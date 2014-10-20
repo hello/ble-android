@@ -46,8 +46,8 @@ public class Morpheus extends HelloBleDevice {
     }
 
 
-    public Morpheus(final Context context, final BluetoothDevice bluetoothDevice){
-        super(context, bluetoothDevice);
+    public Morpheus(final Context context, final BluetoothDevice bluetoothDevice, final int rssi){
+        super(context, bluetoothDevice, rssi);
         checkNotNull(context);
 
 
