@@ -73,7 +73,7 @@ public class Morpheus extends HelloBleDevice {
                             // Authentication required.
 
                             if(sender.bluetoothDevice.getBondState() == BluetoothDevice.BOND_NONE) {
-                                pair(new BleOperationCallback<Void>() {
+                                listenForPairing(new BleOperationCallback<Void>() {
                                     @Override
                                     public void onCompleted(final HelloBleDevice sender, final Void data) {
                                         if (Morpheus.this.connectedCallback != null) {
@@ -88,7 +88,7 @@ public class Morpheus extends HelloBleDevice {
                                         }
                                     }
                                 });
-                            }else{
+                            }else{  // Even by removing this else won't work.
                                 // The target Morpheus lost the bonding information for some reason: firmware update, ROM flashed etc..
                                 if (Morpheus.this.connectedCallback != null) {
                                     Morpheus.this.connectedCallback.onFailed(sender, OperationFailReason.DEVICE_NEED_REBOND, errorCode);
