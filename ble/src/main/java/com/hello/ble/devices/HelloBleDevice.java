@@ -23,7 +23,7 @@ public abstract class HelloBleDevice {
 
     protected Context context;
     protected BluetoothDevice bluetoothDevice;
-    protected int rssi;
+    protected int scanTimeRssi;
     protected HelloGattLayer gattLayer;
 
     protected String id;
@@ -175,18 +175,18 @@ public abstract class HelloBleDevice {
     private HelloBleDevice() {
     }
 
-    protected HelloBleDevice(final Context context, final BluetoothDevice bluetoothDevice, final int rssi) {
+    protected HelloBleDevice(final Context context, final BluetoothDevice bluetoothDevice, final int scanTimeRssi) {
         this.context = context;
         this.bluetoothDevice = bluetoothDevice;
-        this.rssi = rssi;
+        this.scanTimeRssi = scanTimeRssi;
     }
 
     public Context getContext() {
         return context;
     }
 
-    public int getRssi() {
-        return rssi;
+    public int getScanTimeRssi() {
+        return scanTimeRssi;
     }
 
     public String getAddress() {
@@ -205,7 +205,7 @@ public abstract class HelloBleDevice {
 
     @Override
     public String toString() {
-        return getName() + "@" + getAddress() + "-" + getRssi();
+        return getName() + "@" + getAddress();
     }
 
     @Override
