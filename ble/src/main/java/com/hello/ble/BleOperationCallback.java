@@ -20,7 +20,8 @@ public interface BleOperationCallback<T> {
         WRONG_ACK_TYPE(9),
         GET_ID_FAILED(10),
         GATT_NOT_INITIALIZED(11),
-        INTERNAL_ERROR(12);
+        INTERNAL_ERROR(12),
+        DEVICE_NEED_REBOND(13);
 
         private int value = 0;
 

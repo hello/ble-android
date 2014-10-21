@@ -246,6 +246,22 @@ public abstract class HelloBleDevice {
         }
     }
 
+    public void listenForPairing(final BleOperationCallback<Void> pairedCallback) {
+        try {
+
+            this.pairedCallback = pairedCallback;
+            final IntentFilter filter = new IntentFilter();
+            filter.addAction(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
+
+            HelloBle.getApplicationContext().registerReceiver(this.pairingReceiver, filter);
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (pairedCallback != null) {
+                pairedCallback.onFailed(this, OperationFailReason.INTERNAL_ERROR, -1);
+            }
+        }
+    }
+
     public void unpair(final BleOperationCallback<Void> unpairCallback) {
         try {
             this.unpairCallback = unpairCallback;
