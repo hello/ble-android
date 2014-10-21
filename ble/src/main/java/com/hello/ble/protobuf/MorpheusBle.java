@@ -615,6 +615,10 @@ public final class MorpheusBle {
        * <code>MORPHEUS_COMMAND_PILL_DFU_BEGIN = 19;</code>
        */
       MORPHEUS_COMMAND_PILL_DFU_BEGIN(19, 19),
+      /**
+       * <code>MORPHEUS_COMMAND_FACTORY_RESET = 20;</code>
+       */
+      MORPHEUS_COMMAND_FACTORY_RESET(20, 20),
       ;
 
       /**
@@ -701,6 +705,10 @@ public final class MorpheusBle {
        * <code>MORPHEUS_COMMAND_PILL_DFU_BEGIN = 19;</code>
        */
       public static final int MORPHEUS_COMMAND_PILL_DFU_BEGIN_VALUE = 19;
+      /**
+       * <code>MORPHEUS_COMMAND_FACTORY_RESET = 20;</code>
+       */
+      public static final int MORPHEUS_COMMAND_FACTORY_RESET_VALUE = 20;
 
 
       public final int getNumber() { return value; }
@@ -727,6 +735,7 @@ public final class MorpheusBle {
           case 17: return MORPHEUS_COMMAND_PILL_DATA;
           case 18: return MORPHEUS_COMMAND_PILL_HEARTBEAT;
           case 19: return MORPHEUS_COMMAND_PILL_DFU_BEGIN;
+          case 20: return MORPHEUS_COMMAND_FACTORY_RESET;
           default: return null;
         }
       }
@@ -2307,7 +2316,7 @@ public final class MorpheusBle {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\033morpheus/morpheus_ble.proto\"\232\010\n\017Morphe" +
+      "\n\033morpheus/morpheus_ble.proto\"\276\010\n\017Morphe" +
       "usCommand\022\017\n\007version\030\001 \002(\005\022*\n\004type\030\002 \002(\016" +
       "2\034.MorpheusCommand.CommandType\022\020\n\010device" +
       "Id\030\003 \001(\t\022\021\n\taccountId\030\004 \001(\t\022\031\n\005error\030\005 \001" +
@@ -2315,7 +2324,7 @@ public final class MorpheusBle {
       "SSID\030\007 \001(\t\022\024\n\014wifiPassword\030\010 \001(\t\022\024\n\014batt" +
       "eryLevel\030\t \001(\005\022\016\n\006uptime\030\n \001(\005\022\022\n\nmotion" +
       "Data\030\013 \001(\005\022\033\n\023motionDataEntrypted\030\014 \001(\014\022" +
-      "\027\n\017firmwareVersion\030\r \001(\005\"\337\005\n\013CommandType" +
+      "\027\n\017firmwareVersion\030\r \001(\005\"\203\006\n\013CommandType" +
       "\022\035\n\031MORPHEUS_COMMAND_SET_TIME\020\000\022\035\n\031MORPH",
       "EUS_COMMAND_GET_TIME\020\001\022&\n\"MORPHEUS_COMMA" +
       "ND_SET_WIFI_ENDPOINT\020\002\022&\n\"MORPHEUS_COMMA" +
@@ -2334,11 +2343,12 @@ public final class MorpheusBle {
       "HEUS_DFU_BEGIN\020\020\022\036\n\032MORPHEUS_COMMAND_PIL" +
       "L_DATA\020\021\022#\n\037MORPHEUS_COMMAND_PILL_HEARTB" +
       "EAT\020\022\022#\n\037MORPHEUS_COMMAND_PILL_DFU_BEGIN" +
-      "\020\023*\257\001\n\tErrorType\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWOR" +
-      "K_ERROR\020\001\022\031\n\025DEVICE_ALREADY_PAIRED\020\002\022\027\n\023" +
-      "INTERNAL_DATA_ERROR\020\003\022\030\n\024DEVICE_DATABASE",
-      "_FULL\020\004\022\024\n\020DEVICE_NO_MEMORY\020\005\022\035\n\031INTERNA" +
-      "L_OPERATION_FAILED\020\006"
+      "\020\023\022\"\n\036MORPHEUS_COMMAND_FACTORY_RESET\020\024*\257" +
+      "\001\n\tErrorType\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWORK_ER" +
+      "ROR\020\001\022\031\n\025DEVICE_ALREADY_PAIRED\020\002\022\027\n\023INTE",
+      "RNAL_DATA_ERROR\020\003\022\030\n\024DEVICE_DATABASE_FUL" +
+      "L\020\004\022\024\n\020DEVICE_NO_MEMORY\020\005\022\035\n\031INTERNAL_OP" +
+      "ERATION_FAILED\020\006"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
