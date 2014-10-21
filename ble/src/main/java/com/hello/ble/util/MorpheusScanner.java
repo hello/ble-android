@@ -53,7 +53,7 @@ public class MorpheusScanner extends HelloBleDeviceScanner {
     }
 
     @Override
-    public HelloBleDevice createDevice(final Context context, final BluetoothDevice device) {
-        return new Morpheus(context, device);
+    public HelloBleDevice createDevice(final Context context, final BluetoothDevice device, final int rssi) {
+        return new Morpheus(context, device, rssi);
     }
 }

@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.content.Context;
 import android.os.Handler;
+import android.util.Pair;
 
 import com.hello.ble.BleOperationCallback;
 import com.hello.ble.HelloBle;
@@ -28,7 +29,7 @@ public abstract class HelloBleDeviceScanner implements LeScanCallback {
     private final BleOperationCallback<Set<HelloBleDevice>> discoveryCallback;
 
     private final Set<HelloBleDevice> discoveredDevices = new HashSet<>();
-    private final Map<String, BluetoothDevice> devices = new HashMap<String, BluetoothDevice>();
+    private final Map<String, Pair<BluetoothDevice, Integer>> devices = new HashMap<>();
 
     private final Handler scanHandler;
 
@@ -38,7 +39,8 @@ public abstract class HelloBleDeviceScanner implements LeScanCallback {
             bluetoothAdapter.stopLeScan(HelloBleDeviceScanner.this);
 
             for (final String address : devices.keySet()) {
-                discoveredDevices.add(createDevice(HelloBle.getApplicationContext(), devices.get(address)));
+                Pair<BluetoothDevice, Integer> deviceAndRssi = devices.get(address);
+                discoveredDevices.add(createDevice(HelloBle.getApplicationContext(), deviceAndRssi.first, deviceAndRssi.second));
             }
             discoveryCallback.onCompleted(null, discoveredDevices);
         }
@@ -61,11 +63,11 @@ public abstract class HelloBleDeviceScanner implements LeScanCallback {
 
     public abstract boolean isTargetDevice(final BluetoothDevice device, final byte[] scanResponse);
 
-    public abstract HelloBleDevice createDevice(final Context context, final BluetoothDevice device);
+    public abstract HelloBleDevice createDevice(final Context context, final BluetoothDevice device, final int rssi);
 
 
     @Override
-    public void onLeScan(final BluetoothDevice device, int i, byte[] scanRecord) {
+    public void onLeScan(final BluetoothDevice device, int rssi, byte[] scanRecord) {
         final String debugString = device.getName();
 
         if (!isTargetDevice(device, scanRecord)) {
@@ -83,7 +85,7 @@ public abstract class HelloBleDeviceScanner implements LeScanCallback {
                     continue;
                 }
 
-                this.devices.put(device.getAddress(), device);
+                this.devices.put(device.getAddress(), Pair.create(device, rssi));
             }
 
             if (this.devices.size() == this.addresses.length) {
@@ -94,7 +96,7 @@ public abstract class HelloBleDeviceScanner implements LeScanCallback {
 
             }
         } else {
-            this.devices.put(device.getAddress(), device);
+            this.devices.put(device.getAddress(), Pair.create(device, rssi));
         }
 
     }

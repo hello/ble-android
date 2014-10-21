@@ -45,8 +45,8 @@ public class Pill extends HelloBleDevice {
     private PillBlePacketHandler transmissionLayer;
 
 
-    public Pill(final Context context, final BluetoothDevice pillDevice) {
-        super(context, pillDevice);
+    public Pill(final Context context, final BluetoothDevice pillDevice, final int rssi) {
+        super(context, pillDevice, rssi);
 
         if (context == null)
             throw new IllegalArgumentException();
