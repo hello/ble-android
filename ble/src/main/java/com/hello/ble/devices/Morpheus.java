@@ -72,7 +72,7 @@ public class Morpheus extends HelloBleDevice {
                         if(OperationFailReason.GATT_ERROR == reason && errorCode == BluetoothGatt.GATT_INSUFFICIENT_AUTHENTICATION){
                             // Authentication required.
 
-                            //if(sender.bluetoothDevice.getBondState() == BluetoothDevice.BOND_NONE) {
+                            if(sender.bluetoothDevice.getBondState() == BluetoothDevice.BOND_NONE) {
                                 listenForPairing(new BleOperationCallback<Void>() {
                                     @Override
                                     public void onCompleted(final HelloBleDevice sender, final Void data) {
@@ -88,14 +88,24 @@ public class Morpheus extends HelloBleDevice {
                                         }
                                     }
                                 });
-                            /*}else{  // Even by removing this else won't work.
+                            }else{  // Even by removing this else won't work.
                                 // The target Morpheus lost the bonding information for some reason: firmware update, ROM flashed etc..
-                                if (Morpheus.this.connectedCallback != null) {
-                                    Morpheus.this.connectedCallback.onFailed(sender, OperationFailReason.DEVICE_NEED_REBOND, errorCode);
-                                }
+                                unpair(new BleOperationCallback<Void>() {
+                                    @Override
+                                    public void onCompleted(HelloBleDevice sender, Void data) {
+                                        if (Morpheus.this.connectedCallback != null) {
+                                            connect(Morpheus.this.connectedCallback, true);
+                                        }
+                                    }
 
-                                Morpheus.this.disconnect();  // If we run into this, force disconnect. Crash the BLE stack??!!
-                            }*/
+                                    @Override
+                                    public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
+                                        if (Morpheus.this.connectedCallback != null) {
+                                            Morpheus.this.connectedCallback.onFailed(sender, OperationFailReason.DEVICE_NEED_REBOND, errorCode);
+                                        }
+                                    }
+                                });
+                            }
                         }else{
                             if(Morpheus.this.connectedCallback != null){
                                 Morpheus.this.connectedCallback.onFailed(sender, reason, errorCode);
@@ -490,7 +500,7 @@ public class Morpheus extends HelloBleDevice {
 
             @Override
             public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
-                if(getDeviceIdCallback != null){
+                if (getDeviceIdCallback != null) {
                     getDeviceIdCallback.onFailed(sender, reason, errorCode);
                 }
             }
@@ -525,7 +535,7 @@ public class Morpheus extends HelloBleDevice {
 
             @Override
             public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
-                if(operationCallback != null){
+                if (operationCallback != null) {
                     operationCallback.onFailed(sender, reason, errorCode);
                 }
             }
