@@ -79,17 +79,6 @@ public abstract class HelloBleDevice {
         connect();
     }
 
-    public void connect(final BleOperationCallback<Void> connectedCallback, final boolean autoBond) {
-        if (this.bluetoothDevice == null)
-            throw new IllegalArgumentException();
-
-        if (isConnected()) {
-            return;
-        }
-
-        this.connectedCallback = connectedCallback;
-        connect(autoBond);
-    }
 
     protected void setId(final String deviceId) {
         this.id = deviceId;
@@ -112,51 +101,6 @@ public abstract class HelloBleDevice {
         }
 
         HelloBleDevice.this.gattLayer.connect();
-    }
-
-    public void connect(boolean autoBond) {
-        if (this.bluetoothDevice == null)
-            throw new IllegalArgumentException();
-
-        if (isConnected()) {
-            return;
-        }
-
-        if (this.bluetoothDevice.getBondState() != BluetoothDevice.BOND_BONDED && autoBond) {
-            final BleOperationCallback<Void> pairedCallback = new BleOperationCallback<Void>() {
-                @Override
-                public void onCompleted(final HelloBleDevice connectedPill, final Void data) {
-                    connect();
-                }
-
-                @Override
-                public void onFailed(final HelloBleDevice sender, final OperationFailReason reason, final int errorCode) {
-                    if (HelloBleDevice.this.connectedCallback != null) {
-                        HelloBleDevice.this.connectedCallback.onFailed(sender, reason, errorCode);
-                    }
-                }
-            };
-            pair(pairedCallback);
-        } else {
-
-            if (autoBond && this.bluetoothDevice.getBondState() == BluetoothDevice.BOND_BONDED) {
-                final BleOperationCallback<Void> unpairCallback = new BleOperationCallback<Void>() {
-                    @Override
-                    public void onCompleted(final HelloBleDevice sender, final Void data) {
-                        connect();
-                    }
-
-                    @Override
-                    public void onFailed(final HelloBleDevice sender, final OperationFailReason reason, final int errorCode) {
-                        connect();
-                    }
-                };
-
-                connect();
-            } else {
-                connect();
-            }
-        }
     }
 
 

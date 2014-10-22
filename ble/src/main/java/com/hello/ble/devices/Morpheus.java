@@ -12,7 +12,6 @@ import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand;
 import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand.CommandType;
 import com.hello.ble.stack.HelloGattLayer;
 import com.hello.ble.stack.application.MorpheusProtobufResponseDataHandler;
-import com.hello.ble.stack.application.MorpheusResponseDataHandler;
 import com.hello.ble.stack.transmission.MorpheusBlePacketHandler;
 import com.hello.ble.util.BleUUID;
 import com.hello.ble.util.HelloBleDeviceScanner;
@@ -31,7 +30,6 @@ public class Morpheus extends HelloBleDevice {
     private static final int DEFAULT_SCAN_INTERVAL_MS = 10000;
     private static int COMMAND_VERSION = 0;
 
-    private MorpheusResponseDataHandler commandResponsePacketHandler;
     private MorpheusProtobufResponseDataHandler protobufCommandResponseHandler;
 
 
@@ -39,8 +37,6 @@ public class Morpheus extends HelloBleDevice {
         super(context, bluetoothDevice, rssi);
         checkNotNull(context);
 
-
-        this.commandResponsePacketHandler = new MorpheusResponseDataHandler(this);
         this.protobufCommandResponseHandler = new MorpheusProtobufResponseDataHandler(this);
 
         final BleOperationCallback<Void> connectedCallback = new BleOperationCallback<Void>() {
@@ -72,7 +68,7 @@ public class Morpheus extends HelloBleDevice {
                         if(OperationFailReason.GATT_ERROR == reason && errorCode == BluetoothGatt.GATT_INSUFFICIENT_AUTHENTICATION){
                             // Authentication required.
 
-                            //if(sender.bluetoothDevice.getBondState() == BluetoothDevice.BOND_NONE) {
+                            if(sender.bluetoothDevice.getBondState() == BluetoothDevice.BOND_NONE) {
                                 listenForPairing(new BleOperationCallback<Void>() {
                                     @Override
                                     public void onCompleted(final HelloBleDevice sender, final Void data) {
@@ -88,16 +84,12 @@ public class Morpheus extends HelloBleDevice {
                                         }
                                     }
                                 });
-                            /*}else{  // Even by removing this else won't work.
-                                // The target Morpheus lost the bonding information for some reason: firmware update, ROM flashed etc..
-                                if (Morpheus.this.connectedCallback != null) {
-                                    Morpheus.this.connectedCallback.onFailed(sender, OperationFailReason.DEVICE_NEED_REBOND, errorCode);
-                                }
+                            }else{  // Even by removing this else won't work.
+                                rebond();
 
-                                Morpheus.this.disconnect();  // If we run into this, force disconnect. Crash the BLE stack??!!
-                            }*/
+                            }
                         }else{
-                            if(Morpheus.this.connectedCallback != null){
+                            if (Morpheus.this.connectedCallback != null) {
                                 Morpheus.this.connectedCallback.onFailed(sender, reason, errorCode);
                             }
                         }
@@ -145,6 +137,36 @@ public class Morpheus extends HelloBleDevice {
                 connectedCallback,
                 disconnectCallback);
 
+    }
+
+    private void rebond(){
+        // Prepare to alter the disconnect callback, so the API user won't receive a disconnect event during re-bond,
+        // save the original callback first.
+        final BleOperationCallback<Integer> disconnectCallbackSaved = Morpheus.this.disconnectedCallback;
+
+        // The target Morpheus lost the bonding information for some reason: firmware update, ROM flashed etc..
+        final BleOperationCallback<Void> repairCallback = new BleOperationCallback<Void>() {
+            @Override
+            public void onCompleted(final HelloBleDevice sender, final Void data) {
+                Morpheus.this.connect();
+                Morpheus.this.disconnectedCallback = disconnectCallbackSaved;
+            }
+
+            @Override
+            public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
+                if (Morpheus.this.connectedCallback != null) {
+                    Morpheus.this.connectedCallback.onFailed(sender, OperationFailReason.DEVICE_REBOND_FAILED, errorCode);
+                }
+                Morpheus.this.disconnectedCallback = disconnectCallbackSaved;
+            }
+        };
+
+        // use this to skip the disconnect event
+        // I am not sure this is the correct way to backbox things
+        // may be the API is doing too much, shall we just return error OperationFailReason.DEVICE_NEED_REBOND
+        // and let the use decide whether to re-bond or not?
+        Morpheus.this.disconnectedCallback = null;
+        Morpheus.this.unpair(repairCallback);
     }
 
 
@@ -490,7 +512,7 @@ public class Morpheus extends HelloBleDevice {
 
             @Override
             public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
-                if(getDeviceIdCallback != null){
+                if (getDeviceIdCallback != null) {
                     getDeviceIdCallback.onFailed(sender, reason, errorCode);
                 }
             }
@@ -525,7 +547,7 @@ public class Morpheus extends HelloBleDevice {
 
             @Override
             public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
-                if(operationCallback != null){
+                if (operationCallback != null) {
                     operationCallback.onFailed(sender, reason, errorCode);
                 }
             }
