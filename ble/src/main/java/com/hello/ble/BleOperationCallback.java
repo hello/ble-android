@@ -21,7 +21,8 @@ public interface BleOperationCallback<T> {
         GET_ID_FAILED(10),
         GATT_NOT_INITIALIZED(11),
         INTERNAL_ERROR(12),
-        DEVICE_NEED_REBOND(13);
+        DEVICE_NEED_REBOND(13),
+        DEVICE_REBOND_FAILED(14);
 
         private int value = 0;
 
