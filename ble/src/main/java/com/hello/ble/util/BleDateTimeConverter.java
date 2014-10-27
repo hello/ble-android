@@ -2,6 +2,7 @@ package com.hello.ble.util;
 
 import com.google.common.io.LittleEndianDataInputStream;
 import com.google.common.io.LittleEndianDataOutputStream;
+import com.hello.ble.HelloBle;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -41,8 +42,8 @@ public class BleDateTimeConverter {
             outputStream.close();
 
 
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        } catch (IOException e) {
+            HelloBle.logError(BleDateTimeConverter.class.getSimpleName(), "Could not convert DateTime to BLE time.", e);
         }
 
         return bleDateTime;
@@ -68,10 +69,8 @@ public class BleDateTimeConverter {
             long timestamp = inputStream.readLong();
             return new DateTime(timestamp, DateTimeZone.UTC);
 
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } catch (IllegalFieldValueException ifvex) {
-            ifvex.printStackTrace();
+        } catch (IOException | IllegalFieldValueException e) {
+            HelloBle.logError(BleDateTimeConverter.class.getSimpleName(), "Could not convert BLE time to DateTime.", e);
         }
 
         return null;

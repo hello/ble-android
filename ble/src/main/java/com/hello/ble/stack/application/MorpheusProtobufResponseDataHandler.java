@@ -2,6 +2,7 @@ package com.hello.ble.stack.application;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.hello.ble.BleOperationCallback.OperationFailReason;
+import com.hello.ble.HelloBle;
 import com.hello.ble.HelloBlePacket;
 import com.hello.ble.devices.HelloBleDevice;
 import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand;
@@ -76,7 +77,7 @@ public class MorpheusProtobufResponseDataHandler extends HelloDataHandler<Morphe
                 data = MorpheusCommand.parseFrom(Arrays.copyOfRange(this.buffer, 0, actualDataLength));
                 this.dataFinished(data);
             } catch (InvalidProtocolBufferException e) {
-                e.printStackTrace();
+                HelloBle.logError(MorpheusProtobufResponseDataHandler.class.getSimpleName(), "Could not parse command.", e);
                 if (this.getDataCallback() != null) {
                     this.getDataCallback().onFailed(this.getSender(), OperationFailReason.INVALID_PROTOBUF, -1);
                 }
