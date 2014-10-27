@@ -586,7 +586,9 @@ public class Morpheus extends HelloBleDevice {
                         }else{
                             if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_ERROR){
                                 if(operationCallback != null){
-                                    operationCallback.onFailed(sender, OperationFailReason.INTERNAL_ERROR, replyCommand.getError().getNumber());
+                                    // replyCommand.getError() can be cast back to a
+                                    // com.hello.ble.protobuf.MorpheusBle.ErrorType by using ErrorType.valueOf(int)
+                                    operationCallback.onFailed(sender, OperationFailReason.NETWORK_COULD_NOT_CONNECT, replyCommand.getError().getNumber());
                                 }
                             }else {
                                 if (operationCallback != null) {
