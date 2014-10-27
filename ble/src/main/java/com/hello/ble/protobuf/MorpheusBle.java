@@ -63,6 +63,18 @@ public final class MorpheusBle {
      * <code>INTERNAL_OPERATION_FAILED = 6;</code>
      */
     INTERNAL_OPERATION_FAILED(6, 6),
+    /**
+     * <code>NO_ENDPOINT_IN_RANGE = 7;</code>
+     */
+    NO_ENDPOINT_IN_RANGE(7, 7),
+    /**
+     * <code>WLAN_CONNECTION_ERROR = 8;</code>
+     */
+    WLAN_CONNECTION_ERROR(8, 8),
+    /**
+     * <code>FAIL_TO_OBTAIN_IP = 9;</code>
+     */
+    FAIL_TO_OBTAIN_IP(9, 9),
     ;
 
     /**
@@ -117,6 +129,18 @@ public final class MorpheusBle {
      * <code>INTERNAL_OPERATION_FAILED = 6;</code>
      */
     public static final int INTERNAL_OPERATION_FAILED_VALUE = 6;
+    /**
+     * <code>NO_ENDPOINT_IN_RANGE = 7;</code>
+     */
+    public static final int NO_ENDPOINT_IN_RANGE_VALUE = 7;
+    /**
+     * <code>WLAN_CONNECTION_ERROR = 8;</code>
+     */
+    public static final int WLAN_CONNECTION_ERROR_VALUE = 8;
+    /**
+     * <code>FAIL_TO_OBTAIN_IP = 9;</code>
+     */
+    public static final int FAIL_TO_OBTAIN_IP_VALUE = 9;
 
 
     public final int getNumber() { return value; }
@@ -130,6 +154,9 @@ public final class MorpheusBle {
         case 4: return DEVICE_DATABASE_FULL;
         case 5: return DEVICE_NO_MEMORY;
         case 6: return INTERNAL_OPERATION_FAILED;
+        case 7: return NO_ENDPOINT_IN_RANGE;
+        case 8: return WLAN_CONNECTION_ERROR;
+        case 9: return FAIL_TO_OBTAIN_IP;
         default: return null;
       }
     }
@@ -2343,12 +2370,14 @@ public final class MorpheusBle {
       "HEUS_DFU_BEGIN\020\020\022\036\n\032MORPHEUS_COMMAND_PIL" +
       "L_DATA\020\021\022#\n\037MORPHEUS_COMMAND_PILL_HEARTB" +
       "EAT\020\022\022#\n\037MORPHEUS_COMMAND_PILL_DFU_BEGIN" +
-      "\020\023\022\"\n\036MORPHEUS_COMMAND_FACTORY_RESET\020\024*\257" +
+      "\020\023\022\"\n\036MORPHEUS_COMMAND_FACTORY_RESET\020\024*\373" +
       "\001\n\tErrorType\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWORK_ER" +
       "ROR\020\001\022\031\n\025DEVICE_ALREADY_PAIRED\020\002\022\027\n\023INTE",
       "RNAL_DATA_ERROR\020\003\022\030\n\024DEVICE_DATABASE_FUL" +
       "L\020\004\022\024\n\020DEVICE_NO_MEMORY\020\005\022\035\n\031INTERNAL_OP" +
-      "ERATION_FAILED\020\006"
+      "ERATION_FAILED\020\006\022\030\n\024NO_ENDPOINT_IN_RANGE" +
+      "\020\007\022\031\n\025WLAN_CONNECTION_ERROR\020\010\022\025\n\021FAIL_TO" +
+      "_OBTAIN_IP\020\t"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
