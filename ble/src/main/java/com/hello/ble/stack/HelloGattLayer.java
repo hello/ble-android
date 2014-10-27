@@ -195,6 +195,10 @@ public class HelloGattLayer extends BluetoothGattCallback {
 
     }
 
+    public boolean postOperation(final Runnable runnable, final long delay){
+        return this.messageHandler.postDelayed(runnable, delay);
+    }
+
     public void writeCommand(final byte[] commandData) {
         writeCommand(BleUUID.CHAR_COMMAND_UUID, commandData);
     }

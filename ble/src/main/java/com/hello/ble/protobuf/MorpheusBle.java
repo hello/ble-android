@@ -208,6 +208,865 @@ public final class MorpheusBle {
     // @@protoc_insertion_point(enum_scope:ErrorType)
   }
 
+  public interface wifi_endpointOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required string ssid = 1;
+    /**
+     * <code>required string ssid = 1;</code>
+     */
+    boolean hasSsid();
+    /**
+     * <code>required string ssid = 1;</code>
+     */
+    String getSsid();
+    /**
+     * <code>required string ssid = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getSsidBytes();
+
+    // optional bytes bssid = 2;
+    /**
+     * <code>optional bytes bssid = 2;</code>
+     */
+    boolean hasBssid();
+    /**
+     * <code>optional bytes bssid = 2;</code>
+     */
+    com.google.protobuf.ByteString getBssid();
+
+    // required int32 rssi = 4;
+    /**
+     * <code>required int32 rssi = 4;</code>
+     */
+    boolean hasRssi();
+    /**
+     * <code>required int32 rssi = 4;</code>
+     */
+    int getRssi();
+
+    // required .wifi_endpoint.sec_type security_type = 5;
+    /**
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+     */
+    boolean hasSecurityType();
+    /**
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+     */
+    wifi_endpoint.sec_type getSecurityType();
+  }
+  /**
+   * Protobuf type {@code wifi_endpoint}
+   */
+  public static final class wifi_endpoint extends
+      com.google.protobuf.GeneratedMessage
+      implements wifi_endpointOrBuilder {
+    // Use wifi_endpoint.newBuilder() to construct.
+    private wifi_endpoint(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private wifi_endpoint(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final wifi_endpoint defaultInstance;
+    public static wifi_endpoint getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public wifi_endpoint getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private wifi_endpoint(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              ssid_ = input.readBytes();
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              bssid_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000004;
+              rssi_ = input.readInt32();
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+              sec_type value = sec_type.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(5, rawValue);
+              } else {
+                bitField0_ |= 0x00000008;
+                securityType_ = value;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return MorpheusBle.internal_static_wifi_endpoint_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return MorpheusBle.internal_static_wifi_endpoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              wifi_endpoint.class, Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<wifi_endpoint> PARSER =
+        new com.google.protobuf.AbstractParser<wifi_endpoint>() {
+      public wifi_endpoint parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new wifi_endpoint(input, extensionRegistry);
+      }
+    };
+
+    @Override
+    public com.google.protobuf.Parser<wifi_endpoint> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code wifi_endpoint.sec_type}
+     *
+     * <pre>
+     *
+     *_u8 ssid[MAXIMAL_SSID_LENGTH];
+     *_u8 ssid_len;
+     *_u8 sec_type;
+     *_u8 bssid[SL_BSSID_LENGTH];
+     *_i8 rssi;
+     * </pre>
+     */
+    public enum sec_type
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>SL_SCAN_SEC_TYPE_OPEN = 0;</code>
+       */
+      SL_SCAN_SEC_TYPE_OPEN(0, 0),
+      /**
+       * <code>SL_SCAN_SEC_TYPE_WEP = 1;</code>
+       */
+      SL_SCAN_SEC_TYPE_WEP(1, 1),
+      /**
+       * <code>SL_SCAN_SEC_TYPE_WPA = 2;</code>
+       */
+      SL_SCAN_SEC_TYPE_WPA(2, 2),
+      /**
+       * <code>SL_SCAN_SEC_TYPE_WPA2 = 3;</code>
+       */
+      SL_SCAN_SEC_TYPE_WPA2(3, 3),
+      ;
+
+      /**
+       * <code>SL_SCAN_SEC_TYPE_OPEN = 0;</code>
+       */
+      public static final int SL_SCAN_SEC_TYPE_OPEN_VALUE = 0;
+      /**
+       * <code>SL_SCAN_SEC_TYPE_WEP = 1;</code>
+       */
+      public static final int SL_SCAN_SEC_TYPE_WEP_VALUE = 1;
+      /**
+       * <code>SL_SCAN_SEC_TYPE_WPA = 2;</code>
+       */
+      public static final int SL_SCAN_SEC_TYPE_WPA_VALUE = 2;
+      /**
+       * <code>SL_SCAN_SEC_TYPE_WPA2 = 3;</code>
+       */
+      public static final int SL_SCAN_SEC_TYPE_WPA2_VALUE = 3;
+
+
+      public final int getNumber() { return value; }
+
+      public static sec_type valueOf(int value) {
+        switch (value) {
+          case 0: return SL_SCAN_SEC_TYPE_OPEN;
+          case 1: return SL_SCAN_SEC_TYPE_WEP;
+          case 2: return SL_SCAN_SEC_TYPE_WPA;
+          case 3: return SL_SCAN_SEC_TYPE_WPA2;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<sec_type>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<sec_type>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<sec_type>() {
+              public sec_type findValueByNumber(int number) {
+                return sec_type.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return wifi_endpoint.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final sec_type[] VALUES = values();
+
+      public static sec_type valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private sec_type(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:wifi_endpoint.sec_type)
+    }
+
+    private int bitField0_;
+    // required string ssid = 1;
+    public static final int SSID_FIELD_NUMBER = 1;
+    private Object ssid_;
+    /**
+     * <code>required string ssid = 1;</code>
+     */
+    public boolean hasSsid() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string ssid = 1;</code>
+     */
+    public String getSsid() {
+      Object ref = ssid_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          ssid_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string ssid = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSsidBytes() {
+      Object ref = ssid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        ssid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional bytes bssid = 2;
+    public static final int BSSID_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString bssid_;
+    /**
+     * <code>optional bytes bssid = 2;</code>
+     */
+    public boolean hasBssid() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional bytes bssid = 2;</code>
+     */
+    public com.google.protobuf.ByteString getBssid() {
+      return bssid_;
+    }
+
+    // required int32 rssi = 4;
+    public static final int RSSI_FIELD_NUMBER = 4;
+    private int rssi_;
+    /**
+     * <code>required int32 rssi = 4;</code>
+     */
+    public boolean hasRssi() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required int32 rssi = 4;</code>
+     */
+    public int getRssi() {
+      return rssi_;
+    }
+
+    // required .wifi_endpoint.sec_type security_type = 5;
+    public static final int SECURITY_TYPE_FIELD_NUMBER = 5;
+    private sec_type securityType_;
+    /**
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+     */
+    public boolean hasSecurityType() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+     */
+    public sec_type getSecurityType() {
+      return securityType_;
+    }
+
+    private void initFields() {
+      ssid_ = "";
+      bssid_ = com.google.protobuf.ByteString.EMPTY;
+      rssi_ = 0;
+      securityType_ = sec_type.SL_SCAN_SEC_TYPE_OPEN;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasSsid()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasRssi()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasSecurityType()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getSsidBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, bssid_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(4, rssi_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeEnum(5, securityType_.getNumber());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getSsidBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, bssid_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, rssi_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, securityType_.getNumber());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static wifi_endpoint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static wifi_endpoint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static wifi_endpoint parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static wifi_endpoint parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static wifi_endpoint parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static wifi_endpoint parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static wifi_endpoint parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static wifi_endpoint parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static wifi_endpoint parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static wifi_endpoint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(wifi_endpoint prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code wifi_endpoint}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements wifi_endpointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return MorpheusBle.internal_static_wifi_endpoint_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return MorpheusBle.internal_static_wifi_endpoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                wifi_endpoint.class, Builder.class);
+      }
+
+      // Construct using MorpheusBle.wifi_endpoint.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        ssid_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bssid_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rssi_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        securityType_ = sec_type.SL_SCAN_SEC_TYPE_OPEN;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return MorpheusBle.internal_static_wifi_endpoint_descriptor;
+      }
+
+      public wifi_endpoint getDefaultInstanceForType() {
+        return wifi_endpoint.getDefaultInstance();
+      }
+
+      public wifi_endpoint build() {
+        wifi_endpoint result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public wifi_endpoint buildPartial() {
+        wifi_endpoint result = new wifi_endpoint(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.ssid_ = ssid_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bssid_ = bssid_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.rssi_ = rssi_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.securityType_ = securityType_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof wifi_endpoint) {
+          return mergeFrom((wifi_endpoint)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(wifi_endpoint other) {
+        if (other == wifi_endpoint.getDefaultInstance()) return this;
+        if (other.hasSsid()) {
+          bitField0_ |= 0x00000001;
+          ssid_ = other.ssid_;
+          onChanged();
+        }
+        if (other.hasBssid()) {
+          setBssid(other.getBssid());
+        }
+        if (other.hasRssi()) {
+          setRssi(other.getRssi());
+        }
+        if (other.hasSecurityType()) {
+          setSecurityType(other.getSecurityType());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasSsid()) {
+          
+          return false;
+        }
+        if (!hasRssi()) {
+          
+          return false;
+        }
+        if (!hasSecurityType()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        wifi_endpoint parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (wifi_endpoint) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string ssid = 1;
+      private Object ssid_ = "";
+      /**
+       * <code>required string ssid = 1;</code>
+       */
+      public boolean hasSsid() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string ssid = 1;</code>
+       */
+      public String getSsid() {
+        Object ref = ssid_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          ssid_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>required string ssid = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSsidBytes() {
+        Object ref = ssid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          ssid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string ssid = 1;</code>
+       */
+      public Builder setSsid(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        ssid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string ssid = 1;</code>
+       */
+      public Builder clearSsid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ssid_ = getDefaultInstance().getSsid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string ssid = 1;</code>
+       */
+      public Builder setSsidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        ssid_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional bytes bssid = 2;
+      private com.google.protobuf.ByteString bssid_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes bssid = 2;</code>
+       */
+      public boolean hasBssid() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional bytes bssid = 2;</code>
+       */
+      public com.google.protobuf.ByteString getBssid() {
+        return bssid_;
+      }
+      /**
+       * <code>optional bytes bssid = 2;</code>
+       */
+      public Builder setBssid(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        bssid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes bssid = 2;</code>
+       */
+      public Builder clearBssid() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bssid_ = getDefaultInstance().getBssid();
+        onChanged();
+        return this;
+      }
+
+      // required int32 rssi = 4;
+      private int rssi_ ;
+      /**
+       * <code>required int32 rssi = 4;</code>
+       */
+      public boolean hasRssi() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required int32 rssi = 4;</code>
+       */
+      public int getRssi() {
+        return rssi_;
+      }
+      /**
+       * <code>required int32 rssi = 4;</code>
+       */
+      public Builder setRssi(int value) {
+        bitField0_ |= 0x00000004;
+        rssi_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required int32 rssi = 4;</code>
+       */
+      public Builder clearRssi() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        rssi_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required .wifi_endpoint.sec_type security_type = 5;
+      private sec_type securityType_ = sec_type.SL_SCAN_SEC_TYPE_OPEN;
+      /**
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+       */
+      public boolean hasSecurityType() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+       */
+      public sec_type getSecurityType() {
+        return securityType_;
+      }
+      /**
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+       */
+      public Builder setSecurityType(sec_type value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        securityType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
+       */
+      public Builder clearSecurityType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        securityType_ = sec_type.SL_SCAN_SEC_TYPE_OPEN;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:wifi_endpoint)
+    }
+
+    static {
+      defaultInstance = new wifi_endpoint(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:wifi_endpoint)
+  }
+
   public interface MorpheusCommandOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -385,6 +1244,31 @@ public final class MorpheusBle {
      * <code>optional int32 firmwareVersion = 13;</code>
      */
     int getFirmwareVersion();
+
+    // repeated .wifi_endpoint wifi_scan_result = 14;
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    java.util.List<wifi_endpoint>
+        getWifiScanResultList();
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    wifi_endpoint getWifiScanResult(int index);
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    int getWifiScanResultCount();
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    java.util.List<? extends wifi_endpointOrBuilder>
+        getWifiScanResultOrBuilderList();
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    wifi_endpointOrBuilder getWifiScanResultOrBuilder(
+            int index);
   }
   /**
    * Protobuf type {@code MorpheusCommand}
@@ -514,6 +1398,14 @@ public final class MorpheusBle {
               firmwareVersion_ = input.readInt32();
               break;
             }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                wifiScanResult_ = new java.util.ArrayList<wifi_endpoint>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              wifiScanResult_.add(input.readMessage(wifi_endpoint.PARSER, extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -522,6 +1414,9 @@ public final class MorpheusBle {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+          wifiScanResult_ = java.util.Collections.unmodifiableList(wifiScanResult_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -1178,6 +2073,42 @@ public final class MorpheusBle {
       return firmwareVersion_;
     }
 
+    // repeated .wifi_endpoint wifi_scan_result = 14;
+    public static final int WIFI_SCAN_RESULT_FIELD_NUMBER = 14;
+    private java.util.List<wifi_endpoint> wifiScanResult_;
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    public java.util.List<wifi_endpoint> getWifiScanResultList() {
+      return wifiScanResult_;
+    }
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    public java.util.List<? extends wifi_endpointOrBuilder>
+        getWifiScanResultOrBuilderList() {
+      return wifiScanResult_;
+    }
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    public int getWifiScanResultCount() {
+      return wifiScanResult_.size();
+    }
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    public wifi_endpoint getWifiScanResult(int index) {
+      return wifiScanResult_.get(index);
+    }
+    /**
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+     */
+    public wifi_endpointOrBuilder getWifiScanResultOrBuilder(
+        int index) {
+      return wifiScanResult_.get(index);
+    }
+
     private void initFields() {
       version_ = 0;
       type_ = CommandType.MORPHEUS_COMMAND_SET_TIME;
@@ -1192,6 +2123,7 @@ public final class MorpheusBle {
       motionData_ = 0;
       motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
       firmwareVersion_ = 0;
+      wifiScanResult_ = java.util.Collections.emptyList();
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1205,6 +2137,12 @@ public final class MorpheusBle {
       if (!hasType()) {
         memoizedIsInitialized = 0;
         return false;
+      }
+      for (int i = 0; i < getWifiScanResultCount(); i++) {
+        if (!getWifiScanResult(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
       }
       memoizedIsInitialized = 1;
       return true;
@@ -1251,6 +2189,9 @@ public final class MorpheusBle {
       }
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeInt32(13, firmwareVersion_);
+      }
+      for (int i = 0; i < wifiScanResult_.size(); i++) {
+        output.writeMessage(14, wifiScanResult_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -1312,6 +2253,10 @@ public final class MorpheusBle {
       if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, firmwareVersion_);
+      }
+      for (int i = 0; i < wifiScanResult_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(14, wifiScanResult_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1421,6 +2366,7 @@ public final class MorpheusBle {
       }
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getWifiScanResultFieldBuilder();
         }
       }
       private static Builder create() {
@@ -1455,6 +2401,12 @@ public final class MorpheusBle {
         bitField0_ = (bitField0_ & ~0x00000800);
         firmwareVersion_ = 0;
         bitField0_ = (bitField0_ & ~0x00001000);
+        if (wifiScanResultBuilder_ == null) {
+          wifiScanResult_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          wifiScanResultBuilder_.clear();
+        }
         return this;
       }
 
@@ -1535,6 +2487,15 @@ public final class MorpheusBle {
           to_bitField0_ |= 0x00001000;
         }
         result.firmwareVersion_ = firmwareVersion_;
+        if (wifiScanResultBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+            wifiScanResult_ = java.util.Collections.unmodifiableList(wifiScanResult_);
+            bitField0_ = (bitField0_ & ~0x00002000);
+          }
+          result.wifiScanResult_ = wifiScanResult_;
+        } else {
+          result.wifiScanResult_ = wifiScanResultBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1600,6 +2561,32 @@ public final class MorpheusBle {
         if (other.hasFirmwareVersion()) {
           setFirmwareVersion(other.getFirmwareVersion());
         }
+        if (wifiScanResultBuilder_ == null) {
+          if (!other.wifiScanResult_.isEmpty()) {
+            if (wifiScanResult_.isEmpty()) {
+              wifiScanResult_ = other.wifiScanResult_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+            } else {
+              ensureWifiScanResultIsMutable();
+              wifiScanResult_.addAll(other.wifiScanResult_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.wifiScanResult_.isEmpty()) {
+            if (wifiScanResultBuilder_.isEmpty()) {
+              wifiScanResultBuilder_.dispose();
+              wifiScanResultBuilder_ = null;
+              wifiScanResult_ = other.wifiScanResult_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+              wifiScanResultBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getWifiScanResultFieldBuilder() : null;
+            } else {
+              wifiScanResultBuilder_.addAllMessages(other.wifiScanResult_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1612,6 +2599,12 @@ public final class MorpheusBle {
         if (!hasType()) {
           
           return false;
+        }
+        for (int i = 0; i < getWifiScanResultCount(); i++) {
+          if (!getWifiScanResult(i).isInitialized()) {
+            
+            return false;
+          }
         }
         return true;
       }
@@ -2318,6 +3311,246 @@ public final class MorpheusBle {
         return this;
       }
 
+      // repeated .wifi_endpoint wifi_scan_result = 14;
+      private java.util.List<wifi_endpoint> wifiScanResult_ =
+        java.util.Collections.emptyList();
+      private void ensureWifiScanResultIsMutable() {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+          wifiScanResult_ = new java.util.ArrayList<wifi_endpoint>(wifiScanResult_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          wifi_endpoint, wifi_endpoint.Builder, wifi_endpointOrBuilder> wifiScanResultBuilder_;
+
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public java.util.List<wifi_endpoint> getWifiScanResultList() {
+        if (wifiScanResultBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(wifiScanResult_);
+        } else {
+          return wifiScanResultBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public int getWifiScanResultCount() {
+        if (wifiScanResultBuilder_ == null) {
+          return wifiScanResult_.size();
+        } else {
+          return wifiScanResultBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public wifi_endpoint getWifiScanResult(int index) {
+        if (wifiScanResultBuilder_ == null) {
+          return wifiScanResult_.get(index);
+        } else {
+          return wifiScanResultBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder setWifiScanResult(
+          int index, wifi_endpoint value) {
+        if (wifiScanResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.set(index, value);
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder setWifiScanResult(
+          int index, wifi_endpoint.Builder builderForValue) {
+        if (wifiScanResultBuilder_ == null) {
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder addWifiScanResult(wifi_endpoint value) {
+        if (wifiScanResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.add(value);
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder addWifiScanResult(
+          int index, wifi_endpoint value) {
+        if (wifiScanResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.add(index, value);
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder addWifiScanResult(
+          wifi_endpoint.Builder builderForValue) {
+        if (wifiScanResultBuilder_ == null) {
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.add(builderForValue.build());
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder addWifiScanResult(
+          int index, wifi_endpoint.Builder builderForValue) {
+        if (wifiScanResultBuilder_ == null) {
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder addAllWifiScanResult(
+          Iterable<? extends wifi_endpoint> values) {
+        if (wifiScanResultBuilder_ == null) {
+          ensureWifiScanResultIsMutable();
+          super.addAll(values, wifiScanResult_);
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder clearWifiScanResult() {
+        if (wifiScanResultBuilder_ == null) {
+          wifiScanResult_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public Builder removeWifiScanResult(int index) {
+        if (wifiScanResultBuilder_ == null) {
+          ensureWifiScanResultIsMutable();
+          wifiScanResult_.remove(index);
+          onChanged();
+        } else {
+          wifiScanResultBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public wifi_endpoint.Builder getWifiScanResultBuilder(
+          int index) {
+        return getWifiScanResultFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public wifi_endpointOrBuilder getWifiScanResultOrBuilder(
+          int index) {
+        if (wifiScanResultBuilder_ == null) {
+          return wifiScanResult_.get(index);  } else {
+          return wifiScanResultBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public java.util.List<? extends wifi_endpointOrBuilder>
+           getWifiScanResultOrBuilderList() {
+        if (wifiScanResultBuilder_ != null) {
+          return wifiScanResultBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(wifiScanResult_);
+        }
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public wifi_endpoint.Builder addWifiScanResultBuilder() {
+        return getWifiScanResultFieldBuilder().addBuilder(
+            wifi_endpoint.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public wifi_endpoint.Builder addWifiScanResultBuilder(
+          int index) {
+        return getWifiScanResultFieldBuilder().addBuilder(
+            index, wifi_endpoint.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
+       */
+      public java.util.List<wifi_endpoint.Builder>
+           getWifiScanResultBuilderList() {
+        return getWifiScanResultFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          wifi_endpoint, wifi_endpoint.Builder, wifi_endpointOrBuilder>
+          getWifiScanResultFieldBuilder() {
+        if (wifiScanResultBuilder_ == null) {
+          wifiScanResultBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              wifi_endpoint, wifi_endpoint.Builder, wifi_endpointOrBuilder>(
+                  wifiScanResult_,
+                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  getParentForChildren(),
+                  isClean());
+          wifiScanResult_ = null;
+        }
+        return wifiScanResultBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:MorpheusCommand)
     }
 
@@ -2329,6 +3562,11 @@ public final class MorpheusBle {
     // @@protoc_insertion_point(class_scope:MorpheusCommand)
   }
 
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_wifi_endpoint_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_wifi_endpoint_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_MorpheusCommand_descriptor;
   private static
@@ -2343,53 +3581,66 @@ public final class MorpheusBle {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\033morpheus/morpheus_ble.proto\"\276\010\n\017Morphe" +
-      "usCommand\022\017\n\007version\030\001 \002(\005\022*\n\004type\030\002 \002(\016" +
-      "2\034.MorpheusCommand.CommandType\022\020\n\010device" +
-      "Id\030\003 \001(\t\022\021\n\taccountId\030\004 \001(\t\022\031\n\005error\030\005 \001" +
-      "(\0162\n.ErrorType\022\020\n\010wifiName\030\006 \001(\t\022\020\n\010wifi" +
-      "SSID\030\007 \001(\t\022\024\n\014wifiPassword\030\010 \001(\t\022\024\n\014batt" +
-      "eryLevel\030\t \001(\005\022\016\n\006uptime\030\n \001(\005\022\022\n\nmotion" +
-      "Data\030\013 \001(\005\022\033\n\023motionDataEntrypted\030\014 \001(\014\022" +
-      "\027\n\017firmwareVersion\030\r \001(\005\"\203\006\n\013CommandType" +
-      "\022\035\n\031MORPHEUS_COMMAND_SET_TIME\020\000\022\035\n\031MORPH",
-      "EUS_COMMAND_GET_TIME\020\001\022&\n\"MORPHEUS_COMMA" +
-      "ND_SET_WIFI_ENDPOINT\020\002\022&\n\"MORPHEUS_COMMA" +
-      "ND_GET_WIFI_ENDPOINT\020\003\022\037\n\033MORPHEUS_COMMA" +
-      "ND_SET_ALARMS\020\004\022\037\n\033MORPHEUS_COMMAND_GET_" +
-      "ALARMS\020\005\022+\n\'MORPHEUS_COMMAND_SWITCH_TO_P" +
-      "AIRING_MODE\020\006\022*\n&MORPHEUS_COMMAND_SWITCH" +
-      "_TO_NORMAL_MODE\020\007\022#\n\037MORPHEUS_COMMAND_ST" +
-      "ART_WIFISCAN\020\010\022\"\n\036MORPHEUS_COMMAND_STOP_" +
-      "WIFISCAN\020\t\022\"\n\036MORPHEUS_COMMAND_GET_DEVIC" +
-      "E_ID\020\n\022(\n$MORPHEUS_COMMAND_EREASE_PAIRED",
-      "_PHONE\020\013\022\036\n\032MORPHEUS_COMMAND_PAIR_PILL\020\014" +
-      "\022\032\n\026MORPHEUS_COMMAND_ERROR\020\r\022\037\n\033MORPHEUS" +
-      "_COMMAND_PAIR_SENSE\020\016\022 \n\034MORPHEUS_COMMAN" +
-      "D_UNPAIR_PILL\020\017\022\'\n#MORPHEUS_COMMAND_MORP" +
-      "HEUS_DFU_BEGIN\020\020\022\036\n\032MORPHEUS_COMMAND_PIL" +
-      "L_DATA\020\021\022#\n\037MORPHEUS_COMMAND_PILL_HEARTB" +
-      "EAT\020\022\022#\n\037MORPHEUS_COMMAND_PILL_DFU_BEGIN" +
-      "\020\023\022\"\n\036MORPHEUS_COMMAND_FACTORY_RESET\020\024*\373" +
-      "\001\n\tErrorType\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWORK_ER" +
-      "ROR\020\001\022\031\n\025DEVICE_ALREADY_PAIRED\020\002\022\027\n\023INTE",
-      "RNAL_DATA_ERROR\020\003\022\030\n\024DEVICE_DATABASE_FUL" +
-      "L\020\004\022\024\n\020DEVICE_NO_MEMORY\020\005\022\035\n\031INTERNAL_OP" +
-      "ERATION_FAILED\020\006\022\030\n\024NO_ENDPOINT_IN_RANGE" +
-      "\020\007\022\031\n\025WLAN_CONNECTION_ERROR\020\010\022\025\n\021FAIL_TO" +
-      "_OBTAIN_IP\020\t"
+      "\n\033morpheus/morpheus_ble.proto\"\340\001\n\rwifi_e" +
+      "ndpoint\022\014\n\004ssid\030\001 \002(\t\022\r\n\005bssid\030\002 \001(\014\022\014\n\004" +
+      "rssi\030\004 \002(\005\022.\n\rsecurity_type\030\005 \002(\0162\027.wifi" +
+      "_endpoint.sec_type\"t\n\010sec_type\022\031\n\025SL_SCA" +
+      "N_SEC_TYPE_OPEN\020\000\022\030\n\024SL_SCAN_SEC_TYPE_WE" +
+      "P\020\001\022\030\n\024SL_SCAN_SEC_TYPE_WPA\020\002\022\031\n\025SL_SCAN" +
+      "_SEC_TYPE_WPA2\020\003\"\350\010\n\017MorpheusCommand\022\017\n\007" +
+      "version\030\001 \002(\005\022*\n\004type\030\002 \002(\0162\034.MorpheusCo" +
+      "mmand.CommandType\022\020\n\010deviceId\030\003 \001(\t\022\021\n\ta" +
+      "ccountId\030\004 \001(\t\022\031\n\005error\030\005 \001(\0162\n.ErrorTyp",
+      "e\022\020\n\010wifiName\030\006 \001(\t\022\020\n\010wifiSSID\030\007 \001(\t\022\024\n" +
+      "\014wifiPassword\030\010 \001(\t\022\024\n\014batteryLevel\030\t \001(" +
+      "\005\022\016\n\006uptime\030\n \001(\005\022\022\n\nmotionData\030\013 \001(\005\022\033\n" +
+      "\023motionDataEntrypted\030\014 \001(\014\022\027\n\017firmwareVe" +
+      "rsion\030\r \001(\005\022(\n\020wifi_scan_result\030\016 \003(\0132\016." +
+      "wifi_endpoint\"\203\006\n\013CommandType\022\035\n\031MORPHEU" +
+      "S_COMMAND_SET_TIME\020\000\022\035\n\031MORPHEUS_COMMAND" +
+      "_GET_TIME\020\001\022&\n\"MORPHEUS_COMMAND_SET_WIFI" +
+      "_ENDPOINT\020\002\022&\n\"MORPHEUS_COMMAND_GET_WIFI" +
+      "_ENDPOINT\020\003\022\037\n\033MORPHEUS_COMMAND_SET_ALAR",
+      "MS\020\004\022\037\n\033MORPHEUS_COMMAND_GET_ALARMS\020\005\022+\n" +
+      "\'MORPHEUS_COMMAND_SWITCH_TO_PAIRING_MODE" +
+      "\020\006\022*\n&MORPHEUS_COMMAND_SWITCH_TO_NORMAL_" +
+      "MODE\020\007\022#\n\037MORPHEUS_COMMAND_START_WIFISCA" +
+      "N\020\010\022\"\n\036MORPHEUS_COMMAND_STOP_WIFISCAN\020\t\022" +
+      "\"\n\036MORPHEUS_COMMAND_GET_DEVICE_ID\020\n\022(\n$M" +
+      "ORPHEUS_COMMAND_EREASE_PAIRED_PHONE\020\013\022\036\n" +
+      "\032MORPHEUS_COMMAND_PAIR_PILL\020\014\022\032\n\026MORPHEU" +
+      "S_COMMAND_ERROR\020\r\022\037\n\033MORPHEUS_COMMAND_PA" +
+      "IR_SENSE\020\016\022 \n\034MORPHEUS_COMMAND_UNPAIR_PI",
+      "LL\020\017\022\'\n#MORPHEUS_COMMAND_MORPHEUS_DFU_BE" +
+      "GIN\020\020\022\036\n\032MORPHEUS_COMMAND_PILL_DATA\020\021\022#\n" +
+      "\037MORPHEUS_COMMAND_PILL_HEARTBEAT\020\022\022#\n\037MO" +
+      "RPHEUS_COMMAND_PILL_DFU_BEGIN\020\023\022\"\n\036MORPH" +
+      "EUS_COMMAND_FACTORY_RESET\020\024*\373\001\n\tErrorTyp" +
+      "e\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWORK_ERROR\020\001\022\031\n\025DE" +
+      "VICE_ALREADY_PAIRED\020\002\022\027\n\023INTERNAL_DATA_E" +
+      "RROR\020\003\022\030\n\024DEVICE_DATABASE_FULL\020\004\022\024\n\020DEVI" +
+      "CE_NO_MEMORY\020\005\022\035\n\031INTERNAL_OPERATION_FAI" +
+      "LED\020\006\022\030\n\024NO_ENDPOINT_IN_RANGE\020\007\022\031\n\025WLAN_",
+      "CONNECTION_ERROR\020\010\022\025\n\021FAIL_TO_OBTAIN_IP\020" +
+      "\t"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_MorpheusCommand_descriptor =
+          internal_static_wifi_endpoint_descriptor =
             getDescriptor().getMessageTypes().get(0);
+          internal_static_wifi_endpoint_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_wifi_endpoint_descriptor,
+              new String[] { "Ssid", "Bssid", "Rssi", "SecurityType", });
+          internal_static_MorpheusCommand_descriptor =
+            getDescriptor().getMessageTypes().get(1);
           internal_static_MorpheusCommand_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_MorpheusCommand_descriptor,
-              new String[] { "Version", "Type", "DeviceId", "AccountId", "Error", "WifiName", "WifiSSID", "WifiPassword", "BatteryLevel", "Uptime", "MotionData", "MotionDataEntrypted", "FirmwareVersion", });
+              new String[] { "Version", "Type", "DeviceId", "AccountId", "Error", "WifiName", "WifiSSID", "WifiPassword", "BatteryLevel", "Uptime", "MotionData", "MotionDataEntrypted", "FirmwareVersion", "WifiScanResult", });
           return null;
         }
       };
