@@ -524,13 +524,28 @@ public class Morpheus extends HelloBleDevice {
         final BleOperationCallback<Void> writeCallback = new BleOperationCallback<Void>() {
             @Override
             public void onCompleted(HelloBleDevice sender, Void data) {
-                operationCallback.onCompleted(sender, null);
+                Morpheus.this.gattLayer.unsubscribeNotification(BleUUID.CHAR_PROTOBUF_COMMAND_UUID, new BleOperationCallback<UUID>() {
+                    @Override
+                    public void onCompleted(HelloBleDevice sender, UUID data) {
+                        if (operationCallback != null) {
+                            operationCallback.onCompleted(sender, null);
+                        }
+                    }
 
+                    @Override
+                    public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
+                        if (operationCallback != null) {
+                            operationCallback.onFailed(sender, reason, errorCode);
+                        }
+                    }
+                });
             }
 
             @Override
             public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
-                operationCallback.onFailed(sender, reason, errorCode);
+                if(operationCallback != null){
+                    operationCallback.onFailed(sender, reason, errorCode);
+                }
             }
         };
 
@@ -547,7 +562,7 @@ public class Morpheus extends HelloBleDevice {
 
             @Override
             public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
-                if (operationCallback != null) {
+                if(operationCallback != null){
                     operationCallback.onFailed(sender, reason, errorCode);
                 }
             }
@@ -571,7 +586,9 @@ public class Morpheus extends HelloBleDevice {
                         }else{
                             if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_ERROR){
                                 if(operationCallback != null){
-                                    operationCallback.onFailed(sender, OperationFailReason.INTERNAL_ERROR, replyCommand.getError().getNumber());
+                                    // replyCommand.getError() can be cast back to a
+                                    // com.hello.ble.protobuf.MorpheusBle.ErrorType by using ErrorType.valueOf(int)
+                                    operationCallback.onFailed(sender, OperationFailReason.NETWORK_COULD_NOT_CONNECT, replyCommand.getError().getNumber());
                                 }
                             }else {
                                 if (operationCallback != null) {
