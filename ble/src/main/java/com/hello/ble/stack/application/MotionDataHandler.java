@@ -1,9 +1,8 @@
 package com.hello.ble.stack.application;
 
-import android.util.Log;
-
 import com.google.common.io.LittleEndianDataInputStream;
 import com.hello.ble.BleOperationCallback.OperationFailReason;
+import com.hello.ble.HelloBle;
 import com.hello.ble.HelloBlePacket;
 import com.hello.ble.PillMotionData;
 import com.hello.ble.devices.Pill;
@@ -81,8 +80,8 @@ public class MotionDataHandler extends HelloDataHandler<List<PillMotionData>> {
                 this.buffer = new byte[structLength];
                 inputStream.close();
 
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
+            } catch (IOException e) {
+                HelloBle.logError(MotionDataHandler.class.getSimpleName(), "Could not parse motion data.", e);
             }
 
         } else {
@@ -96,7 +95,7 @@ public class MotionDataHandler extends HelloDataHandler<List<PillMotionData>> {
                 this.buffer[this.bufferOffsetIndex] = lastPacket.payload[i];
             }
 
-            Log.i("Get data: ", this.packets.size() + " in " + this.totalPackets);
+            HelloBle.logInfo("Get data: ", this.packets.size() + " in " + this.totalPackets);
 
             if (this.packets.size() == this.totalPackets) {
                 final List<PillMotionData> data = PillMotionData.fromBytes(this.buffer, this.unitLength);

@@ -12,7 +12,6 @@ import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.util.Log;
 
 import com.hello.ble.BleOperationCallback;
 import com.hello.ble.BleOperationCallback.OperationFailReason;
@@ -295,7 +294,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
 
                                     // crap, service discovery initialization failure.
                                     if (!discoverServices) {
-                                        Log.w(HelloGattLayer.class.getName(), "Unable to discover service for " + HelloGattLayer.this.sender.toString());
+                                        HelloBle.logError(HelloGattLayer.class.getName(), "Unable to discover service for " + HelloGattLayer.this.sender.toString(), null);
                                         HelloGattLayer.this.connectedCallback.onFailed(HelloGattLayer.this.sender, OperationFailReason.SERVICE_DISCOVERY_FAILED, -1);
                                     }
                                 }
@@ -348,7 +347,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
         });
 
         if (status != BluetoothGatt.GATT_SUCCESS) {
-            Log.i(HelloGattLayer.class.getName(), "status = " + status + ", new state = " + newState);
+            HelloBle.logInfo(HelloGattLayer.class.getName(), "status = " + status + ", new state = " + newState);
         }
 
         super.onConnectionStateChange(gatt, status, newState);
@@ -433,7 +432,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
         this.messageHandler.post(new Runnable() {
             @Override
             public void run() {
-                Log.i(HelloGattLayer.class.getName(), "onDescriptorWrite, status: " + status);
+                HelloBle.logInfo(HelloGattLayer.class.getName(), "onDescriptorWrite, status: " + status);
                 BleOperationCallback<UUID> callback = null;
                 GattOperationTimeoutRunnable timeoutRunnable = null;
                 final UUID charUUID = descriptor.getCharacteristic().getUuid();
@@ -489,7 +488,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
 
                 final BluetoothGattCharacteristic characteristic = HelloGattLayer.this.bluetoothGattService.getCharacteristic(charUUID);
                 if (!HelloGattLayer.this.bluetoothGatt.setCharacteristicNotification(characteristic, true)) {
-                    Log.w(Pill.class.getName(), "Set notification for Characteristic: " + characteristic.getUuid() + " failed.");
+                    HelloBle.logError(Pill.class.getName(), "Set notification for Characteristic: " + characteristic.getUuid() + " failed.", null);
                     if (subscribeFinishedCallback != null) {
                         subscribeFinishedCallback.onFailed(HelloGattLayer.this.sender, OperationFailReason.SET_CHAR_NOTIFICATION_FAILED, 0);
                     }
@@ -499,7 +498,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
                     final BluetoothGattDescriptor descriptor = characteristic.getDescriptor(BleUUID.DESCRIPTOR_CHAR_COMMAND_RESPONSE_CONFIG);
                     descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);  // This is the {0x01, 0x00} that shows up in the firmware
                     if (!HelloGattLayer.this.bluetoothGatt.writeDescriptor(descriptor)) {
-                        Log.w(Pill.class.getName(), "Set notification for descriptor: " + descriptor.getUuid() + " failed.");
+                        HelloBle.logError(Pill.class.getName(), "Set notification for descriptor: " + descriptor.getUuid() + " failed.", null);
 
                         if (subscribeFinishedCallback != null) {
                             subscribeFinishedCallback.onFailed(HelloGattLayer.this.sender, OperationFailReason.WRITE_CCCD_FAILED, 0);
@@ -550,7 +549,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
                 final BluetoothGattDescriptor descriptor = characteristic.getDescriptor(BleUUID.DESCRIPTOR_CHAR_COMMAND_RESPONSE_CONFIG);
                 descriptor.setValue(BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE);  // This is the {0x01, 0x00} that shows up in the firmware
                 if (!HelloGattLayer.this.bluetoothGatt.writeDescriptor(descriptor)) {
-                    Log.w(Pill.class.getName(), "Set notification for descriptor: " + descriptor.getUuid() + " failed.");
+                    HelloBle.logError(Pill.class.getName(), "Set notification for descriptor: " + descriptor.getUuid() + " failed.", null);
 
                     // Notify the upper layer we cannot write to gatt.
                     if (unsubscribeFinishedCallback != null) {
@@ -559,7 +558,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
                     return;
                 } else {
                     if (!HelloGattLayer.this.bluetoothGatt.setCharacteristicNotification(characteristic, false)) {
-                        Log.w(Pill.class.getName(), "Reset notification for Characteristic: " + characteristic.getUuid() + " failed.");
+                        HelloBle.logError(Pill.class.getName(), "Reset notification for Characteristic: " + characteristic.getUuid() + " failed.", null);
                         if (unsubscribeFinishedCallback != null) {
                             unsubscribeFinishedCallback.onFailed(HelloGattLayer.this.sender, OperationFailReason.WRITE_CCCD_FAILED, 0);
                         }
@@ -591,14 +590,14 @@ public class HelloGattLayer extends BluetoothGattCallback {
     public void disconnect() {
         if (this.connectionStatus == BluetoothProfile.STATE_DISCONNECTED) {
             // Do not trigger the disconnect event
-            Log.i(HelloGattLayer.class.getName(), "disconnect() called without connect.");
+            HelloBle.logInfo(HelloGattLayer.class.getName(), "disconnect() called without connect.");
             return;
         }
 
         final BluetoothManager bluetoothManager =
                 (BluetoothManager) HelloBle.getApplicationContext().getSystemService(Context.BLUETOOTH_SERVICE);
         if (this.bluetoothGatt != null && bluetoothManager.getConnectionState(this.bluetoothDevice, BluetoothProfile.GATT) == BluetoothProfile.STATE_DISCONNECTED) {
-            Log.i(HelloGattLayer.class.getName(), "device is actually disconnected.");
+            HelloBle.logInfo(HelloGattLayer.class.getName(), "device is actually disconnected.");
             this.messageHandler.post(new Runnable() {
                 public void run() {
                     HelloGattLayer.this.connectionStatus = BluetoothProfile.STATE_DISCONNECTED;
@@ -626,7 +625,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
                     // Register the timeout.
                     boolean postResult = HelloGattLayer.this.messageHandler.postDelayed(HelloGattLayer.this.disconnectTimeoutRunnable, GATT_OPERATION_TIMEOUT_MS);
                     if (!postResult) {
-                        Log.w(HelloGattLayer.class.getName(), "Post delay failed. Force disconnected.");
+                        HelloBle.logError(HelloGattLayer.class.getName(), "Post delay failed. Force disconnected.", null);
                         disconnectedCallback.onCompleted(HelloGattLayer.this.sender, -1);
                         return;
                     }
@@ -637,7 +636,7 @@ public class HelloGattLayer extends BluetoothGattCallback {
 
                 } else {
                     // For some reason the device is not initialized, still return succeed.
-                    Log.w(HelloGattLayer.class.getName(), "Disconnect with null gatt layer. Force disconnected.");
+                    HelloBle.logError(HelloGattLayer.class.getName(), "Disconnect with null gatt layer. Force disconnected.", null);
                     if (disconnectedCallback != null) {
                         disconnectedCallback.onCompleted(HelloGattLayer.this.sender, -1);
                     }

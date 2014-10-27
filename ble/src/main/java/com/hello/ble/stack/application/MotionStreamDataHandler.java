@@ -1,6 +1,7 @@
 package com.hello.ble.stack.application;
 
 import com.google.common.io.LittleEndianDataInputStream;
+import com.hello.ble.HelloBle;
 import com.hello.ble.HelloBlePacket;
 import com.hello.ble.devices.Pill;
 import com.hello.ble.util.BleUUID;
@@ -47,8 +48,8 @@ public class MotionStreamDataHandler extends HelloDataHandler<Long[]> {
             byteArrayInputStream.close();
 
             this.dataFinished(xyz);
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        } catch (IOException e) {
+            HelloBle.logError(MotionStreamDataHandler.class.getSimpleName(), "Could not parse packet.", e);
         }
 
 
