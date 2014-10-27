@@ -147,6 +147,10 @@ public abstract class HelloBleDevice {
         return this.bluetoothDevice.getName();
     }
 
+    public int getBondState() {
+        return this.bluetoothDevice.getBondState();
+    }
+
     @Override
     public String toString() {
         return getName() + "@" + getAddress();
