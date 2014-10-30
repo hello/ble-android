@@ -32,7 +32,7 @@ import java.util.UUID;
  * Created by pangwu on 7/14/14.
  */
 public class HelloGattLayer extends BluetoothGattCallback {
-    public static final int GATT_OPERATION_TIMEOUT_MS = 15000;
+    public static final int GATT_OPERATION_TIMEOUT_MS = 60000;
 
     private HelloBleDevice sender;
 
