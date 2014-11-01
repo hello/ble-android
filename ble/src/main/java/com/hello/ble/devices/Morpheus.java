@@ -573,7 +573,7 @@ public class Morpheus extends HelloBleDevice {
     }
 
 
-    public void setWIFIConnection(final String BSSID, final String SSID, final String password, final BleOperationCallback<Void> operationCallback){
+    public void setWIFIConnection(final wifi_endpoint network, final String password, final BleOperationCallback<Void> operationCallback){
         this.protobufCommandResponseHandler.setDataCallback(new BleOperationCallback<MorpheusCommand>() {
             @Override
             public void onCompleted(final HelloBleDevice sender, final MorpheusCommand replyCommand) {
@@ -643,9 +643,10 @@ public class Morpheus extends HelloBleDevice {
                 final MorpheusCommand morpheusCommand = MorpheusCommand.newBuilder()
                         .setType(CommandType.MORPHEUS_COMMAND_SET_WIFI_ENDPOINT)
                         .setVersion(COMMAND_VERSION)
-                        .setWifiName(BSSID)
-                        .setWifiSSID(SSID)
+                        .setWifiNameBytes(network.getBssid())
+                        .setWifiSSID(network.getSsid())
                         .setWifiPassword(password)
+                        .setSecurityType(network.getSecurityType())
                         .build();
                 Morpheus.this.gattLayer.writeLargeCommand(BleUUID.CHAR_PROTOBUF_COMMAND_UUID, morpheusCommand.toByteArray(), operationCallback);
 
