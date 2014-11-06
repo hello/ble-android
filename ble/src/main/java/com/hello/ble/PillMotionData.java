@@ -1,7 +1,5 @@
 package com.hello.ble;
 
-import android.util.Log;
-
 import com.google.common.io.LittleEndianDataInputStream;
 
 import org.joda.time.DateTime;
@@ -84,7 +82,7 @@ public class PillMotionData {
                         final PillMotionData pillMotionData = new PillMotionData(currentDataTime, value);
                         list.add(0, pillMotionData);
                         currentDataTime = currentDataTime.minusMinutes(1);
-                        Log.i("IMU DATA", pillMotionData.timestamp + ", " + pillMotionData.maxAmplitude);
+                        HelloBle.logInfo("IMU DATA", pillMotionData.timestamp + ", " + pillMotionData.maxAmplitude);
                     }
 
                     index--;
@@ -96,12 +94,10 @@ public class PillMotionData {
 
             }
 
-            Log.i("Current max at index " + currentIndex, String.valueOf(valueList[currentIndex]));
+            HelloBle.logInfo("Current max at index " + currentIndex, String.valueOf(valueList[currentIndex]));
 
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } catch (IllegalFieldValueException ifvEx) {
-            ifvEx.printStackTrace();
+        } catch (IOException | IllegalFieldValueException e) {
+            HelloBle.logError(PillMotionData.class.getSimpleName(), "Could not read pill motion data.", e);
         }
 
 

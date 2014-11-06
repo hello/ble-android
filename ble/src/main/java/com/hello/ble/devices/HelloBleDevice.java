@@ -6,7 +6,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.util.Log;
 
 import com.hello.ble.BleOperationCallback;
 import com.hello.ble.BleOperationCallback.OperationFailReason;
@@ -112,7 +111,7 @@ public abstract class HelloBleDevice {
         try {
             HelloBle.getApplicationContext().unregisterReceiver(this.pairingReceiver);
         } catch (IllegalArgumentException iae) {
-            Log.w(Pill.class.getName(), "Disconnect without paired.");
+            HelloBle.logInfo(Pill.class.getName(), "Disconnect without paired.");
         }
     }
 
@@ -187,7 +186,7 @@ public abstract class HelloBleDevice {
             Method method = this.bluetoothDevice.getClass().getMethod("createBond", (Class[]) null);  // this is shit!
             method.invoke(this.bluetoothDevice, (Object[]) null);
         } catch (Exception e) {
-            e.printStackTrace();
+            HelloBle.logError(getClass().getSimpleName(), "Could not pair.", e);
             if (pairedCallback != null) {
                 pairedCallback.onFailed(this, OperationFailReason.INTERNAL_ERROR, -1);
             }
@@ -203,7 +202,7 @@ public abstract class HelloBleDevice {
 
             HelloBle.getApplicationContext().registerReceiver(this.pairingReceiver, filter);
         } catch (Exception e) {
-            e.printStackTrace();
+            HelloBle.logError(getClass().getSimpleName(), "Could not listen for pairing.", e);
             if (pairedCallback != null) {
                 pairedCallback.onFailed(this, OperationFailReason.INTERNAL_ERROR, -1);
             }
@@ -222,7 +221,7 @@ public abstract class HelloBleDevice {
             method.invoke(this.bluetoothDevice, (Object[]) null);
 
         } catch (Exception e) {
-            e.printStackTrace();
+            HelloBle.logError(getClass().getSimpleName(), "Could not unpair.", e);
         }
     }
 

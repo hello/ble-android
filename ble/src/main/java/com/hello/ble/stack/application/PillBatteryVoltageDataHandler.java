@@ -1,6 +1,7 @@
 package com.hello.ble.stack.application;
 
 import com.google.common.io.LittleEndianDataInputStream;
+import com.hello.ble.HelloBle;
 import com.hello.ble.HelloBlePacket;
 import com.hello.ble.devices.HelloBleDevice;
 import com.hello.ble.util.BleUUID;
@@ -34,7 +35,7 @@ public class PillBatteryVoltageDataHandler extends HelloDataHandler<Integer> {
 
             dataFinished(milliVolt);
         } catch (IOException e) {
-            e.printStackTrace();
+            HelloBle.logError(PillBatteryVoltageDataHandler.class.getSimpleName(), "Could not parse battery voltage data.", e);
         }
     }
 }
