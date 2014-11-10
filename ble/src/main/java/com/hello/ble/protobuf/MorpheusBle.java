@@ -208,6 +208,197 @@ public final class MorpheusBle {
     // @@protoc_insertion_point(enum_scope:ErrorType)
   }
 
+  /**
+   * Protobuf enum {@code wifi_connection_state}
+   */
+  public enum wifi_connection_state
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>NO_WLAN_CONNECTED = 0;</code>
+     */
+    NO_WLAN_CONNECTED(0, 0),
+    /**
+     * <code>WLAN_CONNECTING = 1;</code>
+     */
+    WLAN_CONNECTING(1, 1),
+    /**
+     * <code>WLAN_CONNECTED = 2;</code>
+     */
+    WLAN_CONNECTED(2, 2),
+    /**
+     * <code>IP_RETRIEVED = 3;</code>
+     */
+    IP_RETRIEVED(3, 3),
+    ;
+
+    /**
+     * <code>NO_WLAN_CONNECTED = 0;</code>
+     */
+    public static final int NO_WLAN_CONNECTED_VALUE = 0;
+    /**
+     * <code>WLAN_CONNECTING = 1;</code>
+     */
+    public static final int WLAN_CONNECTING_VALUE = 1;
+    /**
+     * <code>WLAN_CONNECTED = 2;</code>
+     */
+    public static final int WLAN_CONNECTED_VALUE = 2;
+    /**
+     * <code>IP_RETRIEVED = 3;</code>
+     */
+    public static final int IP_RETRIEVED_VALUE = 3;
+
+
+    public final int getNumber() { return value; }
+
+    public static wifi_connection_state valueOf(int value) {
+      switch (value) {
+        case 0: return NO_WLAN_CONNECTED;
+        case 1: return WLAN_CONNECTING;
+        case 2: return WLAN_CONNECTED;
+        case 3: return IP_RETRIEVED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<wifi_connection_state>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<wifi_connection_state>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<wifi_connection_state>() {
+            public wifi_connection_state findValueByNumber(int number) {
+              return wifi_connection_state.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return MorpheusBle.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final wifi_connection_state[] VALUES = values();
+
+    public static wifi_connection_state valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private wifi_connection_state(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:wifi_connection_state)
+  }
+
+  /**
+   * Protobuf enum {@code led_demo_state}
+   */
+  public enum led_demo_state
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>FADE_IN = 0;</code>
+     */
+    FADE_IN(0, 0),
+    /**
+     * <code>FADE_OUT = 1;</code>
+     */
+    FADE_OUT(1, 1),
+    /**
+     * <code>RAINBOW = 2;</code>
+     */
+    RAINBOW(2, 2),
+    ;
+
+    /**
+     * <code>FADE_IN = 0;</code>
+     */
+    public static final int FADE_IN_VALUE = 0;
+    /**
+     * <code>FADE_OUT = 1;</code>
+     */
+    public static final int FADE_OUT_VALUE = 1;
+    /**
+     * <code>RAINBOW = 2;</code>
+     */
+    public static final int RAINBOW_VALUE = 2;
+
+
+    public final int getNumber() { return value; }
+
+    public static led_demo_state valueOf(int value) {
+      switch (value) {
+        case 0: return FADE_IN;
+        case 1: return FADE_OUT;
+        case 2: return RAINBOW;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<led_demo_state>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static com.google.protobuf.Internal.EnumLiteMap<led_demo_state>
+        internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<led_demo_state>() {
+            public led_demo_state findValueByNumber(int number) {
+              return led_demo_state.valueOf(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(index);
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return MorpheusBle.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final led_demo_state[] VALUES = values();
+
+    public static led_demo_state valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int index;
+    private final int value;
+
+    private led_demo_state(int index, int value) {
+      this.index = index;
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:led_demo_state)
+  }
+
   public interface wifi_endpointOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -1067,6 +1258,901 @@ public final class MorpheusBle {
     // @@protoc_insertion_point(class_scope:wifi_endpoint)
   }
 
+  public interface pill_dataOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required string device_id = 1;
+    /**
+     * <code>required string device_id = 1;</code>
+     */
+    boolean hasDeviceId();
+    /**
+     * <code>required string device_id = 1;</code>
+     */
+    String getDeviceId();
+    /**
+     * <code>required string device_id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
+
+    // optional int32 battery_level = 2;
+    /**
+     * <code>optional int32 battery_level = 2;</code>
+     */
+    boolean hasBatteryLevel();
+    /**
+     * <code>optional int32 battery_level = 2;</code>
+     */
+    int getBatteryLevel();
+
+    // optional int32 uptime = 3;
+    /**
+     * <code>optional int32 uptime = 3;</code>
+     */
+    boolean hasUptime();
+    /**
+     * <code>optional int32 uptime = 3;</code>
+     */
+    int getUptime();
+
+    // optional bytes motion_data_entrypted = 4;
+    /**
+     * <code>optional bytes motion_data_entrypted = 4;</code>
+     */
+    boolean hasMotionDataEntrypted();
+    /**
+     * <code>optional bytes motion_data_entrypted = 4;</code>
+     */
+    com.google.protobuf.ByteString getMotionDataEntrypted();
+
+    // optional int32 firmware_version = 5;
+    /**
+     * <code>optional int32 firmware_version = 5;</code>
+     */
+    boolean hasFirmwareVersion();
+    /**
+     * <code>optional int32 firmware_version = 5;</code>
+     */
+    int getFirmwareVersion();
+
+    // required uint64 timestamp = 6;
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    boolean hasTimestamp();
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    long getTimestamp();
+  }
+  /**
+   * Protobuf type {@code pill_data}
+   */
+  public static final class pill_data extends
+      com.google.protobuf.GeneratedMessage
+      implements pill_dataOrBuilder {
+    // Use pill_data.newBuilder() to construct.
+    private pill_data(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private pill_data(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final pill_data defaultInstance;
+    public static pill_data getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public pill_data getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private pill_data(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              bitField0_ |= 0x00000001;
+              deviceId_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              batteryLevel_ = input.readInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              uptime_ = input.readInt32();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              motionDataEntrypted_ = input.readBytes();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              firmwareVersion_ = input.readInt32();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              timestamp_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return MorpheusBle.internal_static_pill_data_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return MorpheusBle.internal_static_pill_data_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pill_data.class, Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<pill_data> PARSER =
+        new com.google.protobuf.AbstractParser<pill_data>() {
+      public pill_data parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new pill_data(input, extensionRegistry);
+      }
+    };
+
+    @Override
+    public com.google.protobuf.Parser<pill_data> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required string device_id = 1;
+    public static final int DEVICE_ID_FIELD_NUMBER = 1;
+    private Object deviceId_;
+    /**
+     * <code>required string device_id = 1;</code>
+     */
+    public boolean hasDeviceId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string device_id = 1;</code>
+     */
+    public String getDeviceId() {
+      Object ref = deviceId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          deviceId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string device_id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      Object ref = deviceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int32 battery_level = 2;
+    public static final int BATTERY_LEVEL_FIELD_NUMBER = 2;
+    private int batteryLevel_;
+    /**
+     * <code>optional int32 battery_level = 2;</code>
+     */
+    public boolean hasBatteryLevel() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional int32 battery_level = 2;</code>
+     */
+    public int getBatteryLevel() {
+      return batteryLevel_;
+    }
+
+    // optional int32 uptime = 3;
+    public static final int UPTIME_FIELD_NUMBER = 3;
+    private int uptime_;
+    /**
+     * <code>optional int32 uptime = 3;</code>
+     */
+    public boolean hasUptime() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int32 uptime = 3;</code>
+     */
+    public int getUptime() {
+      return uptime_;
+    }
+
+    // optional bytes motion_data_entrypted = 4;
+    public static final int MOTION_DATA_ENTRYPTED_FIELD_NUMBER = 4;
+    private com.google.protobuf.ByteString motionDataEntrypted_;
+    /**
+     * <code>optional bytes motion_data_entrypted = 4;</code>
+     */
+    public boolean hasMotionDataEntrypted() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional bytes motion_data_entrypted = 4;</code>
+     */
+    public com.google.protobuf.ByteString getMotionDataEntrypted() {
+      return motionDataEntrypted_;
+    }
+
+    // optional int32 firmware_version = 5;
+    public static final int FIRMWARE_VERSION_FIELD_NUMBER = 5;
+    private int firmwareVersion_;
+    /**
+     * <code>optional int32 firmware_version = 5;</code>
+     */
+    public boolean hasFirmwareVersion() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>optional int32 firmware_version = 5;</code>
+     */
+    public int getFirmwareVersion() {
+      return firmwareVersion_;
+    }
+
+    // required uint64 timestamp = 6;
+    public static final int TIMESTAMP_FIELD_NUMBER = 6;
+    private long timestamp_;
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    public boolean hasTimestamp() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    private void initFields() {
+      deviceId_ = "";
+      batteryLevel_ = 0;
+      uptime_ = 0;
+      motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
+      firmwareVersion_ = 0;
+      timestamp_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasDeviceId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTimestamp()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(1, getDeviceIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeInt32(2, batteryLevel_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt32(3, uptime_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, motionDataEntrypted_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeInt32(5, firmwareVersion_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeUInt64(6, timestamp_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, getDeviceIdBytes());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, batteryLevel_);
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, uptime_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, motionDataEntrypted_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, firmwareVersion_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, timestamp_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static pill_data parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pill_data parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pill_data parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pill_data parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pill_data parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pill_data parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static pill_data parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static pill_data parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static pill_data parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static pill_data parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(pill_data prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code pill_data}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements pill_dataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return MorpheusBle.internal_static_pill_data_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return MorpheusBle.internal_static_pill_data_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pill_data.class, Builder.class);
+      }
+
+      // Construct using MorpheusBle.pill_data.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        deviceId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000001);
+        batteryLevel_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        uptime_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        firmwareVersion_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        timestamp_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return MorpheusBle.internal_static_pill_data_descriptor;
+      }
+
+      public pill_data getDefaultInstanceForType() {
+        return pill_data.getDefaultInstance();
+      }
+
+      public pill_data build() {
+        pill_data result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public pill_data buildPartial() {
+        pill_data result = new pill_data(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.deviceId_ = deviceId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.batteryLevel_ = batteryLevel_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.uptime_ = uptime_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.motionDataEntrypted_ = motionDataEntrypted_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.firmwareVersion_ = firmwareVersion_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.timestamp_ = timestamp_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pill_data) {
+          return mergeFrom((pill_data)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pill_data other) {
+        if (other == pill_data.getDefaultInstance()) return this;
+        if (other.hasDeviceId()) {
+          bitField0_ |= 0x00000001;
+          deviceId_ = other.deviceId_;
+          onChanged();
+        }
+        if (other.hasBatteryLevel()) {
+          setBatteryLevel(other.getBatteryLevel());
+        }
+        if (other.hasUptime()) {
+          setUptime(other.getUptime());
+        }
+        if (other.hasMotionDataEntrypted()) {
+          setMotionDataEntrypted(other.getMotionDataEntrypted());
+        }
+        if (other.hasFirmwareVersion()) {
+          setFirmwareVersion(other.getFirmwareVersion());
+        }
+        if (other.hasTimestamp()) {
+          setTimestamp(other.getTimestamp());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasDeviceId()) {
+          
+          return false;
+        }
+        if (!hasTimestamp()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pill_data parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pill_data) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required string device_id = 1;
+      private Object deviceId_ = "";
+      /**
+       * <code>required string device_id = 1;</code>
+       */
+      public boolean hasDeviceId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required string device_id = 1;</code>
+       */
+      public String getDeviceId() {
+        Object ref = deviceId_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>required string device_id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string device_id = 1;</code>
+       */
+      public Builder setDeviceId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string device_id = 1;</code>
+       */
+      public Builder clearDeviceId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string device_id = 1;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 battery_level = 2;
+      private int batteryLevel_ ;
+      /**
+       * <code>optional int32 battery_level = 2;</code>
+       */
+      public boolean hasBatteryLevel() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional int32 battery_level = 2;</code>
+       */
+      public int getBatteryLevel() {
+        return batteryLevel_;
+      }
+      /**
+       * <code>optional int32 battery_level = 2;</code>
+       */
+      public Builder setBatteryLevel(int value) {
+        bitField0_ |= 0x00000002;
+        batteryLevel_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 battery_level = 2;</code>
+       */
+      public Builder clearBatteryLevel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        batteryLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional int32 uptime = 3;
+      private int uptime_ ;
+      /**
+       * <code>optional int32 uptime = 3;</code>
+       */
+      public boolean hasUptime() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int32 uptime = 3;</code>
+       */
+      public int getUptime() {
+        return uptime_;
+      }
+      /**
+       * <code>optional int32 uptime = 3;</code>
+       */
+      public Builder setUptime(int value) {
+        bitField0_ |= 0x00000004;
+        uptime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 uptime = 3;</code>
+       */
+      public Builder clearUptime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        uptime_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // optional bytes motion_data_entrypted = 4;
+      private com.google.protobuf.ByteString motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes motion_data_entrypted = 4;</code>
+       */
+      public boolean hasMotionDataEntrypted() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional bytes motion_data_entrypted = 4;</code>
+       */
+      public com.google.protobuf.ByteString getMotionDataEntrypted() {
+        return motionDataEntrypted_;
+      }
+      /**
+       * <code>optional bytes motion_data_entrypted = 4;</code>
+       */
+      public Builder setMotionDataEntrypted(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        motionDataEntrypted_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes motion_data_entrypted = 4;</code>
+       */
+      public Builder clearMotionDataEntrypted() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        motionDataEntrypted_ = getDefaultInstance().getMotionDataEntrypted();
+        onChanged();
+        return this;
+      }
+
+      // optional int32 firmware_version = 5;
+      private int firmwareVersion_ ;
+      /**
+       * <code>optional int32 firmware_version = 5;</code>
+       */
+      public boolean hasFirmwareVersion() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>optional int32 firmware_version = 5;</code>
+       */
+      public int getFirmwareVersion() {
+        return firmwareVersion_;
+      }
+      /**
+       * <code>optional int32 firmware_version = 5;</code>
+       */
+      public Builder setFirmwareVersion(int value) {
+        bitField0_ |= 0x00000010;
+        firmwareVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 firmware_version = 5;</code>
+       */
+      public Builder clearFirmwareVersion() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        firmwareVersion_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // required uint64 timestamp = 6;
+      private long timestamp_ ;
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public boolean hasTimestamp() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public Builder setTimestamp(long value) {
+        bitField0_ |= 0x00000020;
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public Builder clearTimestamp() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:pill_data)
+    }
+
+    static {
+      defaultInstance = new pill_data(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:pill_data)
+  }
+
   public interface MorpheusCommandOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
@@ -1110,7 +2196,7 @@ public final class MorpheusBle {
      * <code>optional string accountId = 4;</code>
      *
      * <pre>
-     * Used by MORPHEUS_COMMAND_PAIRE_PILL
+     * Used by MORPHEUS_COMMAND_PAIR_PILL
      * </pre>
      */
     boolean hasAccountId();
@@ -1118,7 +2204,7 @@ public final class MorpheusBle {
      * <code>optional string accountId = 4;</code>
      *
      * <pre>
-     * Used by MORPHEUS_COMMAND_PAIRE_PILL
+     * Used by MORPHEUS_COMMAND_PAIR_PILL
      * </pre>
      */
     String getAccountId();
@@ -1126,7 +2212,7 @@ public final class MorpheusBle {
      * <code>optional string accountId = 4;</code>
      *
      * <pre>
-     * Used by MORPHEUS_COMMAND_PAIRE_PILL
+     * Used by MORPHEUS_COMMAND_PAIR_PILL
      * </pre>
      */
     com.google.protobuf.ByteString
@@ -1215,33 +2301,23 @@ public final class MorpheusBle {
      */
     int getUptime();
 
-    // optional int32 motionData = 11;
-    /**
-     * <code>optional int32 motionData = 11;</code>
-     */
-    boolean hasMotionData();
-    /**
-     * <code>optional int32 motionData = 11;</code>
-     */
-    int getMotionData();
-
-    // optional bytes motionDataEntrypted = 12;
-    /**
-     * <code>optional bytes motionDataEntrypted = 12;</code>
-     */
-    boolean hasMotionDataEntrypted();
-    /**
-     * <code>optional bytes motionDataEntrypted = 12;</code>
-     */
-    com.google.protobuf.ByteString getMotionDataEntrypted();
-
     // optional int32 firmwareVersion = 13;
     /**
      * <code>optional int32 firmwareVersion = 13;</code>
+     *
+     * <pre>
+     * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * </pre>
      */
     boolean hasFirmwareVersion();
     /**
      * <code>optional int32 firmwareVersion = 13;</code>
+     *
+     * <pre>
+     * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * </pre>
      */
     int getFirmwareVersion();
 
@@ -1280,19 +2356,49 @@ public final class MorpheusBle {
      */
     wifi_endpoint.sec_type getSecurityType();
 
-    // optional .MorpheusCommand.PillData pillData = 16;
+    // optional .pill_data pill_data = 16;
     /**
-     * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     boolean hasPillData();
     /**
-     * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
-    MorpheusCommand.PillData getPillData();
+    pill_data getPillData();
     /**
-     * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
-    MorpheusCommand.PillDataOrBuilder getPillDataOrBuilder();
+    pill_dataOrBuilder getPillDataOrBuilder();
+
+    // optional .wifi_connection_state wifi_connection_state = 17;
+    /**
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+     */
+    boolean hasWifiConnectionState();
+    /**
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+     */
+    wifi_connection_state getWifiConnectionState();
+
+    // optional .led_demo_state led_demo_state = 18;
+    /**
+     * <code>optional .led_demo_state led_demo_state = 18;</code>
+     */
+    boolean hasLedDemoState();
+    /**
+     * <code>optional .led_demo_state led_demo_state = 18;</code>
+     */
+    led_demo_state getLedDemoState();
+
+    // optional uint32 led_demo_alpha = 19;
+    /**
+     * <code>optional uint32 led_demo_alpha = 19;</code>
+     */
+    boolean hasLedDemoAlpha();
+    /**
+     * <code>optional uint32 led_demo_alpha = 19;</code>
+     */
+    int getLedDemoAlpha();
   }
   /**
    * Protobuf type {@code MorpheusCommand}
@@ -1407,25 +2513,15 @@ public final class MorpheusBle {
               uptime_ = input.readInt32();
               break;
             }
-            case 88: {
-              bitField0_ |= 0x00000400;
-              motionData_ = input.readInt32();
-              break;
-            }
-            case 98: {
-              bitField0_ |= 0x00000800;
-              motionDataEntrypted_ = input.readBytes();
-              break;
-            }
             case 104: {
-              bitField0_ |= 0x00001000;
+              bitField0_ |= 0x00000400;
               firmwareVersion_ = input.readInt32();
               break;
             }
             case 114: {
-              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
                 wifiScanResult_ = new java.util.ArrayList<wifi_endpoint>();
-                mutable_bitField0_ |= 0x00002000;
+                mutable_bitField0_ |= 0x00000800;
               }
               wifiScanResult_.add(input.readMessage(wifi_endpoint.PARSER, extensionRegistry));
               break;
@@ -1436,22 +2532,49 @@ public final class MorpheusBle {
               if (value == null) {
                 unknownFields.mergeVarintField(15, rawValue);
               } else {
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00000800;
                 securityType_ = value;
               }
               break;
             }
             case 130: {
-              PillData.Builder subBuilder = null;
-              if (((bitField0_ & 0x00004000) == 0x00004000)) {
+              pill_data.Builder subBuilder = null;
+              if (((bitField0_ & 0x00001000) == 0x00001000)) {
                 subBuilder = pillData_.toBuilder();
               }
-              pillData_ = input.readMessage(PillData.PARSER, extensionRegistry);
+              pillData_ = input.readMessage(pill_data.PARSER, extensionRegistry);
               if (subBuilder != null) {
                 subBuilder.mergeFrom(pillData_);
                 pillData_ = subBuilder.buildPartial();
               }
-              bitField0_ |= 0x00004000;
+              bitField0_ |= 0x00001000;
+              break;
+            }
+            case 136: {
+              int rawValue = input.readEnum();
+              wifi_connection_state value = wifi_connection_state.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(17, rawValue);
+              } else {
+                bitField0_ |= 0x00002000;
+                wifiConnectionState_ = value;
+              }
+              break;
+            }
+            case 144: {
+              int rawValue = input.readEnum();
+              led_demo_state value = led_demo_state.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(18, rawValue);
+              } else {
+                bitField0_ |= 0x00004000;
+                ledDemoState_ = value;
+              }
+              break;
+            }
+            case 152: {
+              bitField0_ |= 0x00008000;
+              ledDemoAlpha_ = input.readUInt32();
               break;
             }
           }
@@ -1462,7 +2585,7 @@ public final class MorpheusBle {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e.getMessage()).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
           wifiScanResult_ = java.util.Collections.unmodifiableList(wifiScanResult_);
         }
         this.unknownFields = unknownFields.build();
@@ -1546,9 +2669,9 @@ public final class MorpheusBle {
        */
       MORPHEUS_COMMAND_GET_DEVICE_ID(10, 10),
       /**
-       * <code>MORPHEUS_COMMAND_EREASE_PAIRED_PHONE = 11;</code>
+       * <code>MORPHEUS_COMMAND_ERASE_PAIRED_PHONE = 11;</code>
        */
-      MORPHEUS_COMMAND_EREASE_PAIRED_PHONE(11, 11),
+      MORPHEUS_COMMAND_ERASE_PAIRED_PHONE(11, 11),
       /**
        * <code>MORPHEUS_COMMAND_PAIR_PILL = 12;</code>
        */
@@ -1589,6 +2712,14 @@ public final class MorpheusBle {
        * <code>MORPHEUS_COMMAND_FACTORY_RESET = 20;</code>
        */
       MORPHEUS_COMMAND_FACTORY_RESET(20, 20),
+      /**
+       * <code>MORPHEUS_COMMAND_PILL_SHAKES = 21;</code>
+       */
+      MORPHEUS_COMMAND_PILL_SHAKES(21, 21),
+      /**
+       * <code>MORPHEUS_COMMAND_LED_DEMO = 22;</code>
+       */
+      MORPHEUS_COMMAND_LED_DEMO(22, 22),
       ;
 
       /**
@@ -1636,9 +2767,9 @@ public final class MorpheusBle {
        */
       public static final int MORPHEUS_COMMAND_GET_DEVICE_ID_VALUE = 10;
       /**
-       * <code>MORPHEUS_COMMAND_EREASE_PAIRED_PHONE = 11;</code>
+       * <code>MORPHEUS_COMMAND_ERASE_PAIRED_PHONE = 11;</code>
        */
-      public static final int MORPHEUS_COMMAND_EREASE_PAIRED_PHONE_VALUE = 11;
+      public static final int MORPHEUS_COMMAND_ERASE_PAIRED_PHONE_VALUE = 11;
       /**
        * <code>MORPHEUS_COMMAND_PAIR_PILL = 12;</code>
        */
@@ -1679,6 +2810,14 @@ public final class MorpheusBle {
        * <code>MORPHEUS_COMMAND_FACTORY_RESET = 20;</code>
        */
       public static final int MORPHEUS_COMMAND_FACTORY_RESET_VALUE = 20;
+      /**
+       * <code>MORPHEUS_COMMAND_PILL_SHAKES = 21;</code>
+       */
+      public static final int MORPHEUS_COMMAND_PILL_SHAKES_VALUE = 21;
+      /**
+       * <code>MORPHEUS_COMMAND_LED_DEMO = 22;</code>
+       */
+      public static final int MORPHEUS_COMMAND_LED_DEMO_VALUE = 22;
 
 
       public final int getNumber() { return value; }
@@ -1696,7 +2835,7 @@ public final class MorpheusBle {
           case 8: return MORPHEUS_COMMAND_START_WIFISCAN;
           case 9: return MORPHEUS_COMMAND_STOP_WIFISCAN;
           case 10: return MORPHEUS_COMMAND_GET_DEVICE_ID;
-          case 11: return MORPHEUS_COMMAND_EREASE_PAIRED_PHONE;
+          case 11: return MORPHEUS_COMMAND_ERASE_PAIRED_PHONE;
           case 12: return MORPHEUS_COMMAND_PAIR_PILL;
           case 13: return MORPHEUS_COMMAND_ERROR;
           case 14: return MORPHEUS_COMMAND_PAIR_SENSE;
@@ -1706,6 +2845,8 @@ public final class MorpheusBle {
           case 18: return MORPHEUS_COMMAND_PILL_HEARTBEAT;
           case 19: return MORPHEUS_COMMAND_PILL_DFU_BEGIN;
           case 20: return MORPHEUS_COMMAND_FACTORY_RESET;
+          case 21: return MORPHEUS_COMMAND_PILL_SHAKES;
+          case 22: return MORPHEUS_COMMAND_LED_DEMO;
           default: return null;
         }
       }
@@ -1755,804 +2896,6 @@ public final class MorpheusBle {
       }
 
       // @@protoc_insertion_point(enum_scope:MorpheusCommand.CommandType)
-    }
-
-    public interface PillDataOrBuilder
-        extends com.google.protobuf.MessageOrBuilder {
-
-      // optional string deviceId = 1;
-      /**
-       * <code>optional string deviceId = 1;</code>
-       */
-      boolean hasDeviceId();
-      /**
-       * <code>optional string deviceId = 1;</code>
-       */
-      String getDeviceId();
-      /**
-       * <code>optional string deviceId = 1;</code>
-       */
-      com.google.protobuf.ByteString
-          getDeviceIdBytes();
-
-      // optional int32 batteryLevel = 2;
-      /**
-       * <code>optional int32 batteryLevel = 2;</code>
-       */
-      boolean hasBatteryLevel();
-      /**
-       * <code>optional int32 batteryLevel = 2;</code>
-       */
-      int getBatteryLevel();
-
-      // optional int32 uptime = 3;
-      /**
-       * <code>optional int32 uptime = 3;</code>
-       */
-      boolean hasUptime();
-      /**
-       * <code>optional int32 uptime = 3;</code>
-       */
-      int getUptime();
-
-      // optional bytes motionDataEntrypted = 4;
-      /**
-       * <code>optional bytes motionDataEntrypted = 4;</code>
-       */
-      boolean hasMotionDataEntrypted();
-      /**
-       * <code>optional bytes motionDataEntrypted = 4;</code>
-       */
-      com.google.protobuf.ByteString getMotionDataEntrypted();
-
-      // optional int32 firmwareVersion = 5;
-      /**
-       * <code>optional int32 firmwareVersion = 5;</code>
-       */
-      boolean hasFirmwareVersion();
-      /**
-       * <code>optional int32 firmwareVersion = 5;</code>
-       */
-      int getFirmwareVersion();
-    }
-    /**
-     * Protobuf type {@code MorpheusCommand.PillData}
-     */
-    public static final class PillData extends
-        com.google.protobuf.GeneratedMessage
-        implements PillDataOrBuilder {
-      // Use PillData.newBuilder() to construct.
-      private PillData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-        super(builder);
-        this.unknownFields = builder.getUnknownFields();
-      }
-      private PillData(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
-
-      private static final PillData defaultInstance;
-      public static PillData getDefaultInstance() {
-        return defaultInstance;
-      }
-
-      public PillData getDefaultInstanceForType() {
-        return defaultInstance;
-      }
-
-      private final com.google.protobuf.UnknownFieldSet unknownFields;
-      @Override
-      public final com.google.protobuf.UnknownFieldSet
-          getUnknownFields() {
-        return this.unknownFields;
-      }
-      private PillData(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        initFields();
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(input, unknownFields,
-                                       extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 10: {
-                bitField0_ |= 0x00000001;
-                deviceId_ = input.readBytes();
-                break;
-              }
-              case 16: {
-                bitField0_ |= 0x00000002;
-                batteryLevel_ = input.readInt32();
-                break;
-              }
-              case 24: {
-                bitField0_ |= 0x00000004;
-                uptime_ = input.readInt32();
-                break;
-              }
-              case 34: {
-                bitField0_ |= 0x00000008;
-                motionDataEntrypted_ = input.readBytes();
-                break;
-              }
-              case 40: {
-                bitField0_ |= 0x00000010;
-                firmwareVersion_ = input.readInt32();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e.getMessage()).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return MorpheusBle.internal_static_MorpheusCommand_PillData_descriptor;
-      }
-
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return MorpheusBle.internal_static_MorpheusCommand_PillData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                PillData.class, Builder.class);
-      }
-
-      public static com.google.protobuf.Parser<PillData> PARSER =
-          new com.google.protobuf.AbstractParser<PillData>() {
-        public PillData parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PillData(input, extensionRegistry);
-        }
-      };
-
-      @Override
-      public com.google.protobuf.Parser<PillData> getParserForType() {
-        return PARSER;
-      }
-
-      private int bitField0_;
-      // optional string deviceId = 1;
-      public static final int DEVICEID_FIELD_NUMBER = 1;
-      private Object deviceId_;
-      /**
-       * <code>optional string deviceId = 1;</code>
-       */
-      public boolean hasDeviceId() {
-        return ((bitField0_ & 0x00000001) == 0x00000001);
-      }
-      /**
-       * <code>optional string deviceId = 1;</code>
-       */
-      public String getDeviceId() {
-        Object ref = deviceId_;
-        if (ref instanceof String) {
-          return (String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          if (bs.isValidUtf8()) {
-            deviceId_ = s;
-          }
-          return s;
-        }
-      }
-      /**
-       * <code>optional string deviceId = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDeviceIdBytes() {
-        Object ref = deviceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      // optional int32 batteryLevel = 2;
-      public static final int BATTERYLEVEL_FIELD_NUMBER = 2;
-      private int batteryLevel_;
-      /**
-       * <code>optional int32 batteryLevel = 2;</code>
-       */
-      public boolean hasBatteryLevel() {
-        return ((bitField0_ & 0x00000002) == 0x00000002);
-      }
-      /**
-       * <code>optional int32 batteryLevel = 2;</code>
-       */
-      public int getBatteryLevel() {
-        return batteryLevel_;
-      }
-
-      // optional int32 uptime = 3;
-      public static final int UPTIME_FIELD_NUMBER = 3;
-      private int uptime_;
-      /**
-       * <code>optional int32 uptime = 3;</code>
-       */
-      public boolean hasUptime() {
-        return ((bitField0_ & 0x00000004) == 0x00000004);
-      }
-      /**
-       * <code>optional int32 uptime = 3;</code>
-       */
-      public int getUptime() {
-        return uptime_;
-      }
-
-      // optional bytes motionDataEntrypted = 4;
-      public static final int MOTIONDATAENTRYPTED_FIELD_NUMBER = 4;
-      private com.google.protobuf.ByteString motionDataEntrypted_;
-      /**
-       * <code>optional bytes motionDataEntrypted = 4;</code>
-       */
-      public boolean hasMotionDataEntrypted() {
-        return ((bitField0_ & 0x00000008) == 0x00000008);
-      }
-      /**
-       * <code>optional bytes motionDataEntrypted = 4;</code>
-       */
-      public com.google.protobuf.ByteString getMotionDataEntrypted() {
-        return motionDataEntrypted_;
-      }
-
-      // optional int32 firmwareVersion = 5;
-      public static final int FIRMWAREVERSION_FIELD_NUMBER = 5;
-      private int firmwareVersion_;
-      /**
-       * <code>optional int32 firmwareVersion = 5;</code>
-       */
-      public boolean hasFirmwareVersion() {
-        return ((bitField0_ & 0x00000010) == 0x00000010);
-      }
-      /**
-       * <code>optional int32 firmwareVersion = 5;</code>
-       */
-      public int getFirmwareVersion() {
-        return firmwareVersion_;
-      }
-
-      private void initFields() {
-        deviceId_ = "";
-        batteryLevel_ = 0;
-        uptime_ = 0;
-        motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
-        firmwareVersion_ = 0;
-      }
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized != -1) return isInitialized == 1;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        getSerializedSize();
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          output.writeBytes(1, getDeviceIdBytes());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          output.writeInt32(2, batteryLevel_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          output.writeInt32(3, uptime_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          output.writeBytes(4, motionDataEntrypted_);
-        }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          output.writeInt32(5, firmwareVersion_);
-        }
-        getUnknownFields().writeTo(output);
-      }
-
-      private int memoizedSerializedSize = -1;
-      public int getSerializedSize() {
-        int size = memoizedSerializedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(1, getDeviceIdBytes());
-        }
-        if (((bitField0_ & 0x00000002) == 0x00000002)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(2, batteryLevel_);
-        }
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(3, uptime_);
-        }
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeBytesSize(4, motionDataEntrypted_);
-        }
-        if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeInt32Size(5, firmwareVersion_);
-        }
-        size += getUnknownFields().getSerializedSize();
-        memoizedSerializedSize = size;
-        return size;
-      }
-
-      private static final long serialVersionUID = 0L;
-      @Override
-      protected Object writeReplace()
-          throws java.io.ObjectStreamException {
-        return super.writeReplace();
-      }
-
-      public static PillData parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static PillData parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static PillData parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static PillData parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static PillData parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static PillData parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-      public static PillData parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input);
-      }
-      public static PillData parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseDelimitedFrom(input, extensionRegistry);
-      }
-      public static PillData parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input);
-      }
-      public static PillData parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return PARSER.parseFrom(input, extensionRegistry);
-      }
-
-      public static Builder newBuilder() { return Builder.create(); }
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(PillData prototype) {
-        return newBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() { return newBuilder(this); }
-
-      @Override
-      protected Builder newBuilderForType(
-          BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code MorpheusCommand.PillData}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessage.Builder<Builder>
-         implements PillDataOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return MorpheusBle.internal_static_MorpheusCommand_PillData_descriptor;
-        }
-
-        protected FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return MorpheusBle.internal_static_MorpheusCommand_PillData_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  PillData.class, Builder.class);
-        }
-
-        // Construct using MorpheusBle.MorpheusCommand.PillData.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
-          }
-        }
-        private static Builder create() {
-          return new Builder();
-        }
-
-        public Builder clear() {
-          super.clear();
-          deviceId_ = "";
-          bitField0_ = (bitField0_ & ~0x00000001);
-          batteryLevel_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000002);
-          uptime_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000004);
-          motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
-          bitField0_ = (bitField0_ & ~0x00000008);
-          firmwareVersion_ = 0;
-          bitField0_ = (bitField0_ & ~0x00000010);
-          return this;
-        }
-
-        public Builder clone() {
-          return create().mergeFrom(buildPartial());
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return MorpheusBle.internal_static_MorpheusCommand_PillData_descriptor;
-        }
-
-        public PillData getDefaultInstanceForType() {
-          return PillData.getDefaultInstance();
-        }
-
-        public PillData build() {
-          PillData result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public PillData buildPartial() {
-          PillData result = new PillData(this);
-          int from_bitField0_ = bitField0_;
-          int to_bitField0_ = 0;
-          if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
-            to_bitField0_ |= 0x00000001;
-          }
-          result.deviceId_ = deviceId_;
-          if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
-            to_bitField0_ |= 0x00000002;
-          }
-          result.batteryLevel_ = batteryLevel_;
-          if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
-            to_bitField0_ |= 0x00000004;
-          }
-          result.uptime_ = uptime_;
-          if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
-            to_bitField0_ |= 0x00000008;
-          }
-          result.motionDataEntrypted_ = motionDataEntrypted_;
-          if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
-            to_bitField0_ |= 0x00000010;
-          }
-          result.firmwareVersion_ = firmwareVersion_;
-          result.bitField0_ = to_bitField0_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof PillData) {
-            return mergeFrom((PillData)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(PillData other) {
-          if (other == PillData.getDefaultInstance()) return this;
-          if (other.hasDeviceId()) {
-            bitField0_ |= 0x00000001;
-            deviceId_ = other.deviceId_;
-            onChanged();
-          }
-          if (other.hasBatteryLevel()) {
-            setBatteryLevel(other.getBatteryLevel());
-          }
-          if (other.hasUptime()) {
-            setUptime(other.getUptime());
-          }
-          if (other.hasMotionDataEntrypted()) {
-            setMotionDataEntrypted(other.getMotionDataEntrypted());
-          }
-          if (other.hasFirmwareVersion()) {
-            setFirmwareVersion(other.getFirmwareVersion());
-          }
-          this.mergeUnknownFields(other.getUnknownFields());
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          PillData parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (PillData) e.getUnfinishedMessage();
-            throw e;
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-        private int bitField0_;
-
-        // optional string deviceId = 1;
-        private Object deviceId_ = "";
-        /**
-         * <code>optional string deviceId = 1;</code>
-         */
-        public boolean hasDeviceId() {
-          return ((bitField0_ & 0x00000001) == 0x00000001);
-        }
-        /**
-         * <code>optional string deviceId = 1;</code>
-         */
-        public String getDeviceId() {
-          Object ref = deviceId_;
-          if (!(ref instanceof String)) {
-            String s = ((com.google.protobuf.ByteString) ref)
-                .toStringUtf8();
-            deviceId_ = s;
-            return s;
-          } else {
-            return (String) ref;
-          }
-        }
-        /**
-         * <code>optional string deviceId = 1;</code>
-         */
-        public com.google.protobuf.ByteString
-            getDeviceIdBytes() {
-          Object ref = deviceId_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (String) ref);
-            deviceId_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>optional string deviceId = 1;</code>
-         */
-        public Builder setDeviceId(
-            String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-          deviceId_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional string deviceId = 1;</code>
-         */
-        public Builder clearDeviceId() {
-          bitField0_ = (bitField0_ & ~0x00000001);
-          deviceId_ = getDefaultInstance().getDeviceId();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional string deviceId = 1;</code>
-         */
-        public Builder setDeviceIdBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
-          deviceId_ = value;
-          onChanged();
-          return this;
-        }
-
-        // optional int32 batteryLevel = 2;
-        private int batteryLevel_ ;
-        /**
-         * <code>optional int32 batteryLevel = 2;</code>
-         */
-        public boolean hasBatteryLevel() {
-          return ((bitField0_ & 0x00000002) == 0x00000002);
-        }
-        /**
-         * <code>optional int32 batteryLevel = 2;</code>
-         */
-        public int getBatteryLevel() {
-          return batteryLevel_;
-        }
-        /**
-         * <code>optional int32 batteryLevel = 2;</code>
-         */
-        public Builder setBatteryLevel(int value) {
-          bitField0_ |= 0x00000002;
-          batteryLevel_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional int32 batteryLevel = 2;</code>
-         */
-        public Builder clearBatteryLevel() {
-          bitField0_ = (bitField0_ & ~0x00000002);
-          batteryLevel_ = 0;
-          onChanged();
-          return this;
-        }
-
-        // optional int32 uptime = 3;
-        private int uptime_ ;
-        /**
-         * <code>optional int32 uptime = 3;</code>
-         */
-        public boolean hasUptime() {
-          return ((bitField0_ & 0x00000004) == 0x00000004);
-        }
-        /**
-         * <code>optional int32 uptime = 3;</code>
-         */
-        public int getUptime() {
-          return uptime_;
-        }
-        /**
-         * <code>optional int32 uptime = 3;</code>
-         */
-        public Builder setUptime(int value) {
-          bitField0_ |= 0x00000004;
-          uptime_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional int32 uptime = 3;</code>
-         */
-        public Builder clearUptime() {
-          bitField0_ = (bitField0_ & ~0x00000004);
-          uptime_ = 0;
-          onChanged();
-          return this;
-        }
-
-        // optional bytes motionDataEntrypted = 4;
-        private com.google.protobuf.ByteString motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
-        /**
-         * <code>optional bytes motionDataEntrypted = 4;</code>
-         */
-        public boolean hasMotionDataEntrypted() {
-          return ((bitField0_ & 0x00000008) == 0x00000008);
-        }
-        /**
-         * <code>optional bytes motionDataEntrypted = 4;</code>
-         */
-        public com.google.protobuf.ByteString getMotionDataEntrypted() {
-          return motionDataEntrypted_;
-        }
-        /**
-         * <code>optional bytes motionDataEntrypted = 4;</code>
-         */
-        public Builder setMotionDataEntrypted(com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-          motionDataEntrypted_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional bytes motionDataEntrypted = 4;</code>
-         */
-        public Builder clearMotionDataEntrypted() {
-          bitField0_ = (bitField0_ & ~0x00000008);
-          motionDataEntrypted_ = getDefaultInstance().getMotionDataEntrypted();
-          onChanged();
-          return this;
-        }
-
-        // optional int32 firmwareVersion = 5;
-        private int firmwareVersion_ ;
-        /**
-         * <code>optional int32 firmwareVersion = 5;</code>
-         */
-        public boolean hasFirmwareVersion() {
-          return ((bitField0_ & 0x00000010) == 0x00000010);
-        }
-        /**
-         * <code>optional int32 firmwareVersion = 5;</code>
-         */
-        public int getFirmwareVersion() {
-          return firmwareVersion_;
-        }
-        /**
-         * <code>optional int32 firmwareVersion = 5;</code>
-         */
-        public Builder setFirmwareVersion(int value) {
-          bitField0_ |= 0x00000010;
-          firmwareVersion_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>optional int32 firmwareVersion = 5;</code>
-         */
-        public Builder clearFirmwareVersion() {
-          bitField0_ = (bitField0_ & ~0x00000010);
-          firmwareVersion_ = 0;
-          onChanged();
-          return this;
-        }
-
-        // @@protoc_insertion_point(builder_scope:MorpheusCommand.PillData)
-      }
-
-      static {
-        defaultInstance = new PillData(true);
-        defaultInstance.initFields();
-      }
-
-      // @@protoc_insertion_point(class_scope:MorpheusCommand.PillData)
     }
 
     private int bitField0_;
@@ -2638,7 +2981,7 @@ public final class MorpheusBle {
      * <code>optional string accountId = 4;</code>
      *
      * <pre>
-     * Used by MORPHEUS_COMMAND_PAIRE_PILL
+     * Used by MORPHEUS_COMMAND_PAIR_PILL
      * </pre>
      */
     public boolean hasAccountId() {
@@ -2648,7 +2991,7 @@ public final class MorpheusBle {
      * <code>optional string accountId = 4;</code>
      *
      * <pre>
-     * Used by MORPHEUS_COMMAND_PAIRE_PILL
+     * Used by MORPHEUS_COMMAND_PAIR_PILL
      * </pre>
      */
     public String getAccountId() {
@@ -2669,7 +3012,7 @@ public final class MorpheusBle {
      * <code>optional string accountId = 4;</code>
      *
      * <pre>
-     * Used by MORPHEUS_COMMAND_PAIRE_PILL
+     * Used by MORPHEUS_COMMAND_PAIR_PILL
      * </pre>
      */
     public com.google.protobuf.ByteString
@@ -2871,49 +3214,27 @@ public final class MorpheusBle {
       return uptime_;
     }
 
-    // optional int32 motionData = 11;
-    public static final int MOTIONDATA_FIELD_NUMBER = 11;
-    private int motionData_;
-    /**
-     * <code>optional int32 motionData = 11;</code>
-     */
-    public boolean hasMotionData() {
-      return ((bitField0_ & 0x00000400) == 0x00000400);
-    }
-    /**
-     * <code>optional int32 motionData = 11;</code>
-     */
-    public int getMotionData() {
-      return motionData_;
-    }
-
-    // optional bytes motionDataEntrypted = 12;
-    public static final int MOTIONDATAENTRYPTED_FIELD_NUMBER = 12;
-    private com.google.protobuf.ByteString motionDataEntrypted_;
-    /**
-     * <code>optional bytes motionDataEntrypted = 12;</code>
-     */
-    public boolean hasMotionDataEntrypted() {
-      return ((bitField0_ & 0x00000800) == 0x00000800);
-    }
-    /**
-     * <code>optional bytes motionDataEntrypted = 12;</code>
-     */
-    public com.google.protobuf.ByteString getMotionDataEntrypted() {
-      return motionDataEntrypted_;
-    }
-
     // optional int32 firmwareVersion = 13;
     public static final int FIRMWAREVERSION_FIELD_NUMBER = 13;
     private int firmwareVersion_;
     /**
      * <code>optional int32 firmwareVersion = 13;</code>
+     *
+     * <pre>
+     * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * </pre>
      */
     public boolean hasFirmwareVersion() {
-      return ((bitField0_ & 0x00001000) == 0x00001000);
+      return ((bitField0_ & 0x00000400) == 0x00000400);
     }
     /**
      * <code>optional int32 firmwareVersion = 13;</code>
+     *
+     * <pre>
+     * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+     * </pre>
      */
     public int getFirmwareVersion() {
       return firmwareVersion_;
@@ -2962,7 +3283,7 @@ public final class MorpheusBle {
      * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
      */
     public boolean hasSecurityType() {
-      return ((bitField0_ & 0x00002000) == 0x00002000);
+      return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
      * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
@@ -2971,26 +3292,74 @@ public final class MorpheusBle {
       return securityType_;
     }
 
-    // optional .MorpheusCommand.PillData pillData = 16;
-    public static final int PILLDATA_FIELD_NUMBER = 16;
-    private PillData pillData_;
+    // optional .pill_data pill_data = 16;
+    public static final int PILL_DATA_FIELD_NUMBER = 16;
+    private pill_data pillData_;
     /**
-     * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     public boolean hasPillData() {
+      return ((bitField0_ & 0x00001000) == 0x00001000);
+    }
+    /**
+     * <code>optional .pill_data pill_data = 16;</code>
+     */
+    public pill_data getPillData() {
+      return pillData_;
+    }
+    /**
+     * <code>optional .pill_data pill_data = 16;</code>
+     */
+    public pill_dataOrBuilder getPillDataOrBuilder() {
+      return pillData_;
+    }
+
+    // optional .wifi_connection_state wifi_connection_state = 17;
+    public static final int WIFI_CONNECTION_STATE_FIELD_NUMBER = 17;
+    private wifi_connection_state wifiConnectionState_;
+    /**
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+     */
+    public boolean hasWifiConnectionState() {
+      return ((bitField0_ & 0x00002000) == 0x00002000);
+    }
+    /**
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+     */
+    public wifi_connection_state getWifiConnectionState() {
+      return wifiConnectionState_;
+    }
+
+    // optional .led_demo_state led_demo_state = 18;
+    public static final int LED_DEMO_STATE_FIELD_NUMBER = 18;
+    private led_demo_state ledDemoState_;
+    /**
+     * <code>optional .led_demo_state led_demo_state = 18;</code>
+     */
+    public boolean hasLedDemoState() {
       return ((bitField0_ & 0x00004000) == 0x00004000);
     }
     /**
-     * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+     * <code>optional .led_demo_state led_demo_state = 18;</code>
      */
-    public PillData getPillData() {
-      return pillData_;
+    public led_demo_state getLedDemoState() {
+      return ledDemoState_;
+    }
+
+    // optional uint32 led_demo_alpha = 19;
+    public static final int LED_DEMO_ALPHA_FIELD_NUMBER = 19;
+    private int ledDemoAlpha_;
+    /**
+     * <code>optional uint32 led_demo_alpha = 19;</code>
+     */
+    public boolean hasLedDemoAlpha() {
+      return ((bitField0_ & 0x00008000) == 0x00008000);
     }
     /**
-     * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+     * <code>optional uint32 led_demo_alpha = 19;</code>
      */
-    public PillDataOrBuilder getPillDataOrBuilder() {
-      return pillData_;
+    public int getLedDemoAlpha() {
+      return ledDemoAlpha_;
     }
 
     private void initFields() {
@@ -3004,12 +3373,13 @@ public final class MorpheusBle {
       wifiPassword_ = "";
       batteryLevel_ = 0;
       uptime_ = 0;
-      motionData_ = 0;
-      motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
       firmwareVersion_ = 0;
       wifiScanResult_ = java.util.Collections.emptyList();
       securityType_ = wifi_endpoint.sec_type.SL_SCAN_SEC_TYPE_OPEN;
-      pillData_ = PillData.getDefaultInstance();
+      pillData_ = pill_data.getDefaultInstance();
+      wifiConnectionState_ = wifi_connection_state.NO_WLAN_CONNECTED;
+      ledDemoState_ = led_demo_state.FADE_IN;
+      ledDemoAlpha_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -3026,6 +3396,12 @@ public final class MorpheusBle {
       }
       for (int i = 0; i < getWifiScanResultCount(); i++) {
         if (!getWifiScanResult(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      if (hasPillData()) {
+        if (!getPillData().isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -3068,22 +3444,25 @@ public final class MorpheusBle {
         output.writeInt32(10, uptime_);
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
-        output.writeInt32(11, motionData_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        output.writeBytes(12, motionDataEntrypted_);
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeInt32(13, firmwareVersion_);
       }
       for (int i = 0; i < wifiScanResult_.size(); i++) {
         output.writeMessage(14, wifiScanResult_.get(i));
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         output.writeEnum(15, securityType_.getNumber());
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         output.writeMessage(16, pillData_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        output.writeEnum(17, wifiConnectionState_.getNumber());
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        output.writeEnum(18, ledDemoState_.getNumber());
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        output.writeUInt32(19, ledDemoAlpha_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3136,27 +3515,31 @@ public final class MorpheusBle {
       }
       if (((bitField0_ & 0x00000400) == 0x00000400)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, motionData_);
-      }
-      if (((bitField0_ & 0x00000800) == 0x00000800)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(12, motionDataEntrypted_);
-      }
-      if (((bitField0_ & 0x00001000) == 0x00001000)) {
-        size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, firmwareVersion_);
       }
       for (int i = 0; i < wifiScanResult_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, wifiScanResult_.get(i));
       }
-      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+      if (((bitField0_ & 0x00000800) == 0x00000800)) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, securityType_.getNumber());
       }
-      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+      if (((bitField0_ & 0x00001000) == 0x00001000)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(16, pillData_);
+      }
+      if (((bitField0_ & 0x00002000) == 0x00002000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(17, wifiConnectionState_.getNumber());
+      }
+      if (((bitField0_ & 0x00004000) == 0x00004000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(18, ledDemoState_.getNumber());
+      }
+      if (((bitField0_ & 0x00008000) == 0x00008000)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(19, ledDemoAlpha_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -3296,26 +3679,28 @@ public final class MorpheusBle {
         bitField0_ = (bitField0_ & ~0x00000100);
         uptime_ = 0;
         bitField0_ = (bitField0_ & ~0x00000200);
-        motionData_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000400);
-        motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000800);
         firmwareVersion_ = 0;
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         if (wifiScanResultBuilder_ == null) {
           wifiScanResult_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           wifiScanResultBuilder_.clear();
         }
         securityType_ = wifi_endpoint.sec_type.SL_SCAN_SEC_TYPE_OPEN;
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         if (pillDataBuilder_ == null) {
-          pillData_ = PillData.getDefaultInstance();
+          pillData_ = pill_data.getDefaultInstance();
         } else {
           pillDataBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00002000);
+        wifiConnectionState_ = wifi_connection_state.NO_WLAN_CONNECTED;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        ledDemoState_ = led_demo_state.FADE_IN;
         bitField0_ = (bitField0_ & ~0x00008000);
+        ledDemoAlpha_ = 0;
+        bitField0_ = (bitField0_ & ~0x00010000);
         return this;
       }
 
@@ -3387,36 +3772,40 @@ public final class MorpheusBle {
         if (((from_bitField0_ & 0x00000400) == 0x00000400)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.motionData_ = motionData_;
-        if (((from_bitField0_ & 0x00000800) == 0x00000800)) {
-          to_bitField0_ |= 0x00000800;
-        }
-        result.motionDataEntrypted_ = motionDataEntrypted_;
-        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
-          to_bitField0_ |= 0x00001000;
-        }
         result.firmwareVersion_ = firmwareVersion_;
         if (wifiScanResultBuilder_ == null) {
-          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+          if (((bitField0_ & 0x00000800) == 0x00000800)) {
             wifiScanResult_ = java.util.Collections.unmodifiableList(wifiScanResult_);
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000800);
           }
           result.wifiScanResult_ = wifiScanResult_;
         } else {
           result.wifiScanResult_ = wifiScanResultBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
-          to_bitField0_ |= 0x00002000;
+        if (((from_bitField0_ & 0x00001000) == 0x00001000)) {
+          to_bitField0_ |= 0x00000800;
         }
         result.securityType_ = securityType_;
-        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
-          to_bitField0_ |= 0x00004000;
+        if (((from_bitField0_ & 0x00002000) == 0x00002000)) {
+          to_bitField0_ |= 0x00001000;
         }
         if (pillDataBuilder_ == null) {
           result.pillData_ = pillData_;
         } else {
           result.pillData_ = pillDataBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00004000) == 0x00004000)) {
+          to_bitField0_ |= 0x00002000;
+        }
+        result.wifiConnectionState_ = wifiConnectionState_;
+        if (((from_bitField0_ & 0x00008000) == 0x00008000)) {
+          to_bitField0_ |= 0x00004000;
+        }
+        result.ledDemoState_ = ledDemoState_;
+        if (((from_bitField0_ & 0x00010000) == 0x00010000)) {
+          to_bitField0_ |= 0x00008000;
+        }
+        result.ledDemoAlpha_ = ledDemoAlpha_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3473,12 +3862,6 @@ public final class MorpheusBle {
         if (other.hasUptime()) {
           setUptime(other.getUptime());
         }
-        if (other.hasMotionData()) {
-          setMotionData(other.getMotionData());
-        }
-        if (other.hasMotionDataEntrypted()) {
-          setMotionDataEntrypted(other.getMotionDataEntrypted());
-        }
         if (other.hasFirmwareVersion()) {
           setFirmwareVersion(other.getFirmwareVersion());
         }
@@ -3486,7 +3869,7 @@ public final class MorpheusBle {
           if (!other.wifiScanResult_.isEmpty()) {
             if (wifiScanResult_.isEmpty()) {
               wifiScanResult_ = other.wifiScanResult_;
-              bitField0_ = (bitField0_ & ~0x00002000);
+              bitField0_ = (bitField0_ & ~0x00000800);
             } else {
               ensureWifiScanResultIsMutable();
               wifiScanResult_.addAll(other.wifiScanResult_);
@@ -3499,7 +3882,7 @@ public final class MorpheusBle {
               wifiScanResultBuilder_.dispose();
               wifiScanResultBuilder_ = null;
               wifiScanResult_ = other.wifiScanResult_;
-              bitField0_ = (bitField0_ & ~0x00002000);
+              bitField0_ = (bitField0_ & ~0x00000800);
               wifiScanResultBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    getWifiScanResultFieldBuilder() : null;
@@ -3513,6 +3896,15 @@ public final class MorpheusBle {
         }
         if (other.hasPillData()) {
           mergePillData(other.getPillData());
+        }
+        if (other.hasWifiConnectionState()) {
+          setWifiConnectionState(other.getWifiConnectionState());
+        }
+        if (other.hasLedDemoState()) {
+          setLedDemoState(other.getLedDemoState());
+        }
+        if (other.hasLedDemoAlpha()) {
+          setLedDemoAlpha(other.getLedDemoAlpha());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -3529,6 +3921,12 @@ public final class MorpheusBle {
         }
         for (int i = 0; i < getWifiScanResultCount(); i++) {
           if (!getWifiScanResult(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        if (hasPillData()) {
+          if (!getPillData().isInitialized()) {
             
             return false;
           }
@@ -3704,7 +4102,7 @@ public final class MorpheusBle {
        * <code>optional string accountId = 4;</code>
        *
        * <pre>
-       * Used by MORPHEUS_COMMAND_PAIRE_PILL
+       * Used by MORPHEUS_COMMAND_PAIR_PILL
        * </pre>
        */
       public boolean hasAccountId() {
@@ -3714,7 +4112,7 @@ public final class MorpheusBle {
        * <code>optional string accountId = 4;</code>
        *
        * <pre>
-       * Used by MORPHEUS_COMMAND_PAIRE_PILL
+       * Used by MORPHEUS_COMMAND_PAIR_PILL
        * </pre>
        */
       public String getAccountId() {
@@ -3732,7 +4130,7 @@ public final class MorpheusBle {
        * <code>optional string accountId = 4;</code>
        *
        * <pre>
-       * Used by MORPHEUS_COMMAND_PAIRE_PILL
+       * Used by MORPHEUS_COMMAND_PAIR_PILL
        * </pre>
        */
       public com.google.protobuf.ByteString
@@ -3752,7 +4150,7 @@ public final class MorpheusBle {
        * <code>optional string accountId = 4;</code>
        *
        * <pre>
-       * Used by MORPHEUS_COMMAND_PAIRE_PILL
+       * Used by MORPHEUS_COMMAND_PAIR_PILL
        * </pre>
        */
       public Builder setAccountId(
@@ -3769,7 +4167,7 @@ public final class MorpheusBle {
        * <code>optional string accountId = 4;</code>
        *
        * <pre>
-       * Used by MORPHEUS_COMMAND_PAIRE_PILL
+       * Used by MORPHEUS_COMMAND_PAIR_PILL
        * </pre>
        */
       public Builder clearAccountId() {
@@ -3782,7 +4180,7 @@ public final class MorpheusBle {
        * <code>optional string accountId = 4;</code>
        *
        * <pre>
-       * Used by MORPHEUS_COMMAND_PAIRE_PILL
+       * Used by MORPHEUS_COMMAND_PAIR_PILL
        * </pre>
        */
       public Builder setAccountIdBytes(
@@ -4136,103 +4534,54 @@ public final class MorpheusBle {
         return this;
       }
 
-      // optional int32 motionData = 11;
-      private int motionData_ ;
-      /**
-       * <code>optional int32 motionData = 11;</code>
-       */
-      public boolean hasMotionData() {
-        return ((bitField0_ & 0x00000400) == 0x00000400);
-      }
-      /**
-       * <code>optional int32 motionData = 11;</code>
-       */
-      public int getMotionData() {
-        return motionData_;
-      }
-      /**
-       * <code>optional int32 motionData = 11;</code>
-       */
-      public Builder setMotionData(int value) {
-        bitField0_ |= 0x00000400;
-        motionData_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 motionData = 11;</code>
-       */
-      public Builder clearMotionData() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        motionData_ = 0;
-        onChanged();
-        return this;
-      }
-
-      // optional bytes motionDataEntrypted = 12;
-      private com.google.protobuf.ByteString motionDataEntrypted_ = com.google.protobuf.ByteString.EMPTY;
-      /**
-       * <code>optional bytes motionDataEntrypted = 12;</code>
-       */
-      public boolean hasMotionDataEntrypted() {
-        return ((bitField0_ & 0x00000800) == 0x00000800);
-      }
-      /**
-       * <code>optional bytes motionDataEntrypted = 12;</code>
-       */
-      public com.google.protobuf.ByteString getMotionDataEntrypted() {
-        return motionDataEntrypted_;
-      }
-      /**
-       * <code>optional bytes motionDataEntrypted = 12;</code>
-       */
-      public Builder setMotionDataEntrypted(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000800;
-        motionDataEntrypted_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bytes motionDataEntrypted = 12;</code>
-       */
-      public Builder clearMotionDataEntrypted() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        motionDataEntrypted_ = getDefaultInstance().getMotionDataEntrypted();
-        onChanged();
-        return this;
-      }
-
       // optional int32 firmwareVersion = 13;
       private int firmwareVersion_ ;
       /**
        * <code>optional int32 firmwareVersion = 13;</code>
+       *
+       * <pre>
+       * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * </pre>
        */
       public boolean hasFirmwareVersion() {
-        return ((bitField0_ & 0x00001000) == 0x00001000);
+        return ((bitField0_ & 0x00000400) == 0x00000400);
       }
       /**
        * <code>optional int32 firmwareVersion = 13;</code>
+       *
+       * <pre>
+       * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * </pre>
        */
       public int getFirmwareVersion() {
         return firmwareVersion_;
       }
       /**
        * <code>optional int32 firmwareVersion = 13;</code>
+       *
+       * <pre>
+       * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * </pre>
        */
       public Builder setFirmwareVersion(int value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         firmwareVersion_ = value;
         onChanged();
         return this;
       }
       /**
        * <code>optional int32 firmwareVersion = 13;</code>
+       *
+       * <pre>
+       * optional int32 motionData = 11;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * optional bytes motionDataEntrypted = 12;   // This field is removed, to make thing explicit, please DONOT remove the line
+       * </pre>
        */
       public Builder clearFirmwareVersion() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         firmwareVersion_ = 0;
         onChanged();
         return this;
@@ -4242,9 +4591,9 @@ public final class MorpheusBle {
       private java.util.List<wifi_endpoint> wifiScanResult_ =
         java.util.Collections.emptyList();
       private void ensureWifiScanResultIsMutable() {
-        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
           wifiScanResult_ = new java.util.ArrayList<wifi_endpoint>(wifiScanResult_);
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00000800;
          }
       }
 
@@ -4393,7 +4742,7 @@ public final class MorpheusBle {
       public Builder clearWifiScanResult() {
         if (wifiScanResultBuilder_ == null) {
           wifiScanResult_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000800);
           onChanged();
         } else {
           wifiScanResultBuilder_.clear();
@@ -4470,7 +4819,7 @@ public final class MorpheusBle {
           wifiScanResultBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
               wifi_endpoint, wifi_endpoint.Builder, wifi_endpointOrBuilder>(
                   wifiScanResult_,
-                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  ((bitField0_ & 0x00000800) == 0x00000800),
                   getParentForChildren(),
                   isClean());
           wifiScanResult_ = null;
@@ -4484,7 +4833,7 @@ public final class MorpheusBle {
        * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
        */
       public boolean hasSecurityType() {
-        return ((bitField0_ & 0x00004000) == 0x00004000);
+        return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
        * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
@@ -4499,7 +4848,7 @@ public final class MorpheusBle {
         if (value == null) {
           throw new NullPointerException();
         }
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00001000;
         securityType_ = value;
         onChanged();
         return this;
@@ -4508,26 +4857,26 @@ public final class MorpheusBle {
        * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
        */
       public Builder clearSecurityType() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         securityType_ = wifi_endpoint.sec_type.SL_SCAN_SEC_TYPE_OPEN;
         onChanged();
         return this;
       }
 
-      // optional .MorpheusCommand.PillData pillData = 16;
-      private PillData pillData_ = PillData.getDefaultInstance();
+      // optional .pill_data pill_data = 16;
+      private pill_data pillData_ = pill_data.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
-          PillData, PillData.Builder, PillDataOrBuilder> pillDataBuilder_;
+          pill_data, pill_data.Builder, pill_dataOrBuilder> pillDataBuilder_;
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public boolean hasPillData() {
-        return ((bitField0_ & 0x00008000) == 0x00008000);
+        return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
-      public PillData getPillData() {
+      public pill_data getPillData() {
         if (pillDataBuilder_ == null) {
           return pillData_;
         } else {
@@ -4535,9 +4884,9 @@ public final class MorpheusBle {
         }
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
-      public Builder setPillData(PillData value) {
+      public Builder setPillData(pill_data value) {
         if (pillDataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -4547,32 +4896,32 @@ public final class MorpheusBle {
         } else {
           pillDataBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public Builder setPillData(
-          PillData.Builder builderForValue) {
+          pill_data.Builder builderForValue) {
         if (pillDataBuilder_ == null) {
           pillData_ = builderForValue.build();
           onChanged();
         } else {
           pillDataBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
-      public Builder mergePillData(PillData value) {
+      public Builder mergePillData(pill_data value) {
         if (pillDataBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) == 0x00008000) &&
-              pillData_ != PillData.getDefaultInstance()) {
+          if (((bitField0_ & 0x00002000) == 0x00002000) &&
+              pillData_ != pill_data.getDefaultInstance()) {
             pillData_ =
-              PillData.newBuilder(pillData_).mergeFrom(value).buildPartial();
+              pill_data.newBuilder(pillData_).mergeFrom(value).buildPartial();
           } else {
             pillData_ = value;
           }
@@ -4580,34 +4929,34 @@ public final class MorpheusBle {
         } else {
           pillDataBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public Builder clearPillData() {
         if (pillDataBuilder_ == null) {
-          pillData_ = PillData.getDefaultInstance();
+          pillData_ = pill_data.getDefaultInstance();
           onChanged();
         } else {
           pillDataBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         return this;
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
-      public PillData.Builder getPillDataBuilder() {
-        bitField0_ |= 0x00008000;
+      public pill_data.Builder getPillDataBuilder() {
+        bitField0_ |= 0x00002000;
         onChanged();
         return getPillDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
-      public PillDataOrBuilder getPillDataOrBuilder() {
+      public pill_dataOrBuilder getPillDataOrBuilder() {
         if (pillDataBuilder_ != null) {
           return pillDataBuilder_.getMessageOrBuilder();
         } else {
@@ -4615,20 +4964,125 @@ public final class MorpheusBle {
         }
       }
       /**
-       * <code>optional .MorpheusCommand.PillData pillData = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          PillData, PillData.Builder, PillDataOrBuilder>
+          pill_data, pill_data.Builder, pill_dataOrBuilder>
           getPillDataFieldBuilder() {
         if (pillDataBuilder_ == null) {
           pillDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              PillData, PillData.Builder, PillDataOrBuilder>(
+              pill_data, pill_data.Builder, pill_dataOrBuilder>(
                   pillData_,
                   getParentForChildren(),
                   isClean());
           pillData_ = null;
         }
         return pillDataBuilder_;
+      }
+
+      // optional .wifi_connection_state wifi_connection_state = 17;
+      private wifi_connection_state wifiConnectionState_ = wifi_connection_state.NO_WLAN_CONNECTED;
+      /**
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+       */
+      public boolean hasWifiConnectionState() {
+        return ((bitField0_ & 0x00004000) == 0x00004000);
+      }
+      /**
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+       */
+      public wifi_connection_state getWifiConnectionState() {
+        return wifiConnectionState_;
+      }
+      /**
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+       */
+      public Builder setWifiConnectionState(wifi_connection_state value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00004000;
+        wifiConnectionState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
+       */
+      public Builder clearWifiConnectionState() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        wifiConnectionState_ = wifi_connection_state.NO_WLAN_CONNECTED;
+        onChanged();
+        return this;
+      }
+
+      // optional .led_demo_state led_demo_state = 18;
+      private led_demo_state ledDemoState_ = led_demo_state.FADE_IN;
+      /**
+       * <code>optional .led_demo_state led_demo_state = 18;</code>
+       */
+      public boolean hasLedDemoState() {
+        return ((bitField0_ & 0x00008000) == 0x00008000);
+      }
+      /**
+       * <code>optional .led_demo_state led_demo_state = 18;</code>
+       */
+      public led_demo_state getLedDemoState() {
+        return ledDemoState_;
+      }
+      /**
+       * <code>optional .led_demo_state led_demo_state = 18;</code>
+       */
+      public Builder setLedDemoState(led_demo_state value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00008000;
+        ledDemoState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .led_demo_state led_demo_state = 18;</code>
+       */
+      public Builder clearLedDemoState() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        ledDemoState_ = led_demo_state.FADE_IN;
+        onChanged();
+        return this;
+      }
+
+      // optional uint32 led_demo_alpha = 19;
+      private int ledDemoAlpha_ ;
+      /**
+       * <code>optional uint32 led_demo_alpha = 19;</code>
+       */
+      public boolean hasLedDemoAlpha() {
+        return ((bitField0_ & 0x00010000) == 0x00010000);
+      }
+      /**
+       * <code>optional uint32 led_demo_alpha = 19;</code>
+       */
+      public int getLedDemoAlpha() {
+        return ledDemoAlpha_;
+      }
+      /**
+       * <code>optional uint32 led_demo_alpha = 19;</code>
+       */
+      public Builder setLedDemoAlpha(int value) {
+        bitField0_ |= 0x00010000;
+        ledDemoAlpha_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 led_demo_alpha = 19;</code>
+       */
+      public Builder clearLedDemoAlpha() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        ledDemoAlpha_ = 0;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:MorpheusCommand)
@@ -4642,21 +5096,879 @@ public final class MorpheusBle {
     // @@protoc_insertion_point(class_scope:MorpheusCommand)
   }
 
+  public interface batched_pill_dataOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // repeated .pill_data pills = 1;
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    java.util.List<pill_data>
+        getPillsList();
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    pill_data getPills(int index);
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    int getPillsCount();
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    java.util.List<? extends pill_dataOrBuilder>
+        getPillsOrBuilderList();
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    pill_dataOrBuilder getPillsOrBuilder(
+            int index);
+
+    // required string device_id = 2;
+    /**
+     * <code>required string device_id = 2;</code>
+     */
+    boolean hasDeviceId();
+    /**
+     * <code>required string device_id = 2;</code>
+     */
+    String getDeviceId();
+    /**
+     * <code>required string device_id = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
+  }
+  /**
+   * Protobuf type {@code batched_pill_data}
+   */
+  public static final class batched_pill_data extends
+      com.google.protobuf.GeneratedMessage
+      implements batched_pill_dataOrBuilder {
+    // Use batched_pill_data.newBuilder() to construct.
+    private batched_pill_data(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private batched_pill_data(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final batched_pill_data defaultInstance;
+    public static batched_pill_data getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public batched_pill_data getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private batched_pill_data(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                pills_ = new java.util.ArrayList<pill_data>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              pills_.add(input.readMessage(pill_data.PARSER, extensionRegistry));
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000001;
+              deviceId_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          pills_ = java.util.Collections.unmodifiableList(pills_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return MorpheusBle.internal_static_batched_pill_data_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return MorpheusBle.internal_static_batched_pill_data_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              batched_pill_data.class, Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<batched_pill_data> PARSER =
+        new com.google.protobuf.AbstractParser<batched_pill_data>() {
+      public batched_pill_data parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new batched_pill_data(input, extensionRegistry);
+      }
+    };
+
+    @Override
+    public com.google.protobuf.Parser<batched_pill_data> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // repeated .pill_data pills = 1;
+    public static final int PILLS_FIELD_NUMBER = 1;
+    private java.util.List<pill_data> pills_;
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    public java.util.List<pill_data> getPillsList() {
+      return pills_;
+    }
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    public java.util.List<? extends pill_dataOrBuilder>
+        getPillsOrBuilderList() {
+      return pills_;
+    }
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    public int getPillsCount() {
+      return pills_.size();
+    }
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    public pill_data getPills(int index) {
+      return pills_.get(index);
+    }
+    /**
+     * <code>repeated .pill_data pills = 1;</code>
+     */
+    public pill_dataOrBuilder getPillsOrBuilder(
+        int index) {
+      return pills_.get(index);
+    }
+
+    // required string device_id = 2;
+    public static final int DEVICE_ID_FIELD_NUMBER = 2;
+    private Object deviceId_;
+    /**
+     * <code>required string device_id = 2;</code>
+     */
+    public boolean hasDeviceId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required string device_id = 2;</code>
+     */
+    public String getDeviceId() {
+      Object ref = deviceId_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          deviceId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string device_id = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      Object ref = deviceId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      pills_ = java.util.Collections.emptyList();
+      deviceId_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasDeviceId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getPillsCount(); i++) {
+        if (!getPills(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      for (int i = 0; i < pills_.size(); i++) {
+        output.writeMessage(1, pills_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeBytes(2, getDeviceIdBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < pills_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, pills_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getDeviceIdBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @Override
+    protected Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static batched_pill_data parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static batched_pill_data parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static batched_pill_data parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static batched_pill_data parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static batched_pill_data parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static batched_pill_data parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static batched_pill_data parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static batched_pill_data parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static batched_pill_data parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static batched_pill_data parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(batched_pill_data prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code batched_pill_data}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements batched_pill_dataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return MorpheusBle.internal_static_batched_pill_data_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return MorpheusBle.internal_static_batched_pill_data_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                batched_pill_data.class, Builder.class);
+      }
+
+      // Construct using MorpheusBle.batched_pill_data.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+          getPillsFieldBuilder();
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        if (pillsBuilder_ == null) {
+          pills_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          pillsBuilder_.clear();
+        }
+        deviceId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return MorpheusBle.internal_static_batched_pill_data_descriptor;
+      }
+
+      public batched_pill_data getDefaultInstanceForType() {
+        return batched_pill_data.getDefaultInstance();
+      }
+
+      public batched_pill_data build() {
+        batched_pill_data result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public batched_pill_data buildPartial() {
+        batched_pill_data result = new batched_pill_data(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (pillsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            pills_ = java.util.Collections.unmodifiableList(pills_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.pills_ = pills_;
+        } else {
+          result.pills_ = pillsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.deviceId_ = deviceId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof batched_pill_data) {
+          return mergeFrom((batched_pill_data)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(batched_pill_data other) {
+        if (other == batched_pill_data.getDefaultInstance()) return this;
+        if (pillsBuilder_ == null) {
+          if (!other.pills_.isEmpty()) {
+            if (pills_.isEmpty()) {
+              pills_ = other.pills_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePillsIsMutable();
+              pills_.addAll(other.pills_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pills_.isEmpty()) {
+            if (pillsBuilder_.isEmpty()) {
+              pillsBuilder_.dispose();
+              pillsBuilder_ = null;
+              pills_ = other.pills_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              pillsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getPillsFieldBuilder() : null;
+            } else {
+              pillsBuilder_.addAllMessages(other.pills_);
+            }
+          }
+        }
+        if (other.hasDeviceId()) {
+          bitField0_ |= 0x00000002;
+          deviceId_ = other.deviceId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasDeviceId()) {
+          
+          return false;
+        }
+        for (int i = 0; i < getPillsCount(); i++) {
+          if (!getPills(i).isInitialized()) {
+            
+            return false;
+          }
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        batched_pill_data parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (batched_pill_data) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // repeated .pill_data pills = 1;
+      private java.util.List<pill_data> pills_ =
+        java.util.Collections.emptyList();
+      private void ensurePillsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          pills_ = new java.util.ArrayList<pill_data>(pills_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          pill_data, pill_data.Builder, pill_dataOrBuilder> pillsBuilder_;
+
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public java.util.List<pill_data> getPillsList() {
+        if (pillsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pills_);
+        } else {
+          return pillsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public int getPillsCount() {
+        if (pillsBuilder_ == null) {
+          return pills_.size();
+        } else {
+          return pillsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public pill_data getPills(int index) {
+        if (pillsBuilder_ == null) {
+          return pills_.get(index);
+        } else {
+          return pillsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder setPills(
+          int index, pill_data value) {
+        if (pillsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePillsIsMutable();
+          pills_.set(index, value);
+          onChanged();
+        } else {
+          pillsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder setPills(
+          int index, pill_data.Builder builderForValue) {
+        if (pillsBuilder_ == null) {
+          ensurePillsIsMutable();
+          pills_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pillsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder addPills(pill_data value) {
+        if (pillsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePillsIsMutable();
+          pills_.add(value);
+          onChanged();
+        } else {
+          pillsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder addPills(
+          int index, pill_data value) {
+        if (pillsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePillsIsMutable();
+          pills_.add(index, value);
+          onChanged();
+        } else {
+          pillsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder addPills(
+          pill_data.Builder builderForValue) {
+        if (pillsBuilder_ == null) {
+          ensurePillsIsMutable();
+          pills_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pillsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder addPills(
+          int index, pill_data.Builder builderForValue) {
+        if (pillsBuilder_ == null) {
+          ensurePillsIsMutable();
+          pills_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pillsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder addAllPills(
+          Iterable<? extends pill_data> values) {
+        if (pillsBuilder_ == null) {
+          ensurePillsIsMutable();
+          super.addAll(values, pills_);
+          onChanged();
+        } else {
+          pillsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder clearPills() {
+        if (pillsBuilder_ == null) {
+          pills_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          pillsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public Builder removePills(int index) {
+        if (pillsBuilder_ == null) {
+          ensurePillsIsMutable();
+          pills_.remove(index);
+          onChanged();
+        } else {
+          pillsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public pill_data.Builder getPillsBuilder(
+          int index) {
+        return getPillsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public pill_dataOrBuilder getPillsOrBuilder(
+          int index) {
+        if (pillsBuilder_ == null) {
+          return pills_.get(index);  } else {
+          return pillsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public java.util.List<? extends pill_dataOrBuilder>
+           getPillsOrBuilderList() {
+        if (pillsBuilder_ != null) {
+          return pillsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pills_);
+        }
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public pill_data.Builder addPillsBuilder() {
+        return getPillsFieldBuilder().addBuilder(
+            pill_data.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public pill_data.Builder addPillsBuilder(
+          int index) {
+        return getPillsFieldBuilder().addBuilder(
+            index, pill_data.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .pill_data pills = 1;</code>
+       */
+      public java.util.List<pill_data.Builder>
+           getPillsBuilderList() {
+        return getPillsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          pill_data, pill_data.Builder, pill_dataOrBuilder>
+          getPillsFieldBuilder() {
+        if (pillsBuilder_ == null) {
+          pillsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              pill_data, pill_data.Builder, pill_dataOrBuilder>(
+                  pills_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          pills_ = null;
+        }
+        return pillsBuilder_;
+      }
+
+      // required string device_id = 2;
+      private Object deviceId_ = "";
+      /**
+       * <code>required string device_id = 2;</code>
+       */
+      public boolean hasDeviceId() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string device_id = 2;</code>
+       */
+      public String getDeviceId() {
+        Object ref = deviceId_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>required string device_id = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string device_id = 2;</code>
+       */
+      public Builder setDeviceId(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string device_id = 2;</code>
+       */
+      public Builder clearDeviceId() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string device_id = 2;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:batched_pill_data)
+    }
+
+    static {
+      defaultInstance = new batched_pill_data(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:batched_pill_data)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_wifi_endpoint_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_wifi_endpoint_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_pill_data_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_pill_data_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_MorpheusCommand_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_MorpheusCommand_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_MorpheusCommand_PillData_descriptor;
+    internal_static_batched_pill_data_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_MorpheusCommand_PillData_fieldAccessorTable;
+      internal_static_batched_pill_data_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4672,47 +5984,56 @@ public final class MorpheusBle {
       "_endpoint.sec_type\"t\n\010sec_type\022\031\n\025SL_SCA" +
       "N_SEC_TYPE_OPEN\020\000\022\030\n\024SL_SCAN_SEC_TYPE_WE" +
       "P\020\001\022\030\n\024SL_SCAN_SEC_TYPE_WPA\020\002\022\031\n\025SL_SCAN" +
-      "_SEC_TYPE_WPA2\020\003\"\277\n\n\017MorpheusCommand\022\017\n\007" +
-      "version\030\001 \002(\005\022*\n\004type\030\002 \002(\0162\034.MorpheusCo" +
-      "mmand.CommandType\022\020\n\010deviceId\030\003 \001(\t\022\021\n\ta" +
-      "ccountId\030\004 \001(\t\022\031\n\005error\030\005 \001(\0162\n.ErrorTyp",
-      "e\022\020\n\010wifiName\030\006 \001(\t\022\020\n\010wifiSSID\030\007 \001(\t\022\024\n" +
-      "\014wifiPassword\030\010 \001(\t\022\024\n\014batteryLevel\030\t \001(" +
-      "\005\022\016\n\006uptime\030\n \001(\005\022\022\n\nmotionData\030\013 \001(\005\022\033\n" +
-      "\023motionDataEntrypted\030\014 \001(\014\022\027\n\017firmwareVe" +
-      "rsion\030\r \001(\005\022(\n\020wifi_scan_result\030\016 \003(\0132\016." +
-      "wifi_endpoint\022.\n\rsecurity_type\030\017 \001(\0162\027.w" +
-      "ifi_endpoint.sec_type\022+\n\010pillData\030\020 \001(\0132" +
-      "\031.MorpheusCommand.PillData\032x\n\010PillData\022\020" +
-      "\n\010deviceId\030\001 \001(\t\022\024\n\014batteryLevel\030\002 \001(\005\022\016" +
-      "\n\006uptime\030\003 \001(\005\022\033\n\023motionDataEntrypted\030\004 ",
-      "\001(\014\022\027\n\017firmwareVersion\030\005 \001(\005\"\203\006\n\013Command" +
-      "Type\022\035\n\031MORPHEUS_COMMAND_SET_TIME\020\000\022\035\n\031M" +
-      "ORPHEUS_COMMAND_GET_TIME\020\001\022&\n\"MORPHEUS_C" +
-      "OMMAND_SET_WIFI_ENDPOINT\020\002\022&\n\"MORPHEUS_C" +
-      "OMMAND_GET_WIFI_ENDPOINT\020\003\022\037\n\033MORPHEUS_C" +
-      "OMMAND_SET_ALARMS\020\004\022\037\n\033MORPHEUS_COMMAND_" +
-      "GET_ALARMS\020\005\022+\n\'MORPHEUS_COMMAND_SWITCH_" +
-      "TO_PAIRING_MODE\020\006\022*\n&MORPHEUS_COMMAND_SW" +
-      "ITCH_TO_NORMAL_MODE\020\007\022#\n\037MORPHEUS_COMMAN" +
-      "D_START_WIFISCAN\020\010\022\"\n\036MORPHEUS_COMMAND_S",
-      "TOP_WIFISCAN\020\t\022\"\n\036MORPHEUS_COMMAND_GET_D" +
-      "EVICE_ID\020\n\022(\n$MORPHEUS_COMMAND_EREASE_PA" +
-      "IRED_PHONE\020\013\022\036\n\032MORPHEUS_COMMAND_PAIR_PI" +
-      "LL\020\014\022\032\n\026MORPHEUS_COMMAND_ERROR\020\r\022\037\n\033MORP" +
-      "HEUS_COMMAND_PAIR_SENSE\020\016\022 \n\034MORPHEUS_CO" +
-      "MMAND_UNPAIR_PILL\020\017\022\'\n#MORPHEUS_COMMAND_" +
-      "MORPHEUS_DFU_BEGIN\020\020\022\036\n\032MORPHEUS_COMMAND" +
-      "_PILL_DATA\020\021\022#\n\037MORPHEUS_COMMAND_PILL_HE" +
-      "ARTBEAT\020\022\022#\n\037MORPHEUS_COMMAND_PILL_DFU_B" +
-      "EGIN\020\023\022\"\n\036MORPHEUS_COMMAND_FACTORY_RESET",
-      "\020\024*\373\001\n\tErrorType\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWOR" +
-      "K_ERROR\020\001\022\031\n\025DEVICE_ALREADY_PAIRED\020\002\022\027\n\023" +
-      "INTERNAL_DATA_ERROR\020\003\022\030\n\024DEVICE_DATABASE" +
-      "_FULL\020\004\022\024\n\020DEVICE_NO_MEMORY\020\005\022\035\n\031INTERNA" +
-      "L_OPERATION_FAILED\020\006\022\030\n\024NO_ENDPOINT_IN_R" +
-      "ANGE\020\007\022\031\n\025WLAN_CONNECTION_ERROR\020\010\022\025\n\021FAI" +
-      "L_TO_OBTAIN_IP\020\t"
+      "_SEC_TYPE_WPA2\020\003\"\221\001\n\tpill_data\022\021\n\tdevice" +
+      "_id\030\001 \002(\t\022\025\n\rbattery_level\030\002 \001(\005\022\016\n\006upti" +
+      "me\030\003 \001(\005\022\035\n\025motion_data_entrypted\030\004 \001(\014\022" +
+      "\030\n\020firmware_version\030\005 \001(\005\022\021\n\ttimestamp\030\006",
+      " \002(\004\"\276\n\n\017MorpheusCommand\022\017\n\007version\030\001 \002(" +
+      "\005\022*\n\004type\030\002 \002(\0162\034.MorpheusCommand.Comman" +
+      "dType\022\020\n\010deviceId\030\003 \001(\t\022\021\n\taccountId\030\004 \001" +
+      "(\t\022\031\n\005error\030\005 \001(\0162\n.ErrorType\022\020\n\010wifiNam" +
+      "e\030\006 \001(\t\022\020\n\010wifiSSID\030\007 \001(\t\022\024\n\014wifiPasswor" +
+      "d\030\010 \001(\t\022\024\n\014batteryLevel\030\t \001(\005\022\016\n\006uptime\030" +
+      "\n \001(\005\022\027\n\017firmwareVersion\030\r \001(\005\022(\n\020wifi_s" +
+      "can_result\030\016 \003(\0132\016.wifi_endpoint\022.\n\rsecu" +
+      "rity_type\030\017 \001(\0162\027.wifi_endpoint.sec_type" +
+      "\022\035\n\tpill_data\030\020 \001(\0132\n.pill_data\0225\n\025wifi_",
+      "connection_state\030\021 \001(\0162\026.wifi_connection" +
+      "_state\022\'\n\016led_demo_state\030\022 \001(\0162\017.led_dem" +
+      "o_state\022\026\n\016led_demo_alpha\030\023 \001(\r\"\303\006\n\013Comm" +
+      "andType\022\035\n\031MORPHEUS_COMMAND_SET_TIME\020\000\022\035" +
+      "\n\031MORPHEUS_COMMAND_GET_TIME\020\001\022&\n\"MORPHEU" +
+      "S_COMMAND_SET_WIFI_ENDPOINT\020\002\022&\n\"MORPHEU" +
+      "S_COMMAND_GET_WIFI_ENDPOINT\020\003\022\037\n\033MORPHEU" +
+      "S_COMMAND_SET_ALARMS\020\004\022\037\n\033MORPHEUS_COMMA" +
+      "ND_GET_ALARMS\020\005\022+\n\'MORPHEUS_COMMAND_SWIT" +
+      "CH_TO_PAIRING_MODE\020\006\022*\n&MORPHEUS_COMMAND",
+      "_SWITCH_TO_NORMAL_MODE\020\007\022#\n\037MORPHEUS_COM" +
+      "MAND_START_WIFISCAN\020\010\022\"\n\036MORPHEUS_COMMAN" +
+      "D_STOP_WIFISCAN\020\t\022\"\n\036MORPHEUS_COMMAND_GE" +
+      "T_DEVICE_ID\020\n\022\'\n#MORPHEUS_COMMAND_ERASE_" +
+      "PAIRED_PHONE\020\013\022\036\n\032MORPHEUS_COMMAND_PAIR_" +
+      "PILL\020\014\022\032\n\026MORPHEUS_COMMAND_ERROR\020\r\022\037\n\033MO" +
+      "RPHEUS_COMMAND_PAIR_SENSE\020\016\022 \n\034MORPHEUS_" +
+      "COMMAND_UNPAIR_PILL\020\017\022\'\n#MORPHEUS_COMMAN" +
+      "D_MORPHEUS_DFU_BEGIN\020\020\022\036\n\032MORPHEUS_COMMA" +
+      "ND_PILL_DATA\020\021\022#\n\037MORPHEUS_COMMAND_PILL_",
+      "HEARTBEAT\020\022\022#\n\037MORPHEUS_COMMAND_PILL_DFU" +
+      "_BEGIN\020\023\022\"\n\036MORPHEUS_COMMAND_FACTORY_RES" +
+      "ET\020\024\022 \n\034MORPHEUS_COMMAND_PILL_SHAKES\020\025\022\035" +
+      "\n\031MORPHEUS_COMMAND_LED_DEMO\020\026\"A\n\021batched" +
+      "_pill_data\022\031\n\005pills\030\001 \003(\0132\n.pill_data\022\021\n" +
+      "\tdevice_id\030\002 \002(\t*\373\001\n\tErrorType\022\014\n\010TIME_O" +
+      "UT\020\000\022\021\n\rNETWORK_ERROR\020\001\022\031\n\025DEVICE_ALREAD" +
+      "Y_PAIRED\020\002\022\027\n\023INTERNAL_DATA_ERROR\020\003\022\030\n\024D" +
+      "EVICE_DATABASE_FULL\020\004\022\024\n\020DEVICE_NO_MEMOR" +
+      "Y\020\005\022\035\n\031INTERNAL_OPERATION_FAILED\020\006\022\030\n\024NO",
+      "_ENDPOINT_IN_RANGE\020\007\022\031\n\025WLAN_CONNECTION_" +
+      "ERROR\020\010\022\025\n\021FAIL_TO_OBTAIN_IP\020\t*i\n\025wifi_c" +
+      "onnection_state\022\025\n\021NO_WLAN_CONNECTED\020\000\022\023" +
+      "\n\017WLAN_CONNECTING\020\001\022\022\n\016WLAN_CONNECTED\020\002\022" +
+      "\020\n\014IP_RETRIEVED\020\003*8\n\016led_demo_state\022\013\n\007F" +
+      "ADE_IN\020\000\022\014\n\010FADE_OUT\020\001\022\013\n\007RAINBOW\020\002"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -4725,18 +6046,24 @@ public final class MorpheusBle {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_wifi_endpoint_descriptor,
               new String[] { "Ssid", "Bssid", "Rssi", "SecurityType", });
-          internal_static_MorpheusCommand_descriptor =
+          internal_static_pill_data_descriptor =
             getDescriptor().getMessageTypes().get(1);
+          internal_static_pill_data_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_pill_data_descriptor,
+              new String[] { "DeviceId", "BatteryLevel", "Uptime", "MotionDataEntrypted", "FirmwareVersion", "Timestamp", });
+          internal_static_MorpheusCommand_descriptor =
+            getDescriptor().getMessageTypes().get(2);
           internal_static_MorpheusCommand_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_MorpheusCommand_descriptor,
-              new String[] { "Version", "Type", "DeviceId", "AccountId", "Error", "WifiName", "WifiSSID", "WifiPassword", "BatteryLevel", "Uptime", "MotionData", "MotionDataEntrypted", "FirmwareVersion", "WifiScanResult", "SecurityType", "PillData", });
-          internal_static_MorpheusCommand_PillData_descriptor =
-            internal_static_MorpheusCommand_descriptor.getNestedTypes().get(0);
-          internal_static_MorpheusCommand_PillData_fieldAccessorTable = new
+              new String[] { "Version", "Type", "DeviceId", "AccountId", "Error", "WifiName", "WifiSSID", "WifiPassword", "BatteryLevel", "Uptime", "FirmwareVersion", "WifiScanResult", "SecurityType", "PillData", "WifiConnectionState", "LedDemoState", "LedDemoAlpha", });
+          internal_static_batched_pill_data_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+          internal_static_batched_pill_data_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_MorpheusCommand_PillData_descriptor,
-              new String[] { "DeviceId", "BatteryLevel", "Uptime", "MotionDataEntrypted", "FirmwareVersion", });
+              internal_static_batched_pill_data_descriptor,
+              new String[] { "Pills", "DeviceId", });
           return null;
         }
       };
