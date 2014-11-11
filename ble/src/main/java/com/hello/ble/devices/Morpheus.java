@@ -12,7 +12,6 @@ import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand;
 import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand.CommandType;
 import com.hello.ble.protobuf.MorpheusBle.led_demo_state;
 import com.hello.ble.protobuf.MorpheusBle.wifi_endpoint;
-import com.hello.ble.protobuf.MorpheusBle.wifi_endpoint.sec_type;
 import com.hello.ble.stack.HelloGattLayer;
 import com.hello.ble.stack.application.MorpheusProtobufResponseDataHandler;
 import com.hello.ble.stack.transmission.MorpheusBlePacketHandler;
@@ -1092,19 +1091,15 @@ public class Morpheus extends HelloBleDevice {
     }
 
 
-    public void getWIFI(final BleOperationCallback<wifi_endpoint> operationCallback){
+    public void getWIFI(final BleOperationCallback<MorpheusCommand> operationCallback){
         this.protobufCommandResponseHandler.setDataCallback(new BleOperationCallback<MorpheusCommand>() {
 
             @Override
             public void onCompleted(final HelloBleDevice sender, final MorpheusCommand replyCommand) {
                 if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_GET_WIFI_ENDPOINT){
-                    final wifi_endpoint wifiEndpoint = wifi_endpoint.newBuilder()
-                            .setSsid(replyCommand.getWifiSSID())
-                            .setSecurityType(sec_type.SL_SCAN_SEC_TYPE_OPEN)  // Just fake value.
-                    .build();
 
                     if(operationCallback != null) {
-                        operationCallback.onCompleted(sender, wifiEndpoint);
+                        operationCallback.onCompleted(sender, replyCommand);
                     }
 
                 }else if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_ERROR){
