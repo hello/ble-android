@@ -11,7 +11,6 @@ import com.hello.ble.HelloBle;
 import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand;
 import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand.CommandType;
 import com.hello.ble.protobuf.MorpheusBle.wifi_endpoint;
-import com.hello.ble.protobuf.MorpheusBle.wifi_endpoint.sec_type;
 import com.hello.ble.stack.HelloGattLayer;
 import com.hello.ble.stack.application.MorpheusProtobufResponseDataHandler;
 import com.hello.ble.stack.transmission.MorpheusBlePacketHandler;
@@ -370,7 +369,7 @@ public class Morpheus extends HelloBleDevice {
                 Morpheus.this.gattLayer.unsubscribeNotification(BleUUID.CHAR_PROTOBUF_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
                     @Override
                     public void onCompleted(final HelloBleDevice sender, final UUID charUUID) {
-                        if(response.getType() != CommandType.MORPHEUS_COMMAND_EREASE_PAIRED_PHONE){
+                        if(response.getType() != CommandType.MORPHEUS_COMMAND_ERASE_PAIRED_PHONE){
                             // something is wrong here
                             if(response.getType() == CommandType.MORPHEUS_COMMAND_ERROR){
                                 if(clearFinishedCallback != null){
@@ -426,7 +425,7 @@ public class Morpheus extends HelloBleDevice {
             @Override
             public void onCompleted(final HelloBleDevice connectedDevice, final UUID charUUID) {
                 final MorpheusCommand morpheusCommand = MorpheusCommand.newBuilder()
-                        .setType(CommandType.MORPHEUS_COMMAND_EREASE_PAIRED_PHONE)
+                        .setType(CommandType.MORPHEUS_COMMAND_ERASE_PAIRED_PHONE)
                         .setVersion(COMMAND_VERSION)
                         .build();
                 final byte[] commandData = morpheusCommand.toByteArray();
@@ -1091,19 +1090,15 @@ public class Morpheus extends HelloBleDevice {
     }
 
 
-    public void getWIFI(final BleOperationCallback<wifi_endpoint> operationCallback){
+    public void getWIFI(final BleOperationCallback<MorpheusCommand> operationCallback){
         this.protobufCommandResponseHandler.setDataCallback(new BleOperationCallback<MorpheusCommand>() {
 
             @Override
             public void onCompleted(final HelloBleDevice sender, final MorpheusCommand replyCommand) {
                 if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_GET_WIFI_ENDPOINT){
-                    final wifi_endpoint wifiEndpoint = wifi_endpoint.newBuilder()
-                            .setSsid(replyCommand.getWifiSSID())
-                            .setSecurityType(sec_type.SL_SCAN_SEC_TYPE_OPEN)  // Just fake value.
-                    .build();
 
                     if(operationCallback != null) {
-                        operationCallback.onCompleted(sender, wifiEndpoint);
+                        operationCallback.onCompleted(sender, replyCommand);
                     }
 
                 }else if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_ERROR){
