@@ -9,7 +9,7 @@ public final class SenseCommandProtos {
       com.google.protobuf.ExtensionRegistry registry) {
   }
   /**
-   * Protobuf enum {@code hello.ErrorType}
+   * Protobuf enum {@code ErrorType}
    */
   public enum ErrorType
       implements com.google.protobuf.ProtocolMessageEnum {
@@ -207,11 +207,11 @@ public final class SenseCommandProtos {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:hello.ErrorType)
+    // @@protoc_insertion_point(enum_scope:ErrorType)
   }
 
   /**
-   * Protobuf enum {@code hello.wifi_connection_state}
+   * Protobuf enum {@code wifi_connection_state}
    */
   public enum wifi_connection_state
       implements com.google.protobuf.ProtocolMessageEnum {
@@ -307,7 +307,7 @@ public final class SenseCommandProtos {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:hello.wifi_connection_state)
+    // @@protoc_insertion_point(enum_scope:wifi_connection_state)
   }
 
   public interface wifi_endpointOrBuilder
@@ -348,18 +348,18 @@ public final class SenseCommandProtos {
      */
     int getRssi();
 
-    // required .hello.wifi_endpoint.sec_type security_type = 5;
+    // required .wifi_endpoint.sec_type security_type = 5;
     /**
-     * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
      */
     boolean hasSecurityType();
     /**
-     * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
      */
     wifi_endpoint.sec_type getSecurityType();
   }
   /**
-   * Protobuf type {@code hello.wifi_endpoint}
+   * Protobuf type {@code wifi_endpoint}
    */
   public static final class wifi_endpoint extends
       com.google.protobuf.GeneratedMessage
@@ -449,12 +449,12 @@ public final class SenseCommandProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SenseCommandProtos.internal_static_hello_wifi_endpoint_descriptor;
+      return SenseCommandProtos.internal_static_wifi_endpoint_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SenseCommandProtos.internal_static_hello_wifi_endpoint_fieldAccessorTable
+      return SenseCommandProtos.internal_static_wifi_endpoint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               wifi_endpoint.class, Builder.class);
     }
@@ -475,7 +475,7 @@ public final class SenseCommandProtos {
     }
 
     /**
-     * Protobuf enum {@code hello.wifi_endpoint.sec_type}
+     * Protobuf enum {@code wifi_endpoint.sec_type}
      *
      * <pre>
      *
@@ -580,7 +580,7 @@ public final class SenseCommandProtos {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:hello.wifi_endpoint.sec_type)
+      // @@protoc_insertion_point(enum_scope:wifi_endpoint.sec_type)
     }
 
     private int bitField0_;
@@ -659,17 +659,17 @@ public final class SenseCommandProtos {
       return rssi_;
     }
 
-    // required .hello.wifi_endpoint.sec_type security_type = 5;
+    // required .wifi_endpoint.sec_type security_type = 5;
     public static final int SECURITY_TYPE_FIELD_NUMBER = 5;
     private sec_type securityType_;
     /**
-     * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
      */
     public boolean hasSecurityType() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
     /**
-     * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+     * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
      */
     public sec_type getSecurityType() {
       return securityType_;
@@ -821,19 +821,19 @@ public final class SenseCommandProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code hello.wifi_endpoint}
+     * Protobuf type {@code wifi_endpoint}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements wifi_endpointOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SenseCommandProtos.internal_static_hello_wifi_endpoint_descriptor;
+        return SenseCommandProtos.internal_static_wifi_endpoint_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SenseCommandProtos.internal_static_hello_wifi_endpoint_fieldAccessorTable
+        return SenseCommandProtos.internal_static_wifi_endpoint_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 wifi_endpoint.class, Builder.class);
       }
@@ -875,7 +875,7 @@ public final class SenseCommandProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SenseCommandProtos.internal_static_hello_wifi_endpoint_descriptor;
+        return SenseCommandProtos.internal_static_wifi_endpoint_descriptor;
       }
 
       public wifi_endpoint getDefaultInstanceForType() {
@@ -1122,22 +1122,22 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // required .hello.wifi_endpoint.sec_type security_type = 5;
+      // required .wifi_endpoint.sec_type security_type = 5;
       private sec_type securityType_ = sec_type.SL_SCAN_SEC_TYPE_OPEN;
       /**
-       * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
        */
       public boolean hasSecurityType() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
       /**
-       * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
        */
       public sec_type getSecurityType() {
         return securityType_;
       }
       /**
-       * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
        */
       public Builder setSecurityType(sec_type value) {
         if (value == null) {
@@ -1149,7 +1149,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>required .hello.wifi_endpoint.sec_type security_type = 5;</code>
+       * <code>required .wifi_endpoint.sec_type security_type = 5;</code>
        */
       public Builder clearSecurityType() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1158,7 +1158,7 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:hello.wifi_endpoint)
+      // @@protoc_insertion_point(builder_scope:wifi_endpoint)
     }
 
     static {
@@ -1166,7 +1166,7 @@ public final class SenseCommandProtos {
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:hello.wifi_endpoint)
+    // @@protoc_insertion_point(class_scope:wifi_endpoint)
   }
 
   public interface pill_dataOrBuilder
@@ -1238,7 +1238,7 @@ public final class SenseCommandProtos {
     long getTimestamp();
   }
   /**
-   * Protobuf type {@code hello.pill_data}
+   * Protobuf type {@code pill_data}
    */
   public static final class pill_data extends
       com.google.protobuf.GeneratedMessage
@@ -1332,12 +1332,12 @@ public final class SenseCommandProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SenseCommandProtos.internal_static_hello_pill_data_descriptor;
+      return SenseCommandProtos.internal_static_pill_data_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SenseCommandProtos.internal_static_hello_pill_data_fieldAccessorTable
+      return SenseCommandProtos.internal_static_pill_data_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               pill_data.class, Builder.class);
     }
@@ -1639,19 +1639,19 @@ public final class SenseCommandProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code hello.pill_data}
+     * Protobuf type {@code pill_data}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements pill_dataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SenseCommandProtos.internal_static_hello_pill_data_descriptor;
+        return SenseCommandProtos.internal_static_pill_data_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SenseCommandProtos.internal_static_hello_pill_data_fieldAccessorTable
+        return SenseCommandProtos.internal_static_pill_data_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 pill_data.class, Builder.class);
       }
@@ -1697,7 +1697,7 @@ public final class SenseCommandProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SenseCommandProtos.internal_static_hello_pill_data_descriptor;
+        return SenseCommandProtos.internal_static_pill_data_descriptor;
       }
 
       public pill_data getDefaultInstanceForType() {
@@ -2053,7 +2053,7 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:hello.pill_data)
+      // @@protoc_insertion_point(builder_scope:pill_data)
     }
 
     static {
@@ -2061,7 +2061,7 @@ public final class SenseCommandProtos {
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:hello.pill_data)
+    // @@protoc_insertion_point(class_scope:pill_data)
   }
 
   public interface MorpheusCommandOrBuilder
@@ -2077,13 +2077,13 @@ public final class SenseCommandProtos {
      */
     int getVersion();
 
-    // required .hello.MorpheusCommand.CommandType type = 2;
+    // required .MorpheusCommand.CommandType type = 2;
     /**
-     * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+     * <code>required .MorpheusCommand.CommandType type = 2;</code>
      */
     boolean hasType();
     /**
-     * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+     * <code>required .MorpheusCommand.CommandType type = 2;</code>
      */
     MorpheusCommand.CommandType getType();
 
@@ -2129,9 +2129,9 @@ public final class SenseCommandProtos {
     com.google.protobuf.ByteString
         getAccountIdBytes();
 
-    // optional .hello.ErrorType error = 5;
+    // optional .ErrorType error = 5;
     /**
-     * <code>optional .hello.ErrorType error = 5;</code>
+     * <code>optional .ErrorType error = 5;</code>
      *
      * <pre>
      * MORPHEUS_COMMAND_ERROR
@@ -2139,7 +2139,7 @@ public final class SenseCommandProtos {
      */
     boolean hasError();
     /**
-     * <code>optional .hello.ErrorType error = 5;</code>
+     * <code>optional .ErrorType error = 5;</code>
      *
      * <pre>
      * MORPHEUS_COMMAND_ERROR
@@ -2232,67 +2232,67 @@ public final class SenseCommandProtos {
      */
     int getFirmwareVersion();
 
-    // repeated .hello.wifi_endpoint wifi_scan_result = 14;
+    // repeated .wifi_endpoint wifi_scan_result = 14;
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     java.util.List<wifi_endpoint>
         getWifiScanResultList();
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     wifi_endpoint getWifiScanResult(int index);
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     int getWifiScanResultCount();
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     java.util.List<? extends wifi_endpointOrBuilder>
         getWifiScanResultOrBuilderList();
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     wifi_endpointOrBuilder getWifiScanResultOrBuilder(
             int index);
 
-    // optional .hello.wifi_endpoint.sec_type security_type = 15;
+    // optional .wifi_endpoint.sec_type security_type = 15;
     /**
-     * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+     * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
      */
     boolean hasSecurityType();
     /**
-     * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+     * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
      */
     wifi_endpoint.sec_type getSecurityType();
 
-    // optional .hello.pill_data pill_data = 16;
+    // optional .pill_data pill_data = 16;
     /**
-     * <code>optional .hello.pill_data pill_data = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     boolean hasPillData();
     /**
-     * <code>optional .hello.pill_data pill_data = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     pill_data getPillData();
     /**
-     * <code>optional .hello.pill_data pill_data = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     pill_dataOrBuilder getPillDataOrBuilder();
 
-    // optional .hello.wifi_connection_state wifi_connection_state = 17;
+    // optional .wifi_connection_state wifi_connection_state = 17;
     /**
-     * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
      */
     boolean hasWifiConnectionState();
     /**
-     * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
      */
     wifi_connection_state getWifiConnectionState();
   }
   /**
-   * Protobuf type {@code hello.MorpheusCommand}
+   * Protobuf type {@code MorpheusCommand}
    */
   public static final class MorpheusCommand extends
       com.google.protobuf.GeneratedMessage
@@ -2469,12 +2469,12 @@ public final class SenseCommandProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SenseCommandProtos.internal_static_hello_MorpheusCommand_descriptor;
+      return SenseCommandProtos.internal_static_MorpheusCommand_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SenseCommandProtos.internal_static_hello_MorpheusCommand_fieldAccessorTable
+      return SenseCommandProtos.internal_static_MorpheusCommand_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               MorpheusCommand.class, Builder.class);
     }
@@ -2495,7 +2495,7 @@ public final class SenseCommandProtos {
     }
 
     /**
-     * Protobuf enum {@code hello.MorpheusCommand.CommandType}
+     * Protobuf enum {@code MorpheusCommand.CommandType}
      */
     public enum CommandType
         implements com.google.protobuf.ProtocolMessageEnum {
@@ -2761,7 +2761,7 @@ public final class SenseCommandProtos {
         this.value = value;
       }
 
-      // @@protoc_insertion_point(enum_scope:hello.MorpheusCommand.CommandType)
+      // @@protoc_insertion_point(enum_scope:MorpheusCommand.CommandType)
     }
 
     private int bitField0_;
@@ -2781,17 +2781,17 @@ public final class SenseCommandProtos {
       return version_;
     }
 
-    // required .hello.MorpheusCommand.CommandType type = 2;
+    // required .MorpheusCommand.CommandType type = 2;
     public static final int TYPE_FIELD_NUMBER = 2;
     private CommandType type_;
     /**
-     * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+     * <code>required .MorpheusCommand.CommandType type = 2;</code>
      */
     public boolean hasType() {
       return ((bitField0_ & 0x00000002) == 0x00000002);
     }
     /**
-     * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+     * <code>required .MorpheusCommand.CommandType type = 2;</code>
      */
     public CommandType getType() {
       return type_;
@@ -2895,11 +2895,11 @@ public final class SenseCommandProtos {
       }
     }
 
-    // optional .hello.ErrorType error = 5;
+    // optional .ErrorType error = 5;
     public static final int ERROR_FIELD_NUMBER = 5;
     private ErrorType error_;
     /**
-     * <code>optional .hello.ErrorType error = 5;</code>
+     * <code>optional .ErrorType error = 5;</code>
      *
      * <pre>
      * MORPHEUS_COMMAND_ERROR
@@ -2909,7 +2909,7 @@ public final class SenseCommandProtos {
       return ((bitField0_ & 0x00000010) == 0x00000010);
     }
     /**
-     * <code>optional .hello.ErrorType error = 5;</code>
+     * <code>optional .ErrorType error = 5;</code>
      *
      * <pre>
      * MORPHEUS_COMMAND_ERROR
@@ -3106,91 +3106,91 @@ public final class SenseCommandProtos {
       return firmwareVersion_;
     }
 
-    // repeated .hello.wifi_endpoint wifi_scan_result = 14;
+    // repeated .wifi_endpoint wifi_scan_result = 14;
     public static final int WIFI_SCAN_RESULT_FIELD_NUMBER = 14;
     private java.util.List<wifi_endpoint> wifiScanResult_;
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     public java.util.List<wifi_endpoint> getWifiScanResultList() {
       return wifiScanResult_;
     }
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     public java.util.List<? extends wifi_endpointOrBuilder>
         getWifiScanResultOrBuilderList() {
       return wifiScanResult_;
     }
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     public int getWifiScanResultCount() {
       return wifiScanResult_.size();
     }
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     public wifi_endpoint getWifiScanResult(int index) {
       return wifiScanResult_.get(index);
     }
     /**
-     * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+     * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
      */
     public wifi_endpointOrBuilder getWifiScanResultOrBuilder(
         int index) {
       return wifiScanResult_.get(index);
     }
 
-    // optional .hello.wifi_endpoint.sec_type security_type = 15;
+    // optional .wifi_endpoint.sec_type security_type = 15;
     public static final int SECURITY_TYPE_FIELD_NUMBER = 15;
     private wifi_endpoint.sec_type securityType_;
     /**
-     * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+     * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
      */
     public boolean hasSecurityType() {
       return ((bitField0_ & 0x00000800) == 0x00000800);
     }
     /**
-     * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+     * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
      */
     public wifi_endpoint.sec_type getSecurityType() {
       return securityType_;
     }
 
-    // optional .hello.pill_data pill_data = 16;
+    // optional .pill_data pill_data = 16;
     public static final int PILL_DATA_FIELD_NUMBER = 16;
     private pill_data pillData_;
     /**
-     * <code>optional .hello.pill_data pill_data = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     public boolean hasPillData() {
       return ((bitField0_ & 0x00001000) == 0x00001000);
     }
     /**
-     * <code>optional .hello.pill_data pill_data = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     public pill_data getPillData() {
       return pillData_;
     }
     /**
-     * <code>optional .hello.pill_data pill_data = 16;</code>
+     * <code>optional .pill_data pill_data = 16;</code>
      */
     public pill_dataOrBuilder getPillDataOrBuilder() {
       return pillData_;
     }
 
-    // optional .hello.wifi_connection_state wifi_connection_state = 17;
+    // optional .wifi_connection_state wifi_connection_state = 17;
     public static final int WIFI_CONNECTION_STATE_FIELD_NUMBER = 17;
     private wifi_connection_state wifiConnectionState_;
     /**
-     * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
      */
     public boolean hasWifiConnectionState() {
       return ((bitField0_ & 0x00002000) == 0x00002000);
     }
     /**
-     * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+     * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
      */
     public wifi_connection_state getWifiConnectionState() {
       return wifiConnectionState_;
@@ -3438,19 +3438,19 @@ public final class SenseCommandProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code hello.MorpheusCommand}
+     * Protobuf type {@code MorpheusCommand}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements MorpheusCommandOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SenseCommandProtos.internal_static_hello_MorpheusCommand_descriptor;
+        return SenseCommandProtos.internal_static_MorpheusCommand_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SenseCommandProtos.internal_static_hello_MorpheusCommand_fieldAccessorTable
+        return SenseCommandProtos.internal_static_MorpheusCommand_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 MorpheusCommand.class, Builder.class);
       }
@@ -3524,7 +3524,7 @@ public final class SenseCommandProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SenseCommandProtos.internal_static_hello_MorpheusCommand_descriptor;
+        return SenseCommandProtos.internal_static_MorpheusCommand_descriptor;
       }
 
       public MorpheusCommand getDefaultInstanceForType() {
@@ -3786,22 +3786,22 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // required .hello.MorpheusCommand.CommandType type = 2;
+      // required .MorpheusCommand.CommandType type = 2;
       private CommandType type_ = CommandType.MORPHEUS_COMMAND_SET_TIME;
       /**
-       * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+       * <code>required .MorpheusCommand.CommandType type = 2;</code>
        */
       public boolean hasType() {
         return ((bitField0_ & 0x00000002) == 0x00000002);
       }
       /**
-       * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+       * <code>required .MorpheusCommand.CommandType type = 2;</code>
        */
       public CommandType getType() {
         return type_;
       }
       /**
-       * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+       * <code>required .MorpheusCommand.CommandType type = 2;</code>
        */
       public Builder setType(CommandType value) {
         if (value == null) {
@@ -3813,7 +3813,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>required .hello.MorpheusCommand.CommandType type = 2;</code>
+       * <code>required .MorpheusCommand.CommandType type = 2;</code>
        */
       public Builder clearType() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3994,10 +3994,10 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // optional .hello.ErrorType error = 5;
+      // optional .ErrorType error = 5;
       private ErrorType error_ = ErrorType.TIME_OUT;
       /**
-       * <code>optional .hello.ErrorType error = 5;</code>
+       * <code>optional .ErrorType error = 5;</code>
        *
        * <pre>
        * MORPHEUS_COMMAND_ERROR
@@ -4007,7 +4007,7 @@ public final class SenseCommandProtos {
         return ((bitField0_ & 0x00000010) == 0x00000010);
       }
       /**
-       * <code>optional .hello.ErrorType error = 5;</code>
+       * <code>optional .ErrorType error = 5;</code>
        *
        * <pre>
        * MORPHEUS_COMMAND_ERROR
@@ -4017,7 +4017,7 @@ public final class SenseCommandProtos {
         return error_;
       }
       /**
-       * <code>optional .hello.ErrorType error = 5;</code>
+       * <code>optional .ErrorType error = 5;</code>
        *
        * <pre>
        * MORPHEUS_COMMAND_ERROR
@@ -4033,7 +4033,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.ErrorType error = 5;</code>
+       * <code>optional .ErrorType error = 5;</code>
        *
        * <pre>
        * MORPHEUS_COMMAND_ERROR
@@ -4387,7 +4387,7 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // repeated .hello.wifi_endpoint wifi_scan_result = 14;
+      // repeated .wifi_endpoint wifi_scan_result = 14;
       private java.util.List<wifi_endpoint> wifiScanResult_ =
         java.util.Collections.emptyList();
       private void ensureWifiScanResultIsMutable() {
@@ -4401,7 +4401,7 @@ public final class SenseCommandProtos {
           wifi_endpoint, wifi_endpoint.Builder, wifi_endpointOrBuilder> wifiScanResultBuilder_;
 
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public java.util.List<wifi_endpoint> getWifiScanResultList() {
         if (wifiScanResultBuilder_ == null) {
@@ -4411,7 +4411,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public int getWifiScanResultCount() {
         if (wifiScanResultBuilder_ == null) {
@@ -4421,7 +4421,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public wifi_endpoint getWifiScanResult(int index) {
         if (wifiScanResultBuilder_ == null) {
@@ -4431,7 +4431,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder setWifiScanResult(
           int index, wifi_endpoint value) {
@@ -4448,7 +4448,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder setWifiScanResult(
           int index, wifi_endpoint.Builder builderForValue) {
@@ -4462,7 +4462,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder addWifiScanResult(wifi_endpoint value) {
         if (wifiScanResultBuilder_ == null) {
@@ -4478,7 +4478,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder addWifiScanResult(
           int index, wifi_endpoint value) {
@@ -4495,7 +4495,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder addWifiScanResult(
           wifi_endpoint.Builder builderForValue) {
@@ -4509,7 +4509,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder addWifiScanResult(
           int index, wifi_endpoint.Builder builderForValue) {
@@ -4523,7 +4523,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder addAllWifiScanResult(
           Iterable<? extends wifi_endpoint> values) {
@@ -4537,7 +4537,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder clearWifiScanResult() {
         if (wifiScanResultBuilder_ == null) {
@@ -4550,7 +4550,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public Builder removeWifiScanResult(int index) {
         if (wifiScanResultBuilder_ == null) {
@@ -4563,14 +4563,14 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public wifi_endpoint.Builder getWifiScanResultBuilder(
           int index) {
         return getWifiScanResultFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public wifi_endpointOrBuilder getWifiScanResultOrBuilder(
           int index) {
@@ -4580,7 +4580,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public java.util.List<? extends wifi_endpointOrBuilder>
            getWifiScanResultOrBuilderList() {
@@ -4591,14 +4591,14 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public wifi_endpoint.Builder addWifiScanResultBuilder() {
         return getWifiScanResultFieldBuilder().addBuilder(
             wifi_endpoint.getDefaultInstance());
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public wifi_endpoint.Builder addWifiScanResultBuilder(
           int index) {
@@ -4606,7 +4606,7 @@ public final class SenseCommandProtos {
             index, wifi_endpoint.getDefaultInstance());
       }
       /**
-       * <code>repeated .hello.wifi_endpoint wifi_scan_result = 14;</code>
+       * <code>repeated .wifi_endpoint wifi_scan_result = 14;</code>
        */
       public java.util.List<wifi_endpoint.Builder>
            getWifiScanResultBuilderList() {
@@ -4627,22 +4627,22 @@ public final class SenseCommandProtos {
         return wifiScanResultBuilder_;
       }
 
-      // optional .hello.wifi_endpoint.sec_type security_type = 15;
+      // optional .wifi_endpoint.sec_type security_type = 15;
       private wifi_endpoint.sec_type securityType_ = wifi_endpoint.sec_type.SL_SCAN_SEC_TYPE_OPEN;
       /**
-       * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+       * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
        */
       public boolean hasSecurityType() {
         return ((bitField0_ & 0x00001000) == 0x00001000);
       }
       /**
-       * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+       * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
        */
       public wifi_endpoint.sec_type getSecurityType() {
         return securityType_;
       }
       /**
-       * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+       * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
        */
       public Builder setSecurityType(wifi_endpoint.sec_type value) {
         if (value == null) {
@@ -4654,7 +4654,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.wifi_endpoint.sec_type security_type = 15;</code>
+       * <code>optional .wifi_endpoint.sec_type security_type = 15;</code>
        */
       public Builder clearSecurityType() {
         bitField0_ = (bitField0_ & ~0x00001000);
@@ -4663,18 +4663,18 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // optional .hello.pill_data pill_data = 16;
+      // optional .pill_data pill_data = 16;
       private pill_data pillData_ = pill_data.getDefaultInstance();
       private com.google.protobuf.SingleFieldBuilder<
           pill_data, pill_data.Builder, pill_dataOrBuilder> pillDataBuilder_;
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public boolean hasPillData() {
         return ((bitField0_ & 0x00002000) == 0x00002000);
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public pill_data getPillData() {
         if (pillDataBuilder_ == null) {
@@ -4684,7 +4684,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public Builder setPillData(pill_data value) {
         if (pillDataBuilder_ == null) {
@@ -4700,7 +4700,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public Builder setPillData(
           pill_data.Builder builderForValue) {
@@ -4714,7 +4714,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public Builder mergePillData(pill_data value) {
         if (pillDataBuilder_ == null) {
@@ -4733,7 +4733,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public Builder clearPillData() {
         if (pillDataBuilder_ == null) {
@@ -4746,7 +4746,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public pill_data.Builder getPillDataBuilder() {
         bitField0_ |= 0x00002000;
@@ -4754,7 +4754,7 @@ public final class SenseCommandProtos {
         return getPillDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       public pill_dataOrBuilder getPillDataOrBuilder() {
         if (pillDataBuilder_ != null) {
@@ -4764,7 +4764,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>optional .hello.pill_data pill_data = 16;</code>
+       * <code>optional .pill_data pill_data = 16;</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           pill_data, pill_data.Builder, pill_dataOrBuilder>
@@ -4780,22 +4780,22 @@ public final class SenseCommandProtos {
         return pillDataBuilder_;
       }
 
-      // optional .hello.wifi_connection_state wifi_connection_state = 17;
+      // optional .wifi_connection_state wifi_connection_state = 17;
       private wifi_connection_state wifiConnectionState_ = wifi_connection_state.NO_WLAN_CONNECTED;
       /**
-       * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
        */
       public boolean hasWifiConnectionState() {
         return ((bitField0_ & 0x00004000) == 0x00004000);
       }
       /**
-       * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
        */
       public wifi_connection_state getWifiConnectionState() {
         return wifiConnectionState_;
       }
       /**
-       * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
        */
       public Builder setWifiConnectionState(wifi_connection_state value) {
         if (value == null) {
@@ -4807,7 +4807,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>optional .hello.wifi_connection_state wifi_connection_state = 17;</code>
+       * <code>optional .wifi_connection_state wifi_connection_state = 17;</code>
        */
       public Builder clearWifiConnectionState() {
         bitField0_ = (bitField0_ & ~0x00004000);
@@ -4816,7 +4816,7 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:hello.MorpheusCommand)
+      // @@protoc_insertion_point(builder_scope:MorpheusCommand)
     }
 
     static {
@@ -4824,33 +4824,33 @@ public final class SenseCommandProtos {
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:hello.MorpheusCommand)
+    // @@protoc_insertion_point(class_scope:MorpheusCommand)
   }
 
   public interface batched_pill_dataOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
-    // repeated .hello.pill_data pills = 1;
+    // repeated .pill_data pills = 1;
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     java.util.List<pill_data>
         getPillsList();
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     pill_data getPills(int index);
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     int getPillsCount();
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     java.util.List<? extends pill_dataOrBuilder>
         getPillsOrBuilderList();
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     pill_dataOrBuilder getPillsOrBuilder(
             int index);
@@ -4871,7 +4871,7 @@ public final class SenseCommandProtos {
         getDeviceIdBytes();
   }
   /**
-   * Protobuf type {@code hello.batched_pill_data}
+   * Protobuf type {@code batched_pill_data}
    */
   public static final class batched_pill_data extends
       com.google.protobuf.GeneratedMessage
@@ -4951,12 +4951,12 @@ public final class SenseCommandProtos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return SenseCommandProtos.internal_static_hello_batched_pill_data_descriptor;
+      return SenseCommandProtos.internal_static_batched_pill_data_descriptor;
     }
 
     protected FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return SenseCommandProtos.internal_static_hello_batched_pill_data_fieldAccessorTable
+      return SenseCommandProtos.internal_static_batched_pill_data_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               batched_pill_data.class, Builder.class);
     }
@@ -4977,36 +4977,36 @@ public final class SenseCommandProtos {
     }
 
     private int bitField0_;
-    // repeated .hello.pill_data pills = 1;
+    // repeated .pill_data pills = 1;
     public static final int PILLS_FIELD_NUMBER = 1;
     private java.util.List<pill_data> pills_;
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     public java.util.List<pill_data> getPillsList() {
       return pills_;
     }
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     public java.util.List<? extends pill_dataOrBuilder>
         getPillsOrBuilderList() {
       return pills_;
     }
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     public int getPillsCount() {
       return pills_.size();
     }
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     public pill_data getPills(int index) {
       return pills_.get(index);
     }
     /**
-     * <code>repeated .hello.pill_data pills = 1;</code>
+     * <code>repeated .pill_data pills = 1;</code>
      */
     public pill_dataOrBuilder getPillsOrBuilder(
         int index) {
@@ -5184,19 +5184,19 @@ public final class SenseCommandProtos {
       return builder;
     }
     /**
-     * Protobuf type {@code hello.batched_pill_data}
+     * Protobuf type {@code batched_pill_data}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
        implements batched_pill_dataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SenseCommandProtos.internal_static_hello_batched_pill_data_descriptor;
+        return SenseCommandProtos.internal_static_batched_pill_data_descriptor;
       }
 
       protected FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SenseCommandProtos.internal_static_hello_batched_pill_data_fieldAccessorTable
+        return SenseCommandProtos.internal_static_batched_pill_data_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
                 batched_pill_data.class, Builder.class);
       }
@@ -5239,7 +5239,7 @@ public final class SenseCommandProtos {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return SenseCommandProtos.internal_static_hello_batched_pill_data_descriptor;
+        return SenseCommandProtos.internal_static_batched_pill_data_descriptor;
       }
 
       public batched_pill_data getDefaultInstanceForType() {
@@ -5355,7 +5355,7 @@ public final class SenseCommandProtos {
       }
       private int bitField0_;
 
-      // repeated .hello.pill_data pills = 1;
+      // repeated .pill_data pills = 1;
       private java.util.List<pill_data> pills_ =
         java.util.Collections.emptyList();
       private void ensurePillsIsMutable() {
@@ -5369,7 +5369,7 @@ public final class SenseCommandProtos {
           pill_data, pill_data.Builder, pill_dataOrBuilder> pillsBuilder_;
 
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public java.util.List<pill_data> getPillsList() {
         if (pillsBuilder_ == null) {
@@ -5379,7 +5379,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public int getPillsCount() {
         if (pillsBuilder_ == null) {
@@ -5389,7 +5389,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public pill_data getPills(int index) {
         if (pillsBuilder_ == null) {
@@ -5399,7 +5399,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder setPills(
           int index, pill_data value) {
@@ -5416,7 +5416,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder setPills(
           int index, pill_data.Builder builderForValue) {
@@ -5430,7 +5430,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder addPills(pill_data value) {
         if (pillsBuilder_ == null) {
@@ -5446,7 +5446,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder addPills(
           int index, pill_data value) {
@@ -5463,7 +5463,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder addPills(
           pill_data.Builder builderForValue) {
@@ -5477,7 +5477,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder addPills(
           int index, pill_data.Builder builderForValue) {
@@ -5491,7 +5491,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder addAllPills(
           Iterable<? extends pill_data> values) {
@@ -5505,7 +5505,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder clearPills() {
         if (pillsBuilder_ == null) {
@@ -5518,7 +5518,7 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public Builder removePills(int index) {
         if (pillsBuilder_ == null) {
@@ -5531,14 +5531,14 @@ public final class SenseCommandProtos {
         return this;
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public pill_data.Builder getPillsBuilder(
           int index) {
         return getPillsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public pill_dataOrBuilder getPillsOrBuilder(
           int index) {
@@ -5548,7 +5548,7 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public java.util.List<? extends pill_dataOrBuilder>
            getPillsOrBuilderList() {
@@ -5559,14 +5559,14 @@ public final class SenseCommandProtos {
         }
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public pill_data.Builder addPillsBuilder() {
         return getPillsFieldBuilder().addBuilder(
             pill_data.getDefaultInstance());
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public pill_data.Builder addPillsBuilder(
           int index) {
@@ -5574,7 +5574,7 @@ public final class SenseCommandProtos {
             index, pill_data.getDefaultInstance());
       }
       /**
-       * <code>repeated .hello.pill_data pills = 1;</code>
+       * <code>repeated .pill_data pills = 1;</code>
        */
       public java.util.List<pill_data.Builder>
            getPillsBuilderList() {
@@ -5669,7 +5669,7 @@ public final class SenseCommandProtos {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:hello.batched_pill_data)
+      // @@protoc_insertion_point(builder_scope:batched_pill_data)
     }
 
     static {
@@ -5677,29 +5677,29 @@ public final class SenseCommandProtos {
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:hello.batched_pill_data)
+    // @@protoc_insertion_point(class_scope:batched_pill_data)
   }
 
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_hello_wifi_endpoint_descriptor;
+    internal_static_wifi_endpoint_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_hello_wifi_endpoint_fieldAccessorTable;
+      internal_static_wifi_endpoint_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_hello_pill_data_descriptor;
+    internal_static_pill_data_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_hello_pill_data_fieldAccessorTable;
+      internal_static_pill_data_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_hello_MorpheusCommand_descriptor;
+    internal_static_MorpheusCommand_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_hello_MorpheusCommand_fieldAccessorTable;
+      internal_static_MorpheusCommand_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_hello_batched_pill_data_descriptor;
+    internal_static_batched_pill_data_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_hello_batched_pill_data_fieldAccessorTable;
+      internal_static_batched_pill_data_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5709,90 +5709,88 @@ public final class SenseCommandProtos {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\022morpheus_ble.proto\022\005hello\"\346\001\n\rwifi_end" +
-      "point\022\014\n\004ssid\030\001 \002(\t\022\r\n\005bssid\030\002 \001(\014\022\014\n\004rs" +
-      "si\030\004 \002(\005\0224\n\rsecurity_type\030\005 \002(\0162\035.hello." +
-      "wifi_endpoint.sec_type\"t\n\010sec_type\022\031\n\025SL" +
-      "_SCAN_SEC_TYPE_OPEN\020\000\022\030\n\024SL_SCAN_SEC_TYP" +
-      "E_WEP\020\001\022\030\n\024SL_SCAN_SEC_TYPE_WPA\020\002\022\031\n\025SL_" +
-      "SCAN_SEC_TYPE_WPA2\020\003\"\221\001\n\tpill_data\022\021\n\tde" +
-      "vice_id\030\001 \002(\t\022\025\n\rbattery_level\030\002 \001(\005\022\016\n\006" +
-      "uptime\030\003 \001(\005\022\035\n\025motion_data_entrypted\030\004 " +
-      "\001(\014\022\030\n\020firmware_version\030\005 \001(\005\022\021\n\ttimesta",
-      "mp\030\006 \002(\004\"\202\n\n\017MorpheusCommand\022\017\n\007version\030" +
-      "\001 \002(\005\0220\n\004type\030\002 \002(\0162\".hello.MorpheusComm" +
-      "and.CommandType\022\020\n\010deviceId\030\003 \001(\t\022\021\n\tacc" +
-      "ountId\030\004 \001(\t\022\037\n\005error\030\005 \001(\0162\020.hello.Erro" +
-      "rType\022\020\n\010wifiName\030\006 \001(\t\022\020\n\010wifiSSID\030\007 \001(" +
-      "\t\022\024\n\014wifiPassword\030\010 \001(\t\022\024\n\014batteryLevel\030" +
-      "\t \001(\005\022\016\n\006uptime\030\n \001(\005\022\027\n\017firmwareVersion" +
-      "\030\r \001(\005\022.\n\020wifi_scan_result\030\016 \003(\0132\024.hello" +
-      ".wifi_endpoint\0224\n\rsecurity_type\030\017 \001(\0162\035." +
-      "hello.wifi_endpoint.sec_type\022#\n\tpill_dat",
-      "a\030\020 \001(\0132\020.hello.pill_data\022;\n\025wifi_connec" +
-      "tion_state\030\021 \001(\0162\034.hello.wifi_connection" +
-      "_state\"\244\006\n\013CommandType\022\035\n\031MORPHEUS_COMMA" +
-      "ND_SET_TIME\020\000\022\035\n\031MORPHEUS_COMMAND_GET_TI" +
-      "ME\020\001\022&\n\"MORPHEUS_COMMAND_SET_WIFI_ENDPOI" +
-      "NT\020\002\022&\n\"MORPHEUS_COMMAND_GET_WIFI_ENDPOI" +
-      "NT\020\003\022\037\n\033MORPHEUS_COMMAND_SET_ALARMS\020\004\022\037\n" +
-      "\033MORPHEUS_COMMAND_GET_ALARMS\020\005\022+\n\'MORPHE" +
-      "US_COMMAND_SWITCH_TO_PAIRING_MODE\020\006\022*\n&M" +
-      "ORPHEUS_COMMAND_SWITCH_TO_NORMAL_MODE\020\007\022",
-      "#\n\037MORPHEUS_COMMAND_START_WIFISCAN\020\010\022\"\n\036" +
-      "MORPHEUS_COMMAND_STOP_WIFISCAN\020\t\022\"\n\036MORP" +
-      "HEUS_COMMAND_GET_DEVICE_ID\020\n\022\'\n#MORPHEUS" +
-      "_COMMAND_ERASE_PAIRED_PHONE\020\013\022\036\n\032MORPHEU" +
-      "S_COMMAND_PAIR_PILL\020\014\022\032\n\026MORPHEUS_COMMAN" +
-      "D_ERROR\020\r\022\037\n\033MORPHEUS_COMMAND_PAIR_SENSE" +
-      "\020\016\022 \n\034MORPHEUS_COMMAND_UNPAIR_PILL\020\017\022\'\n#" +
-      "MORPHEUS_COMMAND_MORPHEUS_DFU_BEGIN\020\020\022\036\n" +
-      "\032MORPHEUS_COMMAND_PILL_DATA\020\021\022#\n\037MORPHEU" +
-      "S_COMMAND_PILL_HEARTBEAT\020\022\022#\n\037MORPHEUS_C",
-      "OMMAND_PILL_DFU_BEGIN\020\023\022\"\n\036MORPHEUS_COMM" +
-      "AND_FACTORY_RESET\020\024\022 \n\034MORPHEUS_COMMAND_" +
-      "PILL_SHAKES\020\025\"G\n\021batched_pill_data\022\037\n\005pi" +
-      "lls\030\001 \003(\0132\020.hello.pill_data\022\021\n\tdevice_id" +
-      "\030\002 \002(\t*\373\001\n\tErrorType\022\014\n\010TIME_OUT\020\000\022\021\n\rNE" +
-      "TWORK_ERROR\020\001\022\031\n\025DEVICE_ALREADY_PAIRED\020\002" +
-      "\022\027\n\023INTERNAL_DATA_ERROR\020\003\022\030\n\024DEVICE_DATA" +
-      "BASE_FULL\020\004\022\024\n\020DEVICE_NO_MEMORY\020\005\022\035\n\031INT" +
-      "ERNAL_OPERATION_FAILED\020\006\022\030\n\024NO_ENDPOINT_" +
-      "IN_RANGE\020\007\022\031\n\025WLAN_CONNECTION_ERROR\020\010\022\025\n",
-      "\021FAIL_TO_OBTAIN_IP\020\t*i\n\025wifi_connection_" +
-      "state\022\025\n\021NO_WLAN_CONNECTED\020\000\022\023\n\017WLAN_CON" +
-      "NECTING\020\001\022\022\n\016WLAN_CONNECTED\020\002\022\020\n\014IP_RETR" +
-      "IEVED\020\003B.\n\030com.hello.suripu.api.bleB\022Sen" +
-      "seCommandProtos"
+      "\n\022morpheus_ble.proto\"\340\001\n\rwifi_endpoint\022\014" +
+      "\n\004ssid\030\001 \002(\t\022\r\n\005bssid\030\002 \001(\014\022\014\n\004rssi\030\004 \002(" +
+      "\005\022.\n\rsecurity_type\030\005 \002(\0162\027.wifi_endpoint" +
+      ".sec_type\"t\n\010sec_type\022\031\n\025SL_SCAN_SEC_TYP" +
+      "E_OPEN\020\000\022\030\n\024SL_SCAN_SEC_TYPE_WEP\020\001\022\030\n\024SL" +
+      "_SCAN_SEC_TYPE_WPA\020\002\022\031\n\025SL_SCAN_SEC_TYPE" +
+      "_WPA2\020\003\"\221\001\n\tpill_data\022\021\n\tdevice_id\030\001 \002(\t" +
+      "\022\025\n\rbattery_level\030\002 \001(\005\022\016\n\006uptime\030\003 \001(\005\022" +
+      "\035\n\025motion_data_entrypted\030\004 \001(\014\022\030\n\020firmwa" +
+      "re_version\030\005 \001(\005\022\021\n\ttimestamp\030\006 \002(\004\"\336\t\n\017",
+      "MorpheusCommand\022\017\n\007version\030\001 \002(\005\022*\n\004type" +
+      "\030\002 \002(\0162\034.MorpheusCommand.CommandType\022\020\n\010" +
+      "deviceId\030\003 \001(\t\022\021\n\taccountId\030\004 \001(\t\022\031\n\005err" +
+      "or\030\005 \001(\0162\n.ErrorType\022\020\n\010wifiName\030\006 \001(\t\022\020" +
+      "\n\010wifiSSID\030\007 \001(\t\022\024\n\014wifiPassword\030\010 \001(\t\022\024" +
+      "\n\014batteryLevel\030\t \001(\005\022\016\n\006uptime\030\n \001(\005\022\027\n\017" +
+      "firmwareVersion\030\r \001(\005\022(\n\020wifi_scan_resul" +
+      "t\030\016 \003(\0132\016.wifi_endpoint\022.\n\rsecurity_type" +
+      "\030\017 \001(\0162\027.wifi_endpoint.sec_type\022\035\n\tpill_" +
+      "data\030\020 \001(\0132\n.pill_data\0225\n\025wifi_connectio",
+      "n_state\030\021 \001(\0162\026.wifi_connection_state\"\244\006" +
+      "\n\013CommandType\022\035\n\031MORPHEUS_COMMAND_SET_TI" +
+      "ME\020\000\022\035\n\031MORPHEUS_COMMAND_GET_TIME\020\001\022&\n\"M" +
+      "ORPHEUS_COMMAND_SET_WIFI_ENDPOINT\020\002\022&\n\"M" +
+      "ORPHEUS_COMMAND_GET_WIFI_ENDPOINT\020\003\022\037\n\033M" +
+      "ORPHEUS_COMMAND_SET_ALARMS\020\004\022\037\n\033MORPHEUS" +
+      "_COMMAND_GET_ALARMS\020\005\022+\n\'MORPHEUS_COMMAN" +
+      "D_SWITCH_TO_PAIRING_MODE\020\006\022*\n&MORPHEUS_C" +
+      "OMMAND_SWITCH_TO_NORMAL_MODE\020\007\022#\n\037MORPHE" +
+      "US_COMMAND_START_WIFISCAN\020\010\022\"\n\036MORPHEUS_",
+      "COMMAND_STOP_WIFISCAN\020\t\022\"\n\036MORPHEUS_COMM" +
+      "AND_GET_DEVICE_ID\020\n\022\'\n#MORPHEUS_COMMAND_" +
+      "ERASE_PAIRED_PHONE\020\013\022\036\n\032MORPHEUS_COMMAND" +
+      "_PAIR_PILL\020\014\022\032\n\026MORPHEUS_COMMAND_ERROR\020\r" +
+      "\022\037\n\033MORPHEUS_COMMAND_PAIR_SENSE\020\016\022 \n\034MOR" +
+      "PHEUS_COMMAND_UNPAIR_PILL\020\017\022\'\n#MORPHEUS_" +
+      "COMMAND_MORPHEUS_DFU_BEGIN\020\020\022\036\n\032MORPHEUS" +
+      "_COMMAND_PILL_DATA\020\021\022#\n\037MORPHEUS_COMMAND" +
+      "_PILL_HEARTBEAT\020\022\022#\n\037MORPHEUS_COMMAND_PI" +
+      "LL_DFU_BEGIN\020\023\022\"\n\036MORPHEUS_COMMAND_FACTO",
+      "RY_RESET\020\024\022 \n\034MORPHEUS_COMMAND_PILL_SHAK" +
+      "ES\020\025\"A\n\021batched_pill_data\022\031\n\005pills\030\001 \003(\013" +
+      "2\n.pill_data\022\021\n\tdevice_id\030\002 \002(\t*\373\001\n\tErro" +
+      "rType\022\014\n\010TIME_OUT\020\000\022\021\n\rNETWORK_ERROR\020\001\022\031" +
+      "\n\025DEVICE_ALREADY_PAIRED\020\002\022\027\n\023INTERNAL_DA" +
+      "TA_ERROR\020\003\022\030\n\024DEVICE_DATABASE_FULL\020\004\022\024\n\020" +
+      "DEVICE_NO_MEMORY\020\005\022\035\n\031INTERNAL_OPERATION" +
+      "_FAILED\020\006\022\030\n\024NO_ENDPOINT_IN_RANGE\020\007\022\031\n\025W" +
+      "LAN_CONNECTION_ERROR\020\010\022\025\n\021FAIL_TO_OBTAIN" +
+      "_IP\020\t*i\n\025wifi_connection_state\022\025\n\021NO_WLA",
+      "N_CONNECTED\020\000\022\023\n\017WLAN_CONNECTING\020\001\022\022\n\016WL" +
+      "AN_CONNECTED\020\002\022\020\n\014IP_RETRIEVED\020\003B.\n\030com." +
+      "hello.suripu.api.bleB\022SenseCommandProtos"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_hello_wifi_endpoint_descriptor =
+          internal_static_wifi_endpoint_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_hello_wifi_endpoint_fieldAccessorTable = new
+          internal_static_wifi_endpoint_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_hello_wifi_endpoint_descriptor,
+              internal_static_wifi_endpoint_descriptor,
               new String[] { "Ssid", "Bssid", "Rssi", "SecurityType", });
-          internal_static_hello_pill_data_descriptor =
+          internal_static_pill_data_descriptor =
             getDescriptor().getMessageTypes().get(1);
-          internal_static_hello_pill_data_fieldAccessorTable = new
+          internal_static_pill_data_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_hello_pill_data_descriptor,
+              internal_static_pill_data_descriptor,
               new String[] { "DeviceId", "BatteryLevel", "Uptime", "MotionDataEntrypted", "FirmwareVersion", "Timestamp", });
-          internal_static_hello_MorpheusCommand_descriptor =
+          internal_static_MorpheusCommand_descriptor =
             getDescriptor().getMessageTypes().get(2);
-          internal_static_hello_MorpheusCommand_fieldAccessorTable = new
+          internal_static_MorpheusCommand_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_hello_MorpheusCommand_descriptor,
+              internal_static_MorpheusCommand_descriptor,
               new String[] { "Version", "Type", "DeviceId", "AccountId", "Error", "WifiName", "WifiSSID", "WifiPassword", "BatteryLevel", "Uptime", "FirmwareVersion", "WifiScanResult", "SecurityType", "PillData", "WifiConnectionState", });
-          internal_static_hello_batched_pill_data_descriptor =
+          internal_static_batched_pill_data_descriptor =
             getDescriptor().getMessageTypes().get(3);
-          internal_static_hello_batched_pill_data_fieldAccessorTable = new
+          internal_static_batched_pill_data_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_hello_batched_pill_data_descriptor,
+              internal_static_batched_pill_data_descriptor,
               new String[] { "Pills", "DeviceId", });
           return null;
         }
