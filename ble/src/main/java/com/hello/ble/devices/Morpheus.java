@@ -8,9 +8,9 @@ import android.content.Context;
 
 import com.hello.ble.BleOperationCallback;
 import com.hello.ble.HelloBle;
-import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand;
-import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand.CommandType;
-import com.hello.ble.protobuf.MorpheusBle.wifi_endpoint;
+import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand;
+import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand.CommandType;
+import com.hello.suripu.api.ble.SenseCommandProtos.wifi_endpoint;
 import com.hello.ble.stack.HelloGattLayer;
 import com.hello.ble.stack.application.MorpheusProtobufResponseDataHandler;
 import com.hello.ble.stack.transmission.MorpheusBlePacketHandler;

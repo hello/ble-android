@@ -5,7 +5,7 @@ import com.hello.ble.BleOperationCallback.OperationFailReason;
 import com.hello.ble.HelloBle;
 import com.hello.ble.HelloBlePacket;
 import com.hello.ble.devices.HelloBleDevice;
-import com.hello.ble.protobuf.MorpheusBle.MorpheusCommand;
+import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand;
 import com.hello.ble.stack.transmission.BlePacketHandler;
 import com.hello.ble.util.BleUUID;
 
