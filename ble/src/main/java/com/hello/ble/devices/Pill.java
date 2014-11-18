@@ -279,7 +279,68 @@ public class Pill extends HelloBleDevice {
 
     }
 
+    public void wipeFirmware(final BleOperationCallback<Void> wipeFirmwareCallback) {
+        saveAndResetPreviousCommandWriteCallback();
 
+        this.commandResponsePacketHandler.setDataCallback(new BleOperationCallback<PillCommand>() {
+            @Override
+            public void onCompleted(final HelloBleDevice connectedPill, final PillCommand data) {
+                Pill.this.gattLayer.unsubscribeNotification(BleUUID.CHAR_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
+                    @Override
+                    public void onCompleted(HelloBleDevice sender, final UUID charUUID) {
+                        if (wipeFirmwareCallback != null) {
+                            wipeFirmwareCallback.onCompleted(Pill.this, null);
+                        }
+                    }
+
+                    @Override
+                    public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
+                        if (wipeFirmwareCallback != null) {
+                            wipeFirmwareCallback.onFailed(sender, reason, errorCode);
+                        }
+                    }
+                });
+
+            }
+
+            @Override
+            public void onFailed(final HelloBleDevice sender, final OperationFailReason reason, final int errorCode) {
+                Pill.this.gattLayer.unsubscribeNotification(BleUUID.CHAR_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
+                    @Override
+                    public void onCompleted(HelloBleDevice sender, final UUID charUUID) {
+                        if (wipeFirmwareCallback != null) {
+                            wipeFirmwareCallback.onFailed(sender, reason, errorCode);
+                        }
+                    }
+
+                    @Override
+                    public void onFailed(final HelloBleDevice sender, final OperationFailReason internalReason, final int internalCode) {
+                        if (wipeFirmwareCallback != null) {
+                            wipeFirmwareCallback.onFailed(sender, reason, errorCode);
+                        }
+                    }
+                });
+
+            }
+        });
+
+
+        this.gattLayer.subscribeNotification(BleUUID.CHAR_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
+            @Override
+            public void onCompleted(final HelloBleDevice connectedPill, final UUID charUUID) {
+                final byte[] pillCommandData = new byte[]{PillCommand.CALIBRATE.getValue()};
+                Pill.this.gattLayer.writeCommand(pillCommandData);
+            }
+
+            @Override
+            public void onFailed(HelloBleDevice sender, OperationFailReason reason, int errorCode) {
+                if (wipeFirmwareCallback != null) {
+                    wipeFirmwareCallback.onFailed(sender, reason, errorCode);
+                }
+            }
+        });
+
+    }
     @Deprecated
     public void startStream(final BleOperationCallback<Void> operationCallback, final BleOperationCallback<Long[]> dataCallback) {
         this.gattLayer.setCommandWriteCallback(null);
