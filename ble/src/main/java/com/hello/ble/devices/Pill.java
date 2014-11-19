@@ -328,7 +328,7 @@ public class Pill extends HelloBleDevice {
         this.gattLayer.subscribeNotification(BleUUID.CHAR_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
             @Override
             public void onCompleted(final HelloBleDevice connectedPill, final UUID charUUID) {
-                final byte[] pillCommandData = new byte[]{PillCommand.CALIBRATE.getValue()};
+                final byte[] pillCommandData = new byte[]{PillCommand.WIPE_FIRMWARE.getValue()};
                 Pill.this.gattLayer.writeCommand(pillCommandData);
             }
 
