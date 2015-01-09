@@ -13,6 +13,7 @@ import com.hello.ble.stack.application.MorpheusProtobufResponseDataHandler;
 import com.hello.ble.stack.transmission.MorpheusBlePacketHandler;
 import com.hello.ble.util.BleUUID;
 import com.hello.ble.util.HelloBleDeviceScanner;
+import com.hello.ble.util.LEDAnimation;
 import com.hello.ble.util.MorpheusScanner;
 import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand;
 import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand.CommandType;
@@ -1075,6 +1076,89 @@ public class Morpheus extends HelloBleDevice {
                 // Write command
                 final MorpheusCommand morpheusCommand = MorpheusCommand.newBuilder()
                         .setType(CommandType.MORPHEUS_COMMAND_START_WIFISCAN)
+                        .setVersion(COMMAND_VERSION)
+                        .build();
+                Morpheus.this.gattLayer.writeLargeCommand(BleUUID.CHAR_PROTOBUF_COMMAND_UUID, morpheusCommand.toByteArray(), operationCallback);
+
+            }
+
+            @Override
+            public void onFailed(final HelloBleDevice sender, final OperationFailReason reason, final int errorCode) {
+                if(operationCallback != null){
+                    operationCallback.onFailed(sender, reason, errorCode);
+                }
+            }
+        });
+    }
+
+
+    public void setLEDAnimation(final BleOperationCallback<Void> operationCallback, final LEDAnimation animation){
+        MorpheusCommand.CommandType type = CommandType.MORPHEUS_COMMAND_LED_OPERATION_FAILED;
+        switch (animation){
+            case LED_OFF:
+                type = CommandType.MORPHEUS_COMMAND_LED_OPERATION_FAILED;
+                break;
+            case LED_TRIPPY:
+                type = CommandType.MORPHEUS_COMMAND_LED_TRIPPY;
+                break;
+            case LED_BUSY:
+                type = CommandType.MORPHEUS_COMMAND_LED_BUSY;
+                break;
+        }
+
+        final CommandType commandType = type;
+
+        this.protobufCommandResponseHandler.setDataCallback(new BleOperationCallback<MorpheusCommand>() {
+
+            @Override
+            public void onCompleted(final HelloBleDevice sender, final MorpheusCommand replyCommand) {
+                if(replyCommand.getType() == commandType){
+
+                    if(operationCallback != null) {
+                        operationCallback.onCompleted(sender, null);
+                    }
+
+                }else if(replyCommand.getType() == CommandType.MORPHEUS_COMMAND_ERROR){
+                    if(operationCallback != null){
+                        operationCallback.onFailed(sender, OperationFailReason.INTERNAL_ERROR, replyCommand.getError().getNumber());
+                    }
+
+                } else {
+                    if (operationCallback != null) {
+                        // Wrong command received, which means data out of order for some reason.
+                        operationCallback.onFailed(sender, OperationFailReason.WRONG_ACK_TYPE, replyCommand.getType().getNumber());
+                    }
+
+                }
+            }
+
+            @Override
+            public void onFailed(final HelloBleDevice sender, final OperationFailReason reason, final int errorCode) {
+                Morpheus.this.gattLayer.unsubscribeNotification(BleUUID.CHAR_PROTOBUF_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
+                    @Override
+                    public void onCompleted(final HelloBleDevice sender, final UUID charUUID) {
+                        if(operationCallback != null){
+                            operationCallback.onFailed(sender, OperationFailReason.DATA_LOST_OR_OUT_OF_ORDER, 0);
+                        }
+                    }
+
+                    @Override
+                    public void onFailed(final HelloBleDevice sender, final OperationFailReason reason, final int errorCode) {
+                        if(operationCallback != null){
+                            operationCallback.onFailed(sender, OperationFailReason.DATA_LOST_OR_OUT_OF_ORDER, 0);
+                        }
+                    }
+                });
+            }
+        });
+
+
+        this.gattLayer.subscribeNotification(BleUUID.CHAR_PROTOBUF_COMMAND_RESPONSE_UUID, new BleOperationCallback<UUID>() {
+            @Override
+            public void onCompleted(final HelloBleDevice sender, final UUID charUUID) {
+                // Write command
+                final MorpheusCommand morpheusCommand = MorpheusCommand.newBuilder()
+                        .setType(commandType)
                         .setVersion(COMMAND_VERSION)
                         .build();
                 Morpheus.this.gattLayer.writeLargeCommand(BleUUID.CHAR_PROTOBUF_COMMAND_UUID, morpheusCommand.toByteArray(), operationCallback);
