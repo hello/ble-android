@@ -8,16 +8,16 @@ import android.content.Context;
 
 import com.hello.ble.BleOperationCallback;
 import com.hello.ble.HelloBle;
-import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand;
-import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand.CommandType;
-import com.hello.suripu.api.ble.SenseCommandProtos.led_demo_state;
-import com.hello.suripu.api.ble.SenseCommandProtos.wifi_endpoint;
 import com.hello.ble.stack.HelloGattLayer;
 import com.hello.ble.stack.application.MorpheusProtobufResponseDataHandler;
 import com.hello.ble.stack.transmission.MorpheusBlePacketHandler;
 import com.hello.ble.util.BleUUID;
 import com.hello.ble.util.HelloBleDeviceScanner;
 import com.hello.ble.util.MorpheusScanner;
+import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand;
+import com.hello.suripu.api.ble.SenseCommandProtos.MorpheusCommand.CommandType;
+import com.hello.suripu.api.ble.SenseCommandProtos.led_demo_state;
+import com.hello.suripu.api.ble.SenseCommandProtos.wifi_endpoint;
 
 import java.util.ArrayList;
 import java.util.HashSet;

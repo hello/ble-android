@@ -10,7 +10,8 @@ public enum PillCommand {
     GET_TIME((byte) 0x05),
     GET_DATA((byte) 0x04),
     CALIBRATE((byte) 0x02),
-    GET_BATTERY_VOLT((byte) 0x07);
+    GET_BATTERY_VOLT((byte) 0x07),
+    WIPE_FIRMWARE((byte) 0x08);
 
     private byte value;
 
@@ -35,6 +36,8 @@ public enum PillCommand {
 
             case 0x07:
                 return GET_BATTERY_VOLT;
+            case 0x08:
+                return WIPE_FIRMWARE;
             default:
                 return CALIBRATE;
         }
