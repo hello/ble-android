@@ -3,6 +3,8 @@
 
 package com.hello.suripu.api.ble;
 
+import com.google.protobuf.Message;
+
 public final class SenseCommandProtos {
   private SenseCommandProtos() {}
   public static void registerAllExtensions(
@@ -1006,7 +1008,7 @@ public final class SenseCommandProtos {
         return result;
       }
 
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(Message other) {
         if (other instanceof wifi_endpoint) {
           return mergeFrom((wifi_endpoint)other);
         } else {
@@ -1836,7 +1838,7 @@ public final class SenseCommandProtos {
         return result;
       }
 
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(Message other) {
         if (other instanceof pill_data) {
           return mergeFrom((pill_data)other);
         } else {
@@ -3903,7 +3905,7 @@ public final class SenseCommandProtos {
         return result;
       }
 
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(Message other) {
         if (other instanceof MorpheusCommand) {
           return mergeFrom((MorpheusCommand)other);
         } else {
@@ -5637,7 +5639,7 @@ public final class SenseCommandProtos {
         return result;
       }
 
-      public Builder mergeFrom(com.google.protobuf.Message other) {
+      public Builder mergeFrom(Message other) {
         if (other instanceof batched_pill_data) {
           return mergeFrom((batched_pill_data)other);
         } else {
